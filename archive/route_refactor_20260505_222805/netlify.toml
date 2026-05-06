@@ -1,0 +1,29 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/presentation"
+  to = "/presentation/"
+  status = 301
+
+[[redirects]]
+  from = "/case-studies"
+  to = "/case-studies/"
+  status = 301
+
+[[redirects]]
+  from = "/evidence"
+  to = "/evidence/"
+  status = 301
+
+[[redirects]]
+  from = "/reflection"
+  to = "/reflection/"
+  status = 301
