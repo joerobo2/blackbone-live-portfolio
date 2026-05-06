@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Evidence | Joseph Robinson Portfolio</title>
-  <meta name="description" content="Public-safe evidence model for the IST 782 applied data science portfolio.">
+  <title>Evidence Library | Joseph Robinson Portfolio</title>
+  <meta name="description" content="Public-safe evidence library for the IST 782 applied data science portfolio.">
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
@@ -22,53 +22,103 @@
 
     <main>
       <section class="hero reader">
-        <div class="kicker">Evidence</div>
-        <h1>Sanitized technical proof layer.</h1>
+        <div class="kicker">Evidence Library</div>
+        <h1>Click an artifact. Read it in context.</h1>
         <p class="lede">
-          This section explains the kinds of evidence that support the portfolio without exposing proprietary data, internal systems, or protected operational details.
+          This library connects the portfolio paper, system visuals, public case studies, and sanitized technical evidence. Every artifact is public-safe by design.
         </p>
       </section>
 
-      <section class="section grid grid-2">
-        <article class="card">
-          <h3>Allowed evidence</h3>
-          <ul class="list-clean">
-            <li>Sanitized architecture summaries</li>
-            <li>Generalized database and workflow diagrams</li>
-            <li>Synthetic examples</li>
-            <li>Pseudocode</li>
-            <li>Public-safe process descriptions</li>
-            <li>Reflection on method and learning</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Excluded evidence</h3>
-          <ul class="list-clean">
-            <li>Proprietary code</li>
-            <li>Internal URLs or system names</li>
-            <li>Production screenshots</li>
-            <li>Real operational data</li>
-            <li>Exact financial values</li>
-            <li>Customer, vendor, employee, or protected identifiers</li>
-          </ul>
-        </article>
+      <section class="evidence-section">
+        <h2>Portfolio paper</h2>
+        <div class="grid grid-2">
+          <a class="card evidence-card" href="/portfolio/reader/?doc=portfolio-paper">
+            <span class="evidence-icon">PDF</span>
+            <span>
+              <h3>IST 782 Portfolio Paper</h3>
+              <p>Open the milestone paper directly inside the site reader.</p>
+            </span>
+          </a>
+          <article class="card">
+            <h3>Public-safety note</h3>
+            <p>The reader presents public-facing artifacts only. Internal evidence tables, raw operational files, and protected identifiers remain outside the deployed site.</p>
+          </article>
+        </div>
       </section>
 
-      <section class="section reader">
-        <h2>Evidence model</h2>
-        <div class="card">
-          <p>
-            The evidence layer is designed around a simple idea: a portfolio artifact should be strong enough to show skill, but safe enough to publish. The goal is not to reveal internal implementation. The goal is to demonstrate the reasoning pattern behind the implementation.
-          </p>
-          <p>
-            Each artifact should answer: what problem existed, what structure was introduced, what decision became easier, and what learning transferred into future work.
-          </p>
+      <section class="evidence-section">
+        <h2>System visuals</h2>
+        <div class="grid grid-3">
+          <a class="card" href="/portfolio/reader/?doc=financial-visual">
+            <img class="visual-preview" src="/assets/visuals/FINANCIAL_CONTROL_SYSTEM.png" alt="Financial Control System visual">
+            <h3>Financial Control System</h3>
+            <p>Visual map of the financial control workflow.</p>
+          </a>
+          <a class="card" href="/portfolio/reader/?doc=chemical-visual">
+            <img class="visual-preview" src="/assets/visuals/CHEMICAL_COMPLIANCE_SYSTEM.png" alt="Chemical Compliance System visual">
+            <h3>Chemical Compliance System</h3>
+            <p>Visual map of the compliance review workflow.</p>
+          </a>
+          <a class="card" href="/portfolio/reader/?doc=inventory-visual">
+            <img class="visual-preview" src="/assets/visuals/INVENTORY_CONTROL_SYSTEM.png" alt="Inventory Control System visual">
+            <h3>Inventory Control System</h3>
+            <p>Visual map of the inventory prioritization workflow.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="evidence-section">
+        <h2>Public case studies</h2>
+        <div class="grid grid-3">
+          <a class="card evidence-card" href="/portfolio/reader/?doc=financial-case-study"><span class="evidence-icon">01</span><span><h3>Financial Control Case Study</h3><p>Public narrative of the reconciliation/control system.</p></span></a>
+          <a class="card evidence-card" href="/portfolio/reader/?doc=chemical-case-study"><span class="evidence-icon">02</span><span><h3>Chemical Compliance Case Study</h3><p>Public narrative of the compliance/governance system.</p></span></a>
+          <a class="card evidence-card" href="/portfolio/reader/?doc=inventory-case-study"><span class="evidence-icon">03</span><span><h3>Inventory Control Case Study</h3><p>Public narrative of the FEFO/inventory-control system.</p></span></a>
+        </div>
+      </section>
+
+      <section class="evidence-section">
+        <h2>Sanitized technical evidence</h2>
+        <p class="lede">These artifacts show structure, schema thinking, pseudocode, and synthetic outputs without exposing proprietary implementation details.</p>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Financial Control</h3>
+            <div class="badge-row">
+              <a class="badge" href="/portfolio/reader/?doc=financial-architecture">Architecture</a>
+              <a class="badge" href="/portfolio/reader/?doc=financial-schema">Schema</a>
+              <a class="badge" href="/portfolio/reader/?doc=financial-pseudocode">Pseudocode</a>
+              <a class="badge" href="/portfolio/reader/?doc=financial-examples">Examples</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Chemical Compliance</h3>
+            <div class="badge-row">
+              <a class="badge" href="/portfolio/reader/?doc=chemical-architecture">Architecture</a>
+              <a class="badge" href="/portfolio/reader/?doc=chemical-schema">Schema</a>
+              <a class="badge" href="/portfolio/reader/?doc=chemical-pseudocode">Pseudocode</a>
+              <a class="badge" href="/portfolio/reader/?doc=chemical-examples">Examples</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Inventory Control</h3>
+            <div class="badge-row">
+              <a class="badge" href="/portfolio/reader/?doc=inventory-architecture">Architecture</a>
+              <a class="badge" href="/portfolio/reader/?doc=inventory-schema">Schema</a>
+              <a class="badge" href="/portfolio/reader/?doc=inventory-pseudocode">Pseudocode</a>
+              <a class="badge" href="/portfolio/reader/?doc=inventory-examples">Examples</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="button-row">
+          <a class="button secondary" href="/portfolio/reader/?doc=technical-manifest">Open Technical Evidence Manifest</a>
         </div>
       </section>
     </main>
 
-    <footer class="footer">No proprietary data or internal artifacts.</footer>
+    <footer class="footer">Evidence library. Public-safe artifacts only.</footer>
   </div>
 </body>
 </html>
