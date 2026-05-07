@@ -25,3 +25,6 @@ _private/
 raw/
 production/
 internal/
+scripts/
+docs/table_audit_report.md
+evidence_pdf_sources/
