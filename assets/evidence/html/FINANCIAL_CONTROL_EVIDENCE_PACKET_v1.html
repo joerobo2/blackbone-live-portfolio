@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Financial Control Evidence Packet</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="/assets/evidence/packet-assets/css/evidence_packet_pdf.css" />
+</head>
+<body>
+<h1 id="financial-control-evidence-packet">Financial Control Evidence
+Packet</h1>
+<p><strong>Public-Safe Portfolio Evidence Packet</strong></p>
+<p><strong>Author:</strong> Joseph Robinson</p>
+<p><strong>Portfolio:</strong> IST 782 Applied Data Science
+Portfolio</p>
+<h2 id="provenance-and-public-safety-statement">Provenance and
+Public-Safety Statement</h2>
+<p>This evidence packet was authored by Joseph Robinson as part of a
+public-facing applied data science portfolio. It is based on original
+professional experience, graduate coursework, and public-safe
+reconstruction of system design patterns. Proprietary data, internal
+system names, production screenshots, exact financial values,
+customer/vendor identifiers, and protected operational details have been
+removed, generalized, or replaced with descriptive labels.</p>
+<h2 id="ai-assistance-statement">AI Assistance Statement</h2>
+<p>AI tools were used as writing, structuring, editing, and formatting
+assistants. The author reviewed, selected, revised, and approved the
+final content. AI output is not treated as an independent factual source
+for operational claims.</p>
+<h2 id="system-visual">System Visual</h2>
+<figure>
+<img src="/assets/evidence/packet-assets/visuals/FINANCIAL_CONTROL_SYSTEM.png"
+alt="Financial Control System Visual" />
+<figcaption aria-hidden="true">Financial Control System
+Visual</figcaption>
+</figure>
+<div class="page-break">
+
+</div>
+<h1 id="public-case-study">Public Case Study</h1>
+<h2 id="financial-control-system-case-study-v1">Financial Control System
+Case Study v1</h2>
+<p><em>Price-Change Reconciliation and Variance Review</em></p>
+<h3 id="portfolio-role">Portfolio Role</h3>
+<p>The Financial Control System is the first major case study in my IST
+782 portfolio. It represents the longest development arc across my
+graduate program and professional work. Internally, this project is
+connected to the PCN process, but the public-facing portfolio frames it
+as a financial control and reconciliation system.</p>
+<p>This case study demonstrates how coursework in databases, systems
+analysis, business analytics, information management, quantitative
+reasoning, and IT governance shaped a production workflow for
+reconciling price-change variance and making financial risk easier to
+explain.</p>
+<h3 id="public-safe-summary">Public-Safe Summary</h3>
+<p>This project transformed a fragmented price-change review process
+into a structured reconciliation and review workflow. The system
+connected operational records, pricing records, transaction activity,
+and validation logic into a repeatable process that made timing
+variance, source mismatches, and exception categories easier to identify
+and explain.</p>
+<p>All examples in this portfolio are generalized and use sanitized
+language or synthetic data to protect confidential business
+information.</p>
+<h3 id="domain">Domain</h3>
+<p>Financial / operational reconciliation</p>
+<h3 id="process-supported">Process Supported</h3>
+<ul>
+<li>Price-change validation</li>
+<li>Variance review</li>
+<li>Exception classification</li>
+<li>Reconciliation support</li>
+<li>Stakeholder reporting</li>
+<li>Review-readiness</li>
+</ul>
+<h3 id="primary-users">Primary Users</h3>
+<ul>
+<li>Business leadership</li>
+<li>Finance stakeholders</li>
+<li>Operations teams</li>
+<li>Process owners</li>
+</ul>
+<h3 id="business-problem">Business Problem</h3>
+<p>Price-change workflows can create operational and financial risk when
+approval timing, inventory depletion, invoice activity, and
+source-system assumptions do not align.</p>
+<p>The original process depended on fragmented extracts and manual
+reconciliation. Different sources could describe the same population
+differently. Without a structured reconciliation system, teams lacked a
+repeatable way to explain variance, validate timing, and distinguish
+true process issues from data-scope or methodology differences.</p>
+<p>The problem was not only technical. It was also organizational.
+Different users needed different levels of detail: leadership needed
+summary visibility, process owners needed exception categories, and
+analysts needed record-level traceability.</p>
+<h3 id="key-insight">Key Insight</h3>
+<p>The core issue was not simply “wrong price” or “late update.” The
+deeper issue was whether timing assumptions matched operational
+reality.</p>
+<p>The system introduced the concept of a generalized exposure
+window:</p>
+<p><strong>Exposure Window = Actual Operational Depletion Date -
+Expected Implementation Date</strong></p>
+<p>This made it possible to compare expected timing against observed
+operational behavior.</p>
+<p>The most important design shift was separating physical inventory
+behavior from financial billing behavior. Physical movement explains
+when inventory was actually depleted. Billing activity explains where
+the financial outcome appeared. Treating those as separate dimensions
+made the reconciliation logic more defensible.</p>
+<h3 id="system-design">System Design</h3>
+<p>The system was designed as a structured reconciliation workflow
+rather than a one-time report.</p>
+<p>Core components included:</p>
+<ul>
+<li>Price-change ledger logic</li>
+<li>Invoice / sales extract review</li>
+<li>Material transaction review</li>
+<li>Comparison baseline alignment</li>
+<li>Internal reconciliation table</li>
+<li>Exception classification</li>
+<li>Stakeholder summary output</li>
+<li>Detailed review table</li>
+<li>Evidence appendix</li>
+</ul>
+<h3 id="data-model-summary">Data Model Summary</h3>
+<p>The sanitized data model uses the following conceptual entities:</p>
+<h4 id="entity-price-change-ledger">Entity: Price Change Ledger</h4>
+<ul>
+<li><strong>Purpose:</strong> Defines approved change records and
+expected timing.</li>
+</ul>
+<h4 id="entity-material-transaction-extract">Entity: Material
+Transaction Extract</h4>
+<ul>
+<li><strong>Purpose:</strong> Provides operational movement and
+depletion timing.</li>
+</ul>
+<h4 id="entity-invoice-extract">Entity: Invoice Extract</h4>
+<ul>
+<li><strong>Purpose:</strong> Provides billed transaction outcomes.</li>
+</ul>
+<h4 id="entity-comparison-baseline">Entity: Comparison Baseline</h4>
+<ul>
+<li><strong>Purpose:</strong> Provides a comparison population or prior
+review model.</li>
+</ul>
+<h4 id="entity-internal-reconciliation-table">Entity: Internal
+Reconciliation Table</h4>
+<ul>
+<li><strong>Purpose:</strong> Aligns operational and financial
+evidence.</li>
+</ul>
+<h4 id="entity-exception-classification">Entity: Exception
+Classification</h4>
+<ul>
+<li><strong>Purpose:</strong> Explains why records match, differ, or
+require review.</li>
+</ul>
+<p>A public-safe system visual and architecture notes are included in
+this packet.</p>
+<h3 id="transformation-logic">Transformation Logic</h3>
+<p>The workflow can be summarized in four stages.</p>
+<h4 id="population-alignment">1. Population Alignment</h4>
+<p>The system identifies which records are shared between the comparison
+baseline and the internal review population.</p>
+<p>Possible match statuses include:</p>
+<ul>
+<li>Matched</li>
+<li>Internal-only</li>
+<li>Baseline-only</li>
+<li>Partial match</li>
+<li>Requires review</li>
+</ul>
+<h4 id="operational-financial-separation">2. Operational / Financial
+Separation</h4>
+<p>The system separates physical inventory behavior from financial
+billing behavior.</p>
+<ul>
+<li><strong>Physical Origin:</strong> Where the inventory movement
+occurred operationally.</li>
+<li><strong>Billing Destination:</strong> Where the financial outcome
+appeared.</li>
+</ul>
+<p>This prevents operational timing and financial assignment from being
+collapsed into one ambiguous field.</p>
+<h4 id="chronology-validation">3. Chronology Validation</h4>
+<p>The system checks whether events occurred in a valid order.</p>
+<p>Example questions include:</p>
+<ul>
+<li>Was the price change approved before it was applied?</li>
+<li>Did the invoice occur inside the eligible review window?</li>
+<li>Did operational depletion occur before or after the expected
+implementation date?</li>
+<li>Did the comparison model apply timing assumptions unsupported by
+operational evidence?</li>
+</ul>
+<h4 id="exception-classification">4. Exception Classification</h4>
+<p>The system classifies differences into reviewable categories.</p>
+<h4 id="exception-class-methodology">Exception Class: Methodology</h4>
+<ul>
+<li><strong>Meaning:</strong> Variance caused by model assumptions.</li>
+</ul>
+<h4 id="exception-class-scope">Exception Class: Scope</h4>
+<ul>
+<li><strong>Meaning:</strong> Record appears outside the valid review
+population.</li>
+</ul>
+<h4 id="exception-class-support">Exception Class: Support</h4>
+<ul>
+<li><strong>Meaning:</strong> Record lacks sufficient supporting
+evidence.</li>
+</ul>
+<h4 id="exception-class-data-integrity">Exception Class: Data
+Integrity</h4>
+<ul>
+<li><strong>Meaning:</strong> Record exists in one source but not
+another.</li>
+</ul>
+<h4 id="exception-class-chronology">Exception Class: Chronology</h4>
+<ul>
+<li><strong>Meaning:</strong> Timing logic violates event order.</li>
+</ul>
+<h4 id="exception-class-validated">Exception Class: Validated</h4>
+<ul>
+<li><strong>Meaning:</strong> Internal and comparison records align
+materially.</li>
+</ul>
+<h3 id="output-modules">Output Modules</h3>
+<h4 id="output-stakeholder-summary">Output: Stakeholder Summary</h4>
+<ul>
+<li><strong>Purpose:</strong> High-level reconciliation status and
+unresolved categories.</li>
+</ul>
+<h4 id="output-detailed-review-table">Output: Detailed Review Table</h4>
+<ul>
+<li><strong>Purpose:</strong> Record-level review surface.</li>
+</ul>
+<h4 id="output-exception-rollup">Output: Exception Rollup</h4>
+<ul>
+<li><strong>Purpose:</strong> Summarizes exception classes.</li>
+</ul>
+<h4 id="output-operational-allocation">Output: Operational
+Allocation</h4>
+<ul>
+<li><strong>Purpose:</strong> Physical-origin view.</li>
+</ul>
+<h4 id="output-financial-allocation">Output: Financial Allocation</h4>
+<ul>
+<li><strong>Purpose:</strong> Billing-destination view.</li>
+</ul>
+<h4 id="output-evidence-appendix">Output: Evidence Appendix</h4>
+<ul>
+<li><strong>Purpose:</strong> Sanitized support notes and
+reproducibility logic.</li>
+</ul>
+<h3 id="course-connections">Course Connections</h3>
+<h4 id="ist-659-data-administration-and-database-management">IST 659
+Data Administration and Database Management</h4>
+<ul>
+<li><strong>Connection:</strong> Schema thinking, traceability, source
+consolidation.</li>
+</ul>
+<h4 id="ist-654-information-systems-analysis">IST 654 Information
+Systems Analysis</h4>
+<ul>
+<li><strong>Connection:</strong> Requirements, system boundaries,
+process decomposition.</li>
+</ul>
+<h4 id="ist-621-information-management-and-technology">IST 621
+Information Management and Technology</h4>
+<ul>
+<li><strong>Connection:</strong> Digital transformation and
+organizational adoption.</li>
+</ul>
+<h4 id="scm-651-business-analytics">SCM 651 Business Analytics</h4>
+<ul>
+<li><strong>Connection:</strong> Operational analytics and decision
+support.</li>
+</ul>
+<h4 id="ist-614-information-technology-management-and-policy">IST 614
+Information Technology Management and Policy</h4>
+<ul>
+<li><strong>Connection:</strong> Governance and technology
+alignment.</li>
+</ul>
+<h4 id="ist-686-quantitative-reasoning-for-data-science">IST 686
+Quantitative Reasoning for Data Science</h4>
+<ul>
+<li><strong>Connection:</strong> Variance logic and structured
+reasoning.</li>
+</ul>
+<h3 id="program-learning-connection">Program Learning Connection</h3>
+<p>This project demonstrates applied data science as a bridge between
+data management, analytical reasoning, and business decision
+support.</p>
+<p>It required me to:</p>
+<ul>
+<li>Collect and organize operational data.</li>
+<li>Structure data into usable analytical tables.</li>
+<li>Identify variance patterns.</li>
+<li>Classify exceptions.</li>
+<li>Communicate results to stakeholders.</li>
+<li>Preserve reviewability and traceability.</li>
+<li>Design a repeatable workflow rather than a one-time analysis.</li>
+</ul>
+<h3 id="professional-impact">Professional Impact</h3>
+<p>The Financial Control System improved the ability to explain
+price-change variance and reduced dependence on manual reconstruction.
+It helped move the process toward earlier detection, clearer review
+categories, and more defensible stakeholder communication.</p>
+<p>The project also became executive-facing. It developed from a process
+improvement effort into a business review topic, which makes it one of
+the strongest examples of coursework becoming production capability.</p>
+<h3 id="reflection">Reflection</h3>
+<p>This project changed how I understand applied data science.</p>
+<p>At first, the work looked like a reporting problem. The deeper
+challenge was system design: multiple data sources, different
+assumptions, timing gaps, operational behavior, financial outcomes, and
+review expectations all needed to be aligned.</p>
+<p>The most important lesson was the difference between analysis and
+control.</p>
+<p>Analysis explains what happened. A control system changes what
+happens next.</p>
+<p>This project helped me move from building outputs to designing
+workflows that make risk visible earlier and easier to act on.</p>
+<div class="page-break">
+
+</div>
+<h1 id="sanitized-technical-evidence">Sanitized Technical Evidence</h1>
+<div class="page-break">
+
+</div>
+<h2 id="readme">Readme</h2>
+<h2 id="financial-control-system">Financial Control System</h2>
+<h3 id="goal">Goal</h3>
+<p>To demonstrate how a fragmented, multi-source reconciliation problem
+was engineered into a deterministic financial control workflow that
+bridged operational activity and financial review.</p>
+<h3 id="confidentiality-notice">Confidentiality Notice</h3>
+<p>The system described in this folder was built for a live production
+environment. To comply with corporate data protection and
+confidentiality requirements, raw source code, proprietary business
+logic, internal field names, production screenshots, internal URLs,
+actual database records, customer details, exact financial values, and
+internal system names have been omitted.</p>
+<p>Instead, this folder contains sanitized architecture notes, schema
+definitions, pseudocode, and synthetic examples that accurately reflect
+the system’s structural design and data science methodology without
+disclosing proprietary assets.</p>
+<h3 id="system-context">System Context</h3>
+<p>The Financial Control System addressed a reconciliation problem where
+operational activity and financial records did not naturally align.
+Different data sources described different parts of the same process:
+expected change conditions, operational movement, financial outcomes,
+and review assumptions.</p>
+<p>The risk was repeated reconstruction. Each time a stakeholder asked a
+question, the logic had to be rebuilt, re-explained, or revalidated. The
+system was designed to make variance review more repeatable,
+explainable, and defensible.</p>
+<h3 id="methodology-alignment">Methodology Alignment</h3>
+<ol type="1">
+<li>Context: Identify the disconnect between operational events and
+financial outcomes.</li>
+<li>Structure: Normalize source records into a reviewable timeline.</li>
+<li>Modularity: Separate operational evidence from financial evidence
+before recombining them.</li>
+<li>Evidence: Preserve the logic behind each variance
+classification.</li>
+<li>Iteration: Refine classifications and review outputs through
+stakeholder feedback.</li>
+</ol>
+<h3 id="portfolio-role-1">Portfolio Role</h3>
+<p>This evidence supports the Financial Control System case study by
+showing the public-safe architecture behind the reconciliation
+workflow.</p>
+<div class="page-break">
+
+</div>
+<h2 id="architecture-notes">Architecture Notes</h2>
+<h2 id="architecture-notes-financial-control-system">Architecture Notes:
+Financial Control System</h2>
+<h3 id="system-pipeline">System Pipeline</h3>
+<p>Source Records -&gt; Standardization Layer -&gt; Operational Evidence
+Model -&gt; Financial Evidence Model -&gt; Truth Table -&gt; Variance
+Classification -&gt; Stakeholder Review Output -&gt; Control
+Feedback</p>
+<h3 id="source-standardization">1. Source Standardization</h3>
+<p>Multiple source extracts are normalized into public-safe conceptual
+categories. This reduces ambiguity caused by source-specific formats and
+prepares the data for repeatable review.</p>
+<h3 id="operational-evidence-model">2. Operational Evidence Model</h3>
+<p>Operational activity is modeled separately from financial activity.
+This preserves the difference between what happened operationally and
+what appeared financially.</p>
+<h3 id="financial-evidence-model">3. Financial Evidence Model</h3>
+<p>Financial outcomes are modeled as their own evidence layer. This
+prevents the system from assuming that ledger-side activity
+automatically explains operational reality.</p>
+<h3 id="truth-table">4. Truth Table</h3>
+<p>The truth table brings operational and financial evidence into one
+reviewable structure. Each row is designed to explain what happened,
+what evidence supports the classification, and what still requires
+attention.</p>
+<h3 id="variance-classification">5. Variance Classification</h3>
+<p>Variance categories are generalized into public-safe classes such as
+matched, positive exposure, negative exposure, timing difference, source
+limitation, and out of scope.</p>
+<h3 id="stakeholder-review">6. Stakeholder Review</h3>
+<p>The output is designed for multiple audiences: leadership, finance,
+operations, analysts, and process owners. Each stakeholder can see the
+status, evidence category, and next action without rebuilding the
+logic.</p>
+<h3 id="governance-and-public-safety">7. Governance and Public
+Safety</h3>
+<p>This architecture note omits internal tools, internal system names,
+exact thresholds, production screenshots, customer information, real
+financial amounts, and proprietary formulas.</p>
+<div class="page-break">
+
+</div>
+<h2 id="schema-dictionary">Schema Dictionary</h2>
+<h2 id="schema-dictionary-financial-control-system">Schema Dictionary:
+Financial Control System</h2>
+<p>This schema dictionary uses conceptual entities and synthetic field
+names. It does not include actual database fields, internal labels,
+customer data, financial values, or proprietary formulas.</p>
+<h3 id="conceptual-entities">Conceptual Entities</h3>
+<h3 id="entity-review-population">Entity: Review Population</h3>
+<ul>
+<li><strong>Purpose:</strong> Defines which records belong in scope</li>
+<li><strong>Example Public Safe Fields:</strong> review_id, item_key,
+review_group, scope_status</li>
+</ul>
+<h3 id="entity-price-event">Entity: Price Event</h3>
+<ul>
+<li><strong>Purpose:</strong> Represents an expected change
+condition</li>
+<li><strong>Example Public Safe Fields:</strong> price_event_id,
+item_key, prior_value_label, new_value_label, effective_date_label</li>
+</ul>
+<h3 id="entity-operational-movement">Entity: Operational Movement</h3>
+<ul>
+<li><strong>Purpose:</strong> Represents physical or process
+activity</li>
+<li><strong>Example Public Safe Fields:</strong> movement_id, item_key,
+source_group, movement_date, quantity_label</li>
+</ul>
+<h3 id="entity-financial-outcome">Entity: Financial Outcome</h3>
+<ul>
+<li><strong>Purpose:</strong> Represents billing or ledger-side
+activity</li>
+<li><strong>Example Public Safe Fields:</strong> financial_id, item_key,
+destination_group, financial_date, amount_label</li>
+</ul>
+<h3 id="entity-variance-record">Entity: Variance Record</h3>
+<ul>
+<li><strong>Purpose:</strong> Stores calculated or classified
+differences</li>
+<li><strong>Example Public Safe Fields:</strong> variance_id, review_id,
+variance_direction, variance_magnitude_band</li>
+</ul>
+<h3 id="entity-exception-classification-1">Entity: Exception
+Classification</h3>
+<ul>
+<li><strong>Purpose:</strong> Explains why a record needs review</li>
+<li><strong>Example Public Safe Fields:</strong> exception_id,
+exception_type, exception_reason, priority_band</li>
+</ul>
+<h3 id="entity-evidence-link">Entity: Evidence Link</h3>
+<ul>
+<li><strong>Purpose:</strong> Preserves source logic behind a
+classification</li>
+<li><strong>Example Public Safe Fields:</strong> evidence_id, review_id,
+source_type, evidence_status</li>
+</ul>
+<h3 id="entity-review-status">Entity: Review Status</h3>
+<ul>
+<li><strong>Purpose:</strong> Tracks review progress</li>
+<li><strong>Example Public Safe Fields:</strong> review_id,
+reviewer_role, status, timestamp_label</li>
+</ul>
+<h3 id="review-status-values">Review Status Values</h3>
+<p>open in review explained needs follow-up reconciled archived</p>
+<h3 id="variance-direction-values">Variance Direction Values</h3>
+<p>positive exposure negative exposure neutral / matched methodology
+difference timing difference source limitation out of scope</p>
+<h3 id="public-safe-design-principle">Public-Safe Design Principle</h3>
+<p>The schema separates operational evidence from financial evidence.
+The system then recombines both dimensions into a review model so that
+each variance can be explained without collapsing different facts into
+one ambiguous category.</p>
+<div class="page-break">
+
+</div>
+<h2 id="production-pseudocode">Production Pseudocode</h2>
+<h2 id="production-pseudocode-financial-control-system">Production
+Pseudocode: Financial Control System</h2>
+<p>This pseudocode reflects the public-safe structure of the
+reconciliation engine. It does not include production code, actual table
+names, exact business rules, proprietary formulas, or internal field
+names.</p>
+<h3 id="step-1-define-review-population">Step 1 — Define Review
+Population</h3>
+<p>PSEUDOCODE:</p>
+<p>function build_review_population(price_events, operational_records,
+financial_records): review_population = []</p>
+<pre><code>for each event in price_events:
+    candidate = {
+        review_id: create_public_safe_id(event),
+        item_key: event.item_key,
+        effective_date_label: event.effective_date_label,
+        scope_status: determine_scope_status(event),
+        evidence_status: pending
+    }
+
+    add candidate to review_population
+
+return review_population</code></pre>
+<h3 id="step-2-preserve-separation-of-concerns">Step 2 — Preserve
+Separation of Concerns</h3>
+<p>PSEUDOCODE:</p>
+<p>function attach_operational_and_financial_evidence(review_population,
+operational_records, financial_records): for each record in
+review_population: record.operational_evidence =
+find_operational_activity(record.item_key, operational_records)
+record.financial_evidence = find_financial_activity(record.item_key,
+financial_records)</p>
+<pre><code>return review_population</code></pre>
+<h3 id="step-3-build-reviewable-truth-table">Step 3 — Build Reviewable
+Truth Table</h3>
+<p>PSEUDOCODE:</p>
+<p>function build_truth_table(review_population): truth_table = []</p>
+<pre><code>for each record in review_population:
+    operational_status = summarize_operational_evidence(record.operational_evidence)
+    financial_status = summarize_financial_evidence(record.financial_evidence)
+
+    variance_category = classify_variance(
+        operational_status,
+        financial_status,
+        record.scope_status
+    )
+
+    add {
+        review_id: record.review_id,
+        item_key: record.item_key,
+        operational_status: operational_status,
+        financial_status: financial_status,
+        variance_category: variance_category,
+        evidence_status: determine_evidence_status(record),
+        review_status: open
+    } to truth_table
+
+return truth_table</code></pre>
+<h3 id="step-4-classify-variance">Step 4 — Classify Variance</h3>
+<p>PSEUDOCODE:</p>
+<p>function classify_variance(operational_status, financial_status,
+scope_status): if scope_status equals out_of_scope: return out of
+scope</p>
+<pre><code>if operational_status equals not enough evidence or financial_status equals not enough evidence:
+    return source limitation
+
+if operational_status equals financial_status:
+    return matched
+
+if operational_status equals expected change supported and financial_status equals change not reflected:
+    return negative exposure
+
+if operational_status equals expected change not yet supported and financial_status equals change reflected:
+    return positive exposure
+
+return requires review</code></pre>
+<h3 id="step-5-generate-stakeholder-review-output">Step 5 — Generate
+Stakeholder Review Output</h3>
+<p>PSEUDOCODE:</p>
+<p>function generate_review_output(truth_table): return grouped view by:
+variance_category evidence_status review_status</p>
+<h3 id="public-safe-notes">Public-Safe Notes</h3>
+<ul>
+<li>Table names are generalized.</li>
+<li>Field names are synthetic.</li>
+<li>Variance categories are generalized.</li>
+<li>Exact thresholds and formulas are omitted.</li>
+<li>The pseudocode shows architecture and methodology, not proprietary
+implementation.</li>
+</ul>
+<div class="page-break">
+
+</div>
+<h2 id="synthetic-output-examples">Synthetic Output Examples</h2>
+<h3 id="synthetic-output-examples-financial-control-system">Synthetic
+Output Examples: Financial Control System</h3>
+<p>All rows are synthetic. Identifiers, values, dates, categories, and
+labels are public-safe examples.</p>
+<h3 id="table-1-reviewable-truth-table">Table 1 — Reviewable Truth
+Table</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Review_ID</th>
+<th>Item_Key</th>
+<th>Operational_Status</th>
+<th>Financial_Status</th>
+<th>Variance_Category</th>
+<th>Evidence_Status</th>
+<th>Review_Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REV-001</td>
+<td>ITEM-A100</td>
+<td>expected change supported</td>
+<td>change reflected</td>
+<td>matched</td>
+<td>complete</td>
+<td>reconciled</td>
+</tr>
+<tr>
+<td>REV-002</td>
+<td>ITEM-A200</td>
+<td>expected change not yet supported</td>
+<td>change reflected</td>
+<td>positive exposure</td>
+<td>complete</td>
+<td>needs follow-up</td>
+</tr>
+<tr>
+<td>REV-003</td>
+<td>ITEM-B300</td>
+<td>expected change supported</td>
+<td>change not reflected</td>
+<td>negative exposure</td>
+<td>complete</td>
+<td>in review</td>
+</tr>
+<tr>
+<td>REV-004</td>
+<td>ITEM-C400</td>
+<td>not enough evidence</td>
+<td>change reflected</td>
+<td>source limitation</td>
+<td>incomplete</td>
+<td>open</td>
+</tr>
+<tr>
+<td>REV-005</td>
+<td>ITEM-D500</td>
+<td>out of scope</td>
+<td>out of scope</td>
+<td>out of scope</td>
+<td>complete</td>
+<td>archived</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-2-variance-review-summary">Table 2 — Variance Review
+Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Variance_Category</th>
+<th>Count_Band</th>
+<th>Exposure_Band</th>
+<th>Review_Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>matched</td>
+<td>high</td>
+<td>none</td>
+<td>archive</td>
+</tr>
+<tr>
+<td>positive exposure</td>
+<td>medium</td>
+<td>moderate</td>
+<td>review with stakeholder</td>
+</tr>
+<tr>
+<td>negative exposure</td>
+<td>medium</td>
+<td>moderate</td>
+<td>financial follow-up</td>
+</tr>
+<tr>
+<td>source limitation</td>
+<td>low</td>
+<td>unknown</td>
+<td>collect supporting evidence</td>
+</tr>
+<tr>
+<td>out of scope</td>
+<td>low</td>
+<td>none</td>
+<td>archive</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-3-evidence-link-example">Table 3 — Evidence Link
+Example</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Evidence_ID</th>
+<th>Review_ID</th>
+<th>Source_Type</th>
+<th>Evidence_Status</th>
+<th>Public_Safe_Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EVD-001</td>
+<td>REV-001</td>
+<td>operational movement</td>
+<td>complete</td>
+<td>Movement evidence supports expected timing</td>
+</tr>
+<tr>
+<td>EVD-002</td>
+<td>REV-001</td>
+<td>financial outcome</td>
+<td>complete</td>
+<td>Financial record aligns with expected status</td>
+</tr>
+<tr>
+<td>EVD-003</td>
+<td>REV-003</td>
+<td>operational movement</td>
+<td>complete</td>
+<td>Operational evidence supports change condition</td>
+</tr>
+<tr>
+<td>EVD-004</td>
+<td>REV-003</td>
+<td>financial outcome</td>
+<td>complete</td>
+<td>Financial record requires review</td>
+</tr>
+<tr>
+<td>EVD-005</td>
+<td>REV-004</td>
+<td>operational movement</td>
+<td>incomplete</td>
+<td>Additional evidence required</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interpretation">Interpretation</h3>
+<p>These tables demonstrate the review structure, not real financial
+results. The purpose is to show how the system organizes evidence,
+preserves classifications, and supports stakeholder review.</p>
+<div class="page-break">
+
+</div>
+<h1 id="what-is-intentionally-excluded">What Is Intentionally
+Excluded</h1>
+<ul>
+<li>Proprietary source code</li>
+<li>Internal URLs, production system names, and protected
+identifiers</li>
+<li>Production screenshots</li>
+<li>Real operational data</li>
+<li>Exact financial values</li>
+<li>Customer, vendor, employee, or site-specific identifiers</li>
+</ul>
+<div class="page-break">
+
+</div>
+<h2 id="reader-note">Reader Note</h2>
+<p>This evidence packet is a public-safe reconstruction. It is intended
+to demonstrate system design, evidence structure, and applied data
+science reasoning without exposing confidential operational details.</p>
+</body>
+</html>

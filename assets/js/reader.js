@@ -14,40 +14,21 @@
     },
     "financial-packet": {
       title: "Financial Control Evidence Packet",
-      type: "pdf",
+      type: "html",
       category: "System Evidence Packet",
-      path: "/assets/evidence/pdfs/FINANCIAL_CONTROL_EVIDENCE_PACKET_v1.pdf"
+      path: "/assets/evidence/html/FINANCIAL_CONTROL_EVIDENCE_PACKET_v1.html"
     },
     "chemical-packet": {
       title: "Chemical Compliance Evidence Packet",
-      type: "pdf",
+      type: "html",
       category: "System Evidence Packet",
-      path: "/assets/evidence/pdfs/CHEMICAL_COMPLIANCE_EVIDENCE_PACKET_v1.pdf"
+      path: "/assets/evidence/html/CHEMICAL_COMPLIANCE_EVIDENCE_PACKET_v1.html"
     },
     "inventory-packet": {
       title: "Inventory Control Evidence Packet",
-      type: "pdf",
+      type: "html",
       category: "System Evidence Packet",
-      path: "/assets/evidence/pdfs/INVENTORY_CONTROL_EVIDENCE_PACKET_v1.pdf"
-    },
-
-    "financial-visual": {
-      title: "Financial Control System Visual",
-      type: "image",
-      category: "System Visual",
-      path: "/assets/visuals/FINANCIAL_CONTROL_SYSTEM.png"
-    },
-    "chemical-visual": {
-      title: "Chemical Compliance System Visual",
-      type: "image",
-      category: "System Visual",
-      path: "/assets/visuals/CHEMICAL_COMPLIANCE_SYSTEM.png"
-    },
-    "inventory-visual": {
-      title: "Inventory Control System Visual",
-      type: "image",
-      category: "System Visual",
-      path: "/assets/visuals/INVENTORY_CONTROL_SYSTEM.png"
+      path: "/assets/evidence/html/INVENTORY_CONTROL_EVIDENCE_PACKET_v1.html"
     }
   };
 
@@ -69,12 +50,14 @@
   }
 
   function setError(message) {
-    titleEl.textContent = "Reader Error";
-    metaEl.textContent = "Evidence reader";
-    frameEl.innerHTML =
-      "<div class=\"reader-error\"><h2>Unable to load evidence</h2><p>" +
-      escapeHtml(message) +
-      "</p></div>";
+    if (titleEl) titleEl.textContent = "Reader Error";
+    if (metaEl) metaEl.textContent = "Evidence reader";
+    if (frameEl) {
+      frameEl.innerHTML =
+        "<div class=\"reader-error\"><h2>Unable to load evidence</h2><p>" +
+        escapeHtml(message) +
+        "</p></div>";
+    }
   }
 
   if (!doc) {
@@ -82,23 +65,21 @@
     return;
   }
 
-  titleEl.textContent = doc.title;
-  metaEl.textContent = doc.category + " · " + doc.type.toUpperCase();
-  downloadEl.href = doc.path;
-
-  if (doc.type === "pdf") {
-    frameEl.innerHTML =
-      "<iframe title=\"" + escapeHtml(doc.title) + "\" src=\"" + doc.path + "\"></iframe>";
-    return;
+  if (titleEl) titleEl.textContent = doc.title;
+  if (metaEl) {
+    const typeLabel = doc.type === "html" ? "HTML Document" : "PDF";
+    metaEl.textContent = doc.category + " · " + typeLabel;
+  }
+  if (downloadEl) {
+    downloadEl.href = doc.path;
+    downloadEl.textContent = "Open Source File";
   }
 
-  if (doc.type === "image") {
+  if (!frameEl) return;
+
+  if (doc.type === "pdf" || doc.type === "html") {
     frameEl.innerHTML =
-      "<div class=\"reader-image-wrap\"><img alt=\"" +
-      escapeHtml(doc.title) +
-      "\" src=\"" +
-      doc.path +
-      "\"></div>";
+      "<iframe title=\"" + escapeHtml(doc.title) + "\" src=\"" + doc.path + "\"></iframe>";
     return;
   }
 

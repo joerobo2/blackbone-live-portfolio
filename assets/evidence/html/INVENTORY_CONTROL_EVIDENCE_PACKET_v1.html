@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Inventory Control Evidence Packet</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="/assets/evidence/packet-assets/css/evidence_packet_pdf.css" />
+</head>
+<body>
+<h1 id="inventory-control-evidence-packet">Inventory Control Evidence
+Packet</h1>
+<p><strong>Public-Safe Portfolio Evidence Packet</strong></p>
+<p><strong>Author:</strong> Joseph Robinson</p>
+<p><strong>Portfolio:</strong> IST 782 Applied Data Science
+Portfolio</p>
+<h2 id="provenance-and-public-safety-statement">Provenance and
+Public-Safety Statement</h2>
+<p>This evidence packet was authored by Joseph Robinson as part of a
+public-facing applied data science portfolio. It is based on original
+professional experience, graduate coursework, and public-safe
+reconstruction of system design patterns. Proprietary data, internal
+system names, production screenshots, exact financial values,
+customer/vendor identifiers, and protected operational details have been
+removed, generalized, or replaced with descriptive labels.</p>
+<h2 id="ai-assistance-statement">AI Assistance Statement</h2>
+<p>AI tools were used as writing, structuring, editing, and formatting
+assistants. The author reviewed, selected, revised, and approved the
+final content. AI output is not treated as an independent factual source
+for operational claims.</p>
+<h2 id="system-visual">System Visual</h2>
+<figure>
+<img src="/assets/evidence/packet-assets/visuals/INVENTORY_CONTROL_SYSTEM.png"
+alt="Inventory Control Evidence Packet Visual" />
+<figcaption aria-hidden="true">Inventory Control Evidence Packet
+Visual</figcaption>
+</figure>
+<div class="page-break">
+
+</div>
+<h1 id="public-case-study">Public Case Study</h1>
+<h2 id="inventory-control-system-case-study-v1">Inventory Control System
+Case Study v1</h2>
+<h3
+id="fefo-operational-intelligence-and-inventory-risk-prioritization">FEFO
+Operational Intelligence and Inventory-Risk Prioritization</h3>
+<h3 id="portfolio-role">Portfolio Role</h3>
+<p>The Inventory Control System is the third major case study in my IST
+782 portfolio. Internally, this project is connected to the FEFO
+application, but the public-facing portfolio frames it as an inventory
+control and operational intelligence system.</p>
+<p>This case study demonstrates how coursework in business analytics,
+information management, systems analysis, quantitative reasoning, and
+cloud/platform thinking shaped a production workflow for
+expiration-aware prioritization, inventory-risk visibility, and
+exception review.</p>
+<h3 id="public-safe-summary">Public-Safe Summary</h3>
+<p>This project converted time-sensitive inventory information into an
+operational intelligence surface. It helped users identify which
+inventory required attention first and supported earlier, more
+structured review of expiration-driven risk.</p>
+<p>All examples in this portfolio are generalized and use sanitized
+language or synthetic data to protect confidential business
+information.</p>
+<h3 id="domain">Domain</h3>
+<p>Operational intelligence / supply chain / inventory risk</p>
+<h3 id="process-supported">Process Supported</h3>
+<ul>
+<li>expiration-aware prioritization</li>
+<li>inventory-risk visibility</li>
+<li>exception detection</li>
+<li>review workflow</li>
+<li>operational decision support</li>
+<li>historical snapshot review</li>
+</ul>
+<h3 id="primary-users">Primary Users</h3>
+<ul>
+<li>operational leaders</li>
+<li>material handlers</li>
+<li>planners</li>
+<li>inventory process owners</li>
+</ul>
+<h3 id="business-problem">Business Problem</h3>
+<p>Inventory review becomes reactive when expiration-sensitive materials
+are spread across fragmented reports and source systems. Users may know
+inventory exists, but not which inventory needs attention first or
+why.</p>
+<p>The problem was not only visibility. The deeper issue was
+prioritization. A list of inventory records does not automatically tell
+users what requires action, what should be monitored, or what risk is
+emerging over time.</p>
+<h3 id="key-insight">Key Insight</h3>
+<p>Visibility alone is not enough.</p>
+<p>The system needed to move from:</p>
+<pre><code>Here is inventory data.</code></pre>
+<p>to:</p>
+<pre><code>Here is the inventory that needs attention first, and why.</code></pre>
+<p>That shift turned the project from a reporting surface into an
+operational intelligence system.</p>
+<h3 id="system-design">System Design</h3>
+<p>The system was designed as an inventory-risk review workflow with
+expiration-aware logic and exception surfacing.</p>
+<p>Core components included:</p>
+<ul>
+<li>inventory on-hand records</li>
+<li>expiration / shelf-life data</li>
+<li>material movement history</li>
+<li>location or process-stage context</li>
+<li>review status tracking</li>
+<li>historical snapshots</li>
+<li>FEFO priority bands</li>
+<li>exception categories</li>
+<li>leadership summary outputs</li>
+</ul>
+<h3 id="data-model-summary">Data Model Summary</h3>
+<p>The sanitized data model uses the following conceptual entities:</p>
+<h3 id="entity-inventory-record">Entity: Inventory Record</h3>
+<ul>
+<li><strong>Purpose:</strong> Establishes inventory population and
+quantity on hand</li>
+</ul>
+<h3 id="entity-expiration-profile">Entity: Expiration Profile</h3>
+<ul>
+<li><strong>Purpose:</strong> Supports expiration-aware
+prioritization</li>
+</ul>
+<h3 id="entity-material-movement">Entity: Material Movement</h3>
+<ul>
+<li><strong>Purpose:</strong> Provides movement history and exception
+context</li>
+</ul>
+<h3 id="entity-fefo-exception">Entity: FEFO Exception</h3>
+<ul>
+<li><strong>Purpose:</strong> Identifies records requiring review</li>
+</ul>
+<h3 id="entity-review-action">Entity: Review Action</h3>
+<ul>
+<li><strong>Purpose:</strong> Tracks operational follow-up</li>
+</ul>
+<h3 id="entity-snapshot-archive">Entity: Snapshot Archive</h3>
+<ul>
+<li><strong>Purpose:</strong> Preserves point-in-time inventory
+state</li>
+</ul>
+<p>A public-safe system visual and architecture notes are included in
+this packet.</p>
+<h3 id="control-logic">Control Logic</h3>
+<p>The workflow can be summarized in five stages.</p>
+<h4 id="expiration-aware-prioritization">1. Expiration-Aware
+Prioritization</h4>
+<p>The system assigns inventory into priority bands based on expiration
+timing and operational relevance.</p>
+<p>Example priority bands:</p>
+<pre><code>critical
+high
+medium
+low
+monitor</code></pre>
+<p>These bands help users focus attention on the inventory that requires
+the earliest review.</p>
+<h4 id="exception-detection">2. Exception Detection</h4>
+<p>The system identifies records that require review.</p>
+<p>Example exception classes:</p>
+<pre><code>near expiration
+older lot bypassed
+quantity requires review
+location requires attention
+missing or inconsistent date
+unexpected movement pattern</code></pre>
+<p>Exception surfacing turns raw inventory data into an action-oriented
+review queue.</p>
+<h4 id="fefo-review-surface">3. FEFO Review Surface</h4>
+<p>The application presents inventory in an order that supports
+first-expired-first-out decision-making.</p>
+<p>The goal is not only to display data but to reduce the cognitive
+burden required to decide what should be reviewed first.</p>
+<h4 id="filtering-and-segmentation">4. Filtering and Segmentation</h4>
+<p>Users can review inventory by generalized categories such as:</p>
+<pre><code>location group
+material category
+priority band
+review status
+expiration window
+movement type</code></pre>
+<p>This supports different user needs across leadership, planning, and
+operational review.</p>
+<h4 id="snapshot-replay-logic">5. Snapshot / Replay Logic</h4>
+<p>Historical snapshots support point-in-time review and trend
+analysis.</p>
+<p>The goal is to preserve what the system knew at the time, not only
+the current state. That matters for review, learning, and operational
+continuity.</p>
+<h3 id="output-modules">Output Modules</h3>
+<h3 id="output-fefo-watchlist">Output: FEFO Watchlist</h3>
+<ul>
+<li><strong>Purpose:</strong> Prioritized inventory review surface</li>
+</ul>
+<h3 id="output-exception-summary">Output: Exception Summary</h3>
+<ul>
+<li><strong>Purpose:</strong> Shows risk categories and open issues</li>
+</ul>
+<h3 id="output-detail-table">Output: Detail Table</h3>
+<ul>
+<li><strong>Purpose:</strong> Supports record-level inspection</li>
+</ul>
+<h3 id="output-snapshot-archive">Output: Snapshot Archive</h3>
+<ul>
+<li><strong>Purpose:</strong> Preserves point-in-time state</li>
+</ul>
+<h3 id="output-review-status-view">Output: Review Status View</h3>
+<ul>
+<li><strong>Purpose:</strong> Tracks operational follow-up</li>
+</ul>
+<h3 id="output-leadership-summary">Output: Leadership Summary</h3>
+<ul>
+<li><strong>Purpose:</strong> Communicates risk and action needs</li>
+</ul>
+<h3 id="course-connections">Course Connections</h3>
+<h3 id="course-scm-651-business-analytics">Course: SCM 651 Business
+Analytics</h3>
+<ul>
+<li><strong>Connection:</strong> Operational analytics and decision
+support</li>
+</ul>
+<h3 id="course-ist-621-information-management-and-technology">Course:
+IST 621 Information Management and Technology</h3>
+<ul>
+<li><strong>Connection:</strong> Digital transformation and workflow
+adoption</li>
+</ul>
+<h3 id="course-ist-654-information-systems-analysis">Course: IST 654
+Information Systems Analysis</h3>
+<ul>
+<li><strong>Connection:</strong> Requirements, process modeling, user
+workflows</li>
+</ul>
+<h3 id="course-ist-686-quantitative-reasoning-for-data-science">Course:
+IST 686 Quantitative Reasoning for Data Science</h3>
+<ul>
+<li><strong>Connection:</strong> Time-based prioritization and exception
+reasoning</li>
+</ul>
+<h3 id="course-ist-615-cloud-management">Course: IST 615 Cloud
+Management</h3>
+<ul>
+<li><strong>Connection:</strong> Lightweight web delivery and platform
+thinking</li>
+</ul>
+<h3 id="program-learning-connection">Program Learning Connection</h3>
+<p>This project demonstrates applied data science as operational
+intelligence.</p>
+<p>It required me to:</p>
+<ul>
+<li>collect and organize inventory-related data</li>
+<li>design priority logic around time-sensitive records</li>
+<li>identify exception categories</li>
+<li>create a user-facing review surface</li>
+<li>preserve historical snapshots</li>
+<li>communicate risk through summary and detail views</li>
+<li>support operational decision-making</li>
+</ul>
+<h3 id="professional-impact">Professional Impact</h3>
+<p>The Inventory Control System improved operational visibility by
+helping users prioritize time-sensitive inventory review. It supported
+proactive exception detection and transformed inventory data into a more
+actionable decision-support surface.</p>
+<p>The system launched into production and was submitted for internal
+innovation recognition in the AI category.</p>
+<h3 id="reflection">Reflection</h3>
+<p>This project helped me understand how applied data science can
+support operational judgment.</p>
+<p>The goal was not simply to show more data. The goal was to structure
+the data so that action became clearer.</p>
+<p>The project also extended a pattern from my earlier work: build a
+shared truth layer, then create user-facing tools that help teams make
+faster, better decisions from that truth.</p>
+<h3 id="public-safety-note">Public Safety Note</h3>
+<p>This case study is intentionally generalized. It does not include
+production screenshots, internal URLs, exact organization IDs, user
+names, internal field names, warehouse-specific labels, or proprietary
+inventory records.</p>
+<div class="page-break">
+
+</div>
+<h1 id="sanitized-technical-evidence">Sanitized Technical Evidence</h1>
+<div class="page-break">
+
+</div>
+<h2 id="readme">Readme</h2>
+<h2 id="inventory-control-system">Inventory Control System</h2>
+<h3 id="goal">Goal</h3>
+<p>To demonstrate how expiration-sensitive inventory data was
+transformed into an operational intelligence surface that prioritizes
+material risk, identifies review exceptions, and supports point-in-time
+inventory analysis.</p>
+<h3 id="confidentiality-notice">Confidentiality Notice</h3>
+<p>The system described in this folder was built for a live production
+environment. To comply with corporate data protection and
+confidentiality requirements, raw source code, proprietary business
+logic, internal field names, production screenshots, internal URLs,
+actual database records, exact organization IDs, user names, internal
+item IDs, exact warehouse labels, and proprietary inventory records have
+been omitted.</p>
+<p>Instead, this folder contains sanitized architecture notes, schema
+definitions, pseudocode, and synthetic examples that accurately reflect
+the system’s structural design and data science methodology without
+disclosing proprietary assets.</p>
+<h3 id="system-context">System Context</h3>
+<p>Inventory data may exist, but users still need to understand which
+records require attention first and why. Expiration-sensitive inventory
+changes over time, and a static extract does not automatically show
+urgency, exception status, or historical context.</p>
+<p>The system was designed to turn inventory records into an
+action-oriented review surface.</p>
+<h3 id="methodology-alignment">Methodology Alignment</h3>
+<ol type="1">
+<li>Context: Identify expiration-sensitive inventory risk.</li>
+<li>Structure: Relate inventory records, expiration profiles, movement
+context, and review status.</li>
+<li>Modularity: Separate visibility, priority logic, exception
+detection, filtering, and snapshots.</li>
+<li>Evidence: Preserve point-in-time inventory state and exception
+logic.</li>
+<li>Iteration: Refine priority bands and exception categories based on
+user review.</li>
+</ol>
+<h3 id="portfolio-role-1">Portfolio Role</h3>
+<p>This evidence supports the Inventory Control System case study by
+showing the public-safe architecture behind expiration-aware
+prioritization and operational intelligence.</p>
+<div class="page-break">
+
+</div>
+<h2 id="architecture-notes">Architecture Notes</h2>
+<h2 id="architecture-notes-inventory-control-system">Architecture Notes:
+Inventory Control System</h2>
+<h3 id="system-pipeline">System Pipeline</h3>
+<p>Inventory Source Records -&gt; Standardization Layer -&gt; Expiration
+Profile -&gt; Priority Band Assignment -&gt; Exception Detection -&gt;
+Review Surface -&gt; Snapshot Archive -&gt; Summary Output</p>
+<h3 id="source-standardization">1. Source Standardization</h3>
+<p>Inventory records, expiration-related fields, movement context, and
+location groupings are standardized into public-safe categories.</p>
+<h3 id="expiration-profile">2. Expiration Profile</h3>
+<p>Expiration information is converted into generalized time bands. This
+avoids exposing exact thresholds while preserving the decision-support
+logic.</p>
+<h3 id="priority-band-assignment">3. Priority Band Assignment</h3>
+<p>The system assigns records to public-safe priority bands such as
+critical, high, medium, low, and monitor. This helps users focus on what
+requires attention first.</p>
+<h3 id="exception-detection-1">4. Exception Detection</h3>
+<p>The system surfaces public-safe exception classes such as near
+expiration, older available lot not selected, quantity requires review,
+location requires attention, missing or inconsistent date, and
+unexpected movement pattern.</p>
+<h3 id="review-surface">5. Review Surface</h3>
+<p>The review surface supports filtering by generalized categories such
+as location group, material category, priority band, review status,
+expiration window, and movement type.</p>
+<h3 id="snapshot-archive">6. Snapshot Archive</h3>
+<p>Point-in-time snapshots preserve what the system knew at a specific
+moment. This supports historical review, learning, and operational
+continuity.</p>
+<h3 id="governance-and-public-safety">7. Governance and Public
+Safety</h3>
+<p>This architecture note omits real item IDs, warehouse-specific
+labels, internal system names, internal URLs, production screenshots,
+exact thresholds, exact quantities, and proprietary inventory
+records.</p>
+<div class="page-break">
+
+</div>
+<h2 id="schema-dictionary">Schema Dictionary</h2>
+<h2 id="schema-dictionary-inventory-control-system">Schema Dictionary:
+Inventory Control System</h2>
+<p>This schema dictionary uses conceptual entities and synthetic field
+names. It does not include actual item IDs, warehouse labels, internal
+locations, exact quantities, exact thresholds, production screenshots,
+or proprietary inventory records.</p>
+<h3 id="conceptual-entities">Conceptual Entities</h3>
+<h3 id="entity-inventory-record-1">Entity: Inventory Record</h3>
+<ul>
+<li><strong>Purpose:</strong> Establishes inventory population and
+quantity band</li>
+<li><strong>Example Public Safe Fields:</strong> inventory_id, item_key,
+lot_key, location_group, quantity_band</li>
+</ul>
+<h3 id="entity-expiration-profile-1">Entity: Expiration Profile</h3>
+<ul>
+<li><strong>Purpose:</strong> Supports expiration-aware
+prioritization</li>
+<li><strong>Example Public Safe Fields:</strong> expiration_id,
+item_key, lot_key, days_to_expire_band, priority_band</li>
+</ul>
+<h3 id="entity-material-movement-1">Entity: Material Movement</h3>
+<ul>
+<li><strong>Purpose:</strong> Provides movement history and exception
+context</li>
+<li><strong>Example Public Safe Fields:</strong> movement_id, item_key,
+lot_key, movement_date_label, movement_type</li>
+</ul>
+<h3 id="entity-fefo-exception-1">Entity: FEFO Exception</h3>
+<ul>
+<li><strong>Purpose:</strong> Identifies records requiring review</li>
+<li><strong>Example Public Safe Fields:</strong> exception_id,
+inventory_id, exception_type, priority_level, review_status</li>
+</ul>
+<h3 id="entity-review-action-1">Entity: Review Action</h3>
+<ul>
+<li><strong>Purpose:</strong> Tracks operational follow-up</li>
+<li><strong>Example Public Safe Fields:</strong> action_id,
+exception_id, reviewer_role, action_status, action_time_label</li>
+</ul>
+<h3 id="entity-snapshot-archive-1">Entity: Snapshot Archive</h3>
+<ul>
+<li><strong>Purpose:</strong> Preserves point-in-time inventory
+state</li>
+<li><strong>Example Public Safe Fields:</strong> snapshot_id,
+snapshot_date_label, record_count_band, archive_status</li>
+</ul>
+<h3 id="priority-bands">Priority Bands</h3>
+<p>critical high medium low monitor</p>
+<h3 id="public-safe-exception-classes">Public-Safe Exception
+Classes</h3>
+<p>near expiration older available lot not selected quantity requires
+review location requires attention missing or inconsistent date
+unexpected movement pattern</p>
+<h3 id="public-safe-design-principle">Public-Safe Design Principle</h3>
+<p>The schema separates current inventory visibility from expiration
+priority, movement history, exception detection, review actions, and
+historical snapshots. This allows users to understand both current risk
+and prior inventory state.</p>
+<div class="page-break">
+
+</div>
+<h2 id="production-pseudocode">Production Pseudocode</h2>
+<h2 id="production-pseudocode-inventory-control-system">Production
+Pseudocode: Inventory Control System</h2>
+<p>This pseudocode reflects the public-safe structure of the
+expiration-aware inventory review engine. It does not include production
+code, actual item identifiers, exact thresholds, warehouse labels,
+internal field names, or proprietary business rules.</p>
+<h3 id="step-1-load-inventory-and-expiration-records">Step 1 — Load
+Inventory and Expiration Records</h3>
+<p>PSEUDOCODE:</p>
+<p>function load_inventory_review_population(inventory_rows,
+expiration_rows): review_population = []</p>
+<pre><code>for each row in inventory_rows:
+    expiration_profile = find_expiration_profile(
+        item_key = row.item_key,
+        lot_key = row.lot_key,
+        expiration_rows = expiration_rows
+    )
+
+    add {
+        inventory_id: create_public_safe_id(row),
+        item_key: row.item_key,
+        lot_key: row.lot_key,
+        location_group: row.location_group,
+        quantity_band: row.quantity_band,
+        days_to_expire_band: expiration_profile.days_to_expire_band,
+        priority_band: assign_priority_band(expiration_profile),
+        review_status: open
+    } to review_population
+
+return review_population</code></pre>
+<h3 id="step-2-assign-priority-band">Step 2 — Assign Priority Band</h3>
+<p>PSEUDOCODE:</p>
+<p>function assign_priority_band(expiration_profile): if
+expiration_profile.days_to_expire_band equals immediate: return
+critical</p>
+<pre><code>if expiration_profile.days_to_expire_band equals near term:
+    return high
+
+if expiration_profile.days_to_expire_band equals medium term:
+    return medium
+
+if expiration_profile.days_to_expire_band equals long term:
+    return low
+
+return monitor</code></pre>
+<h3 id="step-3-detect-exceptions">Step 3 — Detect Exceptions</h3>
+<p>PSEUDOCODE:</p>
+<p>function detect_inventory_exceptions(review_population,
+movement_records): exceptions = []</p>
+<pre><code>for each record in review_population:
+    if record.priority_band is critical or high:
+        add exception near expiration
+
+    if older_available_lot_not_selected(record, review_population, movement_records):
+        add exception older available lot not selected
+
+    if missing_or_inconsistent_date(record):
+        add exception missing or inconsistent date
+
+    if quantity_or_location_requires_review(record):
+        add exception quantity or location requires review
+
+return exceptions</code></pre>
+<h3 id="step-4-preserve-snapshot">Step 4 — Preserve Snapshot</h3>
+<p>PSEUDOCODE:</p>
+<p>function create_snapshot_archive(review_population, exceptions):
+snapshot = { snapshot_id: create_snapshot_id(), snapshot_date_label:
+public_safe_date_label, record_count_band:
+summarize_record_count(review_population), exception_count_band:
+summarize_exception_count(exceptions), archive_status: captured }</p>
+<pre><code>save snapshot, review_population, and exceptions
+
+return snapshot</code></pre>
+<h3 id="step-5-generate-review-surface">Step 5 — Generate Review
+Surface</h3>
+<p>PSEUDOCODE:</p>
+<p>function generate_review_surface(review_population, exceptions):
+return filtered and sorted view by: priority_band review_status
+location_group material_category expiration_window movement_type</p>
+<h3 id="public-safe-notes">Public-Safe Notes</h3>
+<ul>
+<li>Exact thresholds are omitted.</li>
+<li>Item and lot identifiers are synthetic.</li>
+<li>Location labels are generalized.</li>
+<li>Priority logic is represented by bands, not proprietary business
+rules.</li>
+<li>The pseudocode shows methodology and architecture, not protected
+implementation.</li>
+</ul>
+<div class="page-break">
+
+</div>
+<h2 id="synthetic-output-examples">Synthetic Output Examples</h2>
+<h3 id="synthetic-output-examples-inventory-control-system">Synthetic
+Output Examples: Inventory Control System</h3>
+<p>All rows are synthetic. Identifiers, values, dates, locations, and
+quantities are public-safe examples.</p>
+<h4 id="table-1-fefo-watchlist">Table 1 — FEFO Watchlist</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Inventory_ID</th>
+<th>Item_Key</th>
+<th>Lot_Key</th>
+<th>Location_Group</th>
+<th>Days_To_Expire_Band</th>
+<th>Priority_Band</th>
+<th>Review_Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INV-001</td>
+<td>ITEM-A100</td>
+<td>LOT-001</td>
+<td>Zone Group A</td>
+<td>immediate</td>
+<td>critical</td>
+<td>open</td>
+</tr>
+<tr>
+<td>INV-002</td>
+<td>ITEM-A100</td>
+<td>LOT-002</td>
+<td>Zone Group B</td>
+<td>near term</td>
+<td>high</td>
+<td>open</td>
+</tr>
+<tr>
+<td>INV-003</td>
+<td>ITEM-B200</td>
+<td>LOT-003</td>
+<td>Zone Group A</td>
+<td>medium term</td>
+<td>medium</td>
+<td>in review</td>
+</tr>
+<tr>
+<td>INV-004</td>
+<td>ITEM-C300</td>
+<td>LOT-004</td>
+<td>Zone Group C</td>
+<td>long term</td>
+<td>low</td>
+<td>monitor</td>
+</tr>
+<tr>
+<td>INV-005</td>
+<td>ITEM-D400</td>
+<td>LOT-005</td>
+<td>Zone Group D</td>
+<td>unknown</td>
+<td>monitor</td>
+<td>needs review</td>
+</tr>
+</tbody>
+</table>
+<h4 id="table-2-exception-summary">Table 2 — Exception Summary</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Exception_ID</th>
+<th>Inventory_ID</th>
+<th>Exception_Type</th>
+<th>Priority_Level</th>
+<th>Review_Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EXC-001</td>
+<td>INV-001</td>
+<td>near expiration</td>
+<td>critical</td>
+<td>open</td>
+</tr>
+<tr>
+<td>EXC-002</td>
+<td>INV-002</td>
+<td>older available lot not selected</td>
+<td>high</td>
+<td>in review</td>
+</tr>
+<tr>
+<td>EXC-003</td>
+<td>INV-005</td>
+<td>missing or inconsistent date</td>
+<td>medium</td>
+<td>needs correction</td>
+</tr>
+<tr>
+<td>EXC-004</td>
+<td>INV-003</td>
+<td>quantity requires review</td>
+<td>medium</td>
+<td>open</td>
+</tr>
+</tbody>
+</table>
+<h4 id="table-3-snapshot-archive-example">Table 3 — Snapshot Archive
+Example</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Snapshot_ID</th>
+<th>Snapshot_Date_Label</th>
+<th>Record_Count_Band</th>
+<th>Exception_Count_Band</th>
+<th>Archive_Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SNAP-001</td>
+<td>Synthetic Date A</td>
+<td>medium</td>
+<td>low</td>
+<td>captured</td>
+</tr>
+<tr>
+<td>SNAP-002</td>
+<td>Synthetic Date B</td>
+<td>medium</td>
+<td>medium</td>
+<td>captured</td>
+</tr>
+<tr>
+<td>SNAP-003</td>
+<td>Synthetic Date C</td>
+<td>high</td>
+<td>medium</td>
+<td>captured</td>
+</tr>
+</tbody>
+</table>
+<h4 id="table-4-review-status-table">Table 4 — Review Status Table</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Action_ID</th>
+<th>Exception_ID</th>
+<th>Reviewer_Role</th>
+<th>Action_Status</th>
+<th>Action_Time_Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT-001</td>
+<td>EXC-001</td>
+<td>Inventory Reviewer</td>
+<td>opened</td>
+<td>Synthetic Timestamp</td>
+</tr>
+<tr>
+<td>ACT-002</td>
+<td>EXC-002</td>
+<td>Process Owner</td>
+<td>in review</td>
+<td>Synthetic Timestamp</td>
+</tr>
+<tr>
+<td>ACT-003</td>
+<td>EXC-003</td>
+<td>Data Reviewer</td>
+<td>needs correction</td>
+<td>Synthetic Timestamp</td>
+</tr>
+</tbody>
+</table>
+<h4 id="interpretation">Interpretation</h4>
+<p>These examples demonstrate expiration-aware prioritization, exception
+surfacing, review workflow, and snapshot logic. They do not represent
+actual inventory records.</p>
+<div class="page-break">
+
+</div>
+<h1 id="what-is-intentionally-excluded">What Is Intentionally
+Excluded</h1>
+<ul>
+<li>Proprietary source code</li>
+<li>Internal URLs, production system names, and protected
+identifiers</li>
+<li>Production screenshots</li>
+<li>Real operational data</li>
+<li>Exact financial values</li>
+<li>Customer, vendor, employee, or site-specific identifiers</li>
+</ul>
+<div class="page-break">
+
+</div>
+<h2 id="reader-note">Reader Note</h2>
+<p>This evidence packet is a public-safe reconstruction. It is intended
+to demonstrate system design, evidence structure, and applied data
+science reasoning without exposing confidential operational details.</p>
+</body>
+</html>

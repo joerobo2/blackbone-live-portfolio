@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chemical Compliance Evidence Packet</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="/assets/evidence/packet-assets/css/evidence_packet_pdf.css" />
+</head>
+<body>
+<h1 id="chemical-compliance-evidence-packet">Chemical Compliance
+Evidence Packet</h1>
+<p><strong>Public-Safe Portfolio Evidence Packet</strong></p>
+<p><strong>Author:</strong> Joseph Robinson</p>
+<p><strong>Portfolio:</strong> IST 782 Applied Data Science
+Portfolio</p>
+<h2 id="provenance-and-public-safety-statement">Provenance and
+Public-Safety Statement</h2>
+<p>This evidence packet was authored by Joseph Robinson as part of a
+public-facing applied data science portfolio. It is based on original
+professional experience, graduate coursework, and public-safe
+reconstruction of system design patterns. Proprietary data, internal
+system names, production screenshots, exact financial values,
+customer/vendor identifiers, and protected operational details have been
+removed, generalized, or replaced with descriptive labels.</p>
+<h2 id="ai-assistance-statement">AI Assistance Statement</h2>
+<p>AI tools were used as writing, structuring, editing, and formatting
+assistants. The author reviewed, selected, revised, and approved the
+final content. AI output is not treated as an independent factual source
+for operational claims.</p>
+<h2 id="system-visual">System Visual</h2>
+<figure>
+<img src="/assets/evidence/packet-assets/visuals/CHEMICAL_COMPLIANCE_SYSTEM.png"
+alt="Chemical Compliance Evidence Packet Visual" />
+<figcaption aria-hidden="true">Chemical Compliance Evidence Packet
+Visual</figcaption>
+</figure>
+<div class="page-break">
+
+</div>
+<h1 id="public-case-study">Public Case Study</h1>
+<h2 id="chemical-compliance-system-case-study-v1">Chemical Compliance
+System Case Study v1</h2>
+<h3
+id="compliance-support-workflow-and-audit-defensibility">Compliance-Support
+Workflow and Audit Defensibility</h3>
+<h3 id="portfolio-role">Portfolio Role</h3>
+<p>The Chemical Compliance System is the second major case study in my
+IST 782 portfolio. Internally, this project is connected to the Tier II
+reporting process, but the public-facing portfolio frames it as a
+chemical compliance and audit-defensibility system.</p>
+<p>This case study demonstrates how coursework in cloud management,
+systems analysis, information management, IT governance, and database
+thinking shaped a production workflow for compliance review, sign-off
+tracking, and repeatable reporting.</p>
+<h3 id="public-safe-summary">Public-Safe Summary</h3>
+<p>This project improved a recurring compliance-support process by
+making the workflow more structured, traceable, and reviewable. It
+reframed annual reporting as a system-design challenge involving
+lineage, ownership, continuity, sign-off workflow, and audit
+defensibility.</p>
+<p>All examples in this portfolio are generalized and use sanitized
+language or synthetic data to protect confidential business
+information.</p>
+<h3 id="domain">Domain</h3>
+<p>Compliance / governance / audit defensibility</p>
+<h3 id="process-supported">Process Supported</h3>
+<ul>
+<li>recurring compliance-support review</li>
+<li>inventory validation</li>
+<li>sign-off workflow</li>
+<li>threshold review</li>
+<li>audit logging</li>
+<li>review status tracking</li>
+<li>operational continuity</li>
+</ul>
+<h3 id="primary-users">Primary Users</h3>
+<ul>
+<li>compliance coordinators</li>
+<li>area managers</li>
+<li>operational reviewers</li>
+<li>process owners</li>
+</ul>
+<h3 id="business-problem">Business Problem</h3>
+<p>Recurring compliance reporting can become fragile when source data,
+review responsibility, and sign-off evidence are distributed across
+spreadsheets, emails, shared folders, and individual memory.</p>
+<p>The problem was not only whether the data existed. The deeper issue
+was whether the reporting process was repeatable, reviewable, and
+defensible across time.</p>
+<p>Without a structured system, compliance work can become dependent on
+tribal knowledge, manual reconstruction, and fragile handoffs. That
+creates risk when the process needs to be reviewed, repeated, or
+transferred to another owner.</p>
+<h3 id="key-insight">Key Insight</h3>
+<p>Compliance reporting is a data architecture problem, not just a
+reporting task.</p>
+<p>The system needed to answer:</p>
+<pre><code>Who reviewed what?
+When did they review it?
+What changed?
+What still requires attention?
+Can the process be reconstructed later?</code></pre>
+<p>This changed the project from “complete the report” to “stabilize the
+system that produces and supports the report.”</p>
+<h3 id="system-design">System Design</h3>
+<p>The system was designed as a compliance-support workflow with
+traceable review states and structured sign-off logic.</p>
+<p>Core components included:</p>
+<ul>
+<li>compliance inventory records</li>
+<li>grouped component / material details</li>
+<li>reviewer identity capture</li>
+<li>review status tracking</li>
+<li>threshold review logic</li>
+<li>audit event logging</li>
+<li>compliance review dashboard</li>
+<li>exception view</li>
+<li>summary report</li>
+</ul>
+<h3 id="data-model-summary">Data Model Summary</h3>
+<p>The sanitized data model uses the following conceptual entities:</p>
+<h3 id="entity-compliance-record">Entity: Compliance Record</h3>
+<ul>
+<li><strong>Purpose:</strong> Establishes the review population</li>
+</ul>
+<h3 id="entity-component-detail">Entity: Component Detail</h3>
+<ul>
+<li><strong>Purpose:</strong> Supports grouped material or component
+review</li>
+</ul>
+<h3 id="entity-reviewer">Entity: Reviewer</h3>
+<ul>
+<li><strong>Purpose:</strong> Captures review ownership or reviewer
+role</li>
+</ul>
+<h3 id="entity-sign-off-event">Entity: Sign-Off Event</h3>
+<ul>
+<li><strong>Purpose:</strong> Preserves accountability and timestamped
+review status</li>
+</ul>
+<h3 id="entity-threshold-review">Entity: Threshold Review</h3>
+<ul>
+<li><strong>Purpose:</strong> Flags records requiring additional
+attention</li>
+</ul>
+<h3 id="entity-audit-log">Entity: Audit Log</h3>
+<ul>
+<li><strong>Purpose:</strong> Preserves review lineage and event
+history</li>
+</ul>
+<p>A public-safe system visual and architecture notes are included in
+this packet.</p>
+<h3 id="control-logic">Control Logic</h3>
+<p>The workflow can be summarized in five stages.</p>
+<h4 id="identity-capture">1. Identity Capture</h4>
+<p>The system captures reviewer identity or reviewer role so sign-off
+activity can be tied to accountable review.</p>
+<p>This matters because compliance review is not only about the data. It
+is also about who reviewed the data, when they reviewed it, and what
+status they assigned.</p>
+<h4 id="review-state-tracking">2. Review State Tracking</h4>
+<p>Records can move through generalized states:</p>
+<pre><code>pending review
+reviewed
+flagged
+needs correction
+complete
+archived</code></pre>
+<p>These states make the process visible and reduce ambiguity about what
+still needs attention.</p>
+<h4 id="grouped-review">3. Grouped Review</h4>
+<p>Related component records are grouped into a reviewable unit so
+reviewers do not have to inspect disconnected rows one at a time.</p>
+<p>This reduces review fatigue and makes the process easier to
+follow.</p>
+<h4 id="concurrency-overwrite-protection">4. Concurrency / Overwrite
+Protection</h4>
+<p>The system reduces the risk of accidental overwrite by controlling
+how review events are captured and logged.</p>
+<p>This is important because shared spreadsheet-based workflows can
+create versioning, ownership, and overwrite risks.</p>
+<h4 id="audit-logging">5. Audit Logging</h4>
+<p>Every meaningful review action should preserve:</p>
+<pre><code>record identifier
+review state
+reviewer role
+timestamp
+event type
+comment status</code></pre>
+<p>This creates a review history that can be reconstructed later.</p>
+<h3 id="output-modules">Output Modules</h3>
+<h3 id="output-compliance-review-dashboard">Output: Compliance Review
+Dashboard</h3>
+<ul>
+<li><strong>Purpose:</strong> Shows review status and open items</li>
+</ul>
+<h3 id="output-sign-off-table">Output: Sign-Off Table</h3>
+<ul>
+<li><strong>Purpose:</strong> Captures reviewer accountability</li>
+</ul>
+<h3 id="output-threshold-review-view">Output: Threshold Review View</h3>
+<ul>
+<li><strong>Purpose:</strong> Flags records requiring additional
+attention</li>
+</ul>
+<h3 id="output-audit-log">Output: Audit Log</h3>
+<ul>
+<li><strong>Purpose:</strong> Preserves review history</li>
+</ul>
+<h3 id="output-exception-view">Output: Exception View</h3>
+<ul>
+<li><strong>Purpose:</strong> Shows incomplete, flagged, or inconsistent
+records</li>
+</ul>
+<h3 id="output-summary-report">Output: Summary Report</h3>
+<ul>
+<li><strong>Purpose:</strong> Supports leadership or compliance
+review</li>
+</ul>
+<h3 id="course-connections">Course Connections</h3>
+<h3 id="course-ist-615-cloud-management">Course: IST 615 Cloud
+Management</h3>
+<ul>
+<li><strong>Connection:</strong> Platform architecture, access,
+cloud-enabled workflow</li>
+</ul>
+<h3 id="course-ist-654-information-systems-analysis">Course: IST 654
+Information Systems Analysis</h3>
+<ul>
+<li><strong>Connection:</strong> Use cases, requirements, process
+boundaries</li>
+</ul>
+<h3 id="course-ist-621-information-management-and-technology">Course:
+IST 621 Information Management and Technology</h3>
+<ul>
+<li><strong>Connection:</strong> Information governance and digital
+transformation</li>
+</ul>
+<h3
+id="course-ist-614-information-technology-management-and-policy">Course:
+IST 614 Information Technology Management and Policy</h3>
+<ul>
+<li><strong>Connection:</strong> Compliance, policy, governance</li>
+</ul>
+<h3
+id="course-ist-659-data-administration-and-database-management">Course:
+IST 659 Data Administration and Database Management</h3>
+<ul>
+<li><strong>Connection:</strong> Structured data and traceability</li>
+</ul>
+<h3 id="program-learning-connection">Program Learning Connection</h3>
+<p>This project demonstrates applied data science as compliance-support
+system design.</p>
+<p>It required me to:</p>
+<ul>
+<li>organize compliance-related data into reviewable structures</li>
+<li>design a workflow around sign-off and accountability</li>
+<li>preserve traceability through audit logging</li>
+<li>support review status visibility</li>
+<li>reduce manual reconstruction</li>
+<li>communicate compliance process risk to stakeholders</li>
+<li>create a more repeatable operational workflow</li>
+</ul>
+<h3 id="professional-impact">Professional Impact</h3>
+<p>The Chemical Compliance System improved operational efficiency by
+making a recurring compliance process easier to review, track, and
+repeat. It supported stronger continuity and reduced dependency on
+manual reconstruction.</p>
+<p>This project received internal operational efficiency recognition,
+making it one of the strongest examples of professional impact in my
+portfolio.</p>
+<h3 id="reflection">Reflection</h3>
+<p>This project helped me understand that compliance work is not only
+about meeting a reporting deadline. It is also about designing systems
+that preserve lineage, ownership, reviewability, and accountability over
+time.</p>
+<p>The most important lesson was that a compliance-support system must
+outlast the person who built it.</p>
+<p>That requires clear structure, accessible workflows, traceable review
+events, and a design that turns recurring reporting into a repeatable
+operational process.</p>
+<h3 id="public-safety-note">Public Safety Note</h3>
+<p>This case study is intentionally generalized. It does not include
+protected compliance records, production screenshots, internal URLs,
+actual chemical inventories, user names, site IDs, or proprietary
+workflows.</p>
+<div class="page-break">
+
+</div>
+<h1 id="sanitized-technical-evidence">Sanitized Technical Evidence</h1>
+<div class="page-break">
+
+</div>
+<h2 id="readme">Readme</h2>
+<h2 id="chemical-compliance-system">Chemical Compliance System</h2>
+<h3 id="goal">Goal</h3>
+<p>To demonstrate how a recurring chemical compliance review process was
+transformed from fragmented manual reconstruction into a structured
+review workflow with sign-off accountability, exception visibility, and
+audit defensibility.</p>
+<h3 id="confidentiality-notice">Confidentiality Notice</h3>
+<p>The system described in this folder was built for a live production
+environment. To comply with corporate data protection and
+confidentiality requirements, raw source code, proprietary business
+logic, internal field names, production screenshots, internal URLs,
+actual database records, actual chemical inventories, exact thresholds,
+site identifiers, and user names have been omitted.</p>
+<p>Instead, this folder contains sanitized architecture notes, schema
+definitions, pseudocode, and synthetic examples that accurately reflect
+the system’s structural design and data science methodology without
+disclosing proprietary assets.</p>
+<h3 id="system-context">System Context</h3>
+<p>Compliance reporting can become fragile when review responsibility,
+source records, sign-off evidence, and exception handling are
+distributed across spreadsheets, emails, shared folders, and individual
+memory.</p>
+<p>The system was designed to make review status visible, preserve
+sign-off accountability, reduce manual handling, and support later
+reconstruction of the review process.</p>
+<h3 id="methodology-alignment">Methodology Alignment</h3>
+<ol type="1">
+<li>Context: Recognize compliance review as a high-consequence
+workflow.</li>
+<li>Structure: Define review population, component details, sign-off
+events, and audit history.</li>
+<li>Modularity: Separate data gathering, grouped review, sign-off,
+exception handling, and audit logging.</li>
+<li>Evidence: Preserve reviewer action, timestamp, state, and event
+history.</li>
+<li>Iteration: Improve readiness and review flow through repeated
+reporting cycles.</li>
+</ol>
+<h3 id="portfolio-role-1">Portfolio Role</h3>
+<p>This evidence supports the Chemical Compliance System case study by
+showing the public-safe architecture behind review-state control and
+audit defensibility.</p>
+<div class="page-break">
+
+</div>
+<h2 id="architecture-notes">Architecture Notes</h2>
+<h2 id="architecture-notes-chemical-compliance-system">Architecture
+Notes: Chemical Compliance System</h2>
+<h3 id="system-pipeline">System Pipeline</h3>
+<p>Compliance Source Records -&gt; Standardization Layer -&gt; Grouped
+Review Model -&gt; Controlled Review Surface -&gt; Sign-Off Capture
+-&gt; Threshold / Exception Review -&gt; Audit Log -&gt; Summary
+Output</p>
+<h3 id="source-standardization">1. Source Standardization</h3>
+<p>Compliance-related records are standardized into public-safe review
+categories. This supports repeatable review and reduces dependence on
+scattered spreadsheets or individual memory.</p>
+<h3 id="grouped-review-model">2. Grouped Review Model</h3>
+<p>Related component details are grouped into parent review units. This
+reduces review fatigue and helps reviewers understand related
+information in context.</p>
+<h3 id="controlled-review-surface">3. Controlled Review Surface</h3>
+<p>The review surface presents only the information needed for review
+and sign-off. This reduces the risk of accidental edits, overwrite
+confusion, and unnecessary manual handling.</p>
+<h3 id="sign-off-capture">4. Sign-Off Capture</h3>
+<p>Each meaningful review action is captured as a sign-off or status
+event. The event includes a reviewer role, status, and timestamp
+label.</p>
+<h3 id="threshold-exception-review">5. Threshold / Exception Review</h3>
+<p>Records that require additional attention are flagged into a review
+queue. This makes the remaining work visible and helps prevent
+unresolved items from being hidden inside a flat file.</p>
+<h3 id="audit-log">6. Audit Log</h3>
+<p>The audit log preserves review events so the process can be
+reconstructed later. This supports continuity, accountability, and audit
+defensibility.</p>
+<h3 id="governance-and-public-safety">7. Governance and Public
+Safety</h3>
+<p>This architecture note omits actual chemical inventories, exact
+thresholds, internal system names, internal URLs, production
+screenshots, real user names, and protected compliance records.</p>
+<div class="page-break">
+
+</div>
+<h2 id="schema-dictionary">Schema Dictionary</h2>
+<h2 id="schema-dictionary-chemical-compliance-system">Schema Dictionary:
+Chemical Compliance System</h2>
+<p>This schema dictionary uses conceptual entities and synthetic field
+names. It does not include actual chemical inventories, exact
+thresholds, internal field names, site identifiers, user names, or
+regulatory system details.</p>
+<h3 id="conceptual-entities">Conceptual Entities</h3>
+<h3 id="entity-compliance-record-1">Entity: Compliance Record</h3>
+<ul>
+<li><strong>Purpose:</strong> Establishes the review population</li>
+<li><strong>Example Public Safe Fields:</strong> record_id,
+site_group_label, material_group_label, current_status</li>
+</ul>
+<h3 id="entity-component-detail-1">Entity: Component Detail</h3>
+<ul>
+<li><strong>Purpose:</strong> Supports grouped material or component
+review</li>
+<li><strong>Example Public Safe Fields:</strong> component_id,
+record_id, component_identifier, quantity_band, review_flag</li>
+</ul>
+<h3 id="entity-reviewer-1">Entity: Reviewer</h3>
+<ul>
+<li><strong>Purpose:</strong> Captures review ownership or reviewer
+role</li>
+<li><strong>Example Public Safe Fields:</strong> reviewer_id,
+reviewer_role, review_group</li>
+</ul>
+<h3 id="entity-sign-off-event-1">Entity: Sign-Off Event</h3>
+<ul>
+<li><strong>Purpose:</strong> Preserves accountability and timestamped
+review status</li>
+<li><strong>Example Public Safe Fields:</strong> signoff_id, record_id,
+reviewer_id, signed_at_label, signoff_status</li>
+</ul>
+<h3 id="entity-threshold-review-1">Entity: Threshold Review</h3>
+<ul>
+<li><strong>Purpose:</strong> Flags records requiring additional
+attention</li>
+<li><strong>Example Public Safe Fields:</strong> threshold_id,
+record_id, threshold_type, review_required</li>
+</ul>
+<h3 id="entity-audit-log-1">Entity: Audit Log</h3>
+<ul>
+<li><strong>Purpose:</strong> Preserves review lineage and event
+history</li>
+<li><strong>Example Public Safe Fields:</strong> audit_event_id,
+record_id, event_type, event_time_label, event_source</li>
+</ul>
+<h3 id="review-states">Review States</h3>
+<p>pending review reviewed flagged needs correction complete
+archived</p>
+<h3 id="event-types">Event Types</h3>
+<p>record loaded record grouped review opened status changed sign-off
+captured exception flagged comment added record archived</p>
+<h3 id="public-safe-design-principle">Public-Safe Design Principle</h3>
+<p>The schema separates the compliance record, component details,
+reviewer identity, sign-off event, threshold review, and audit history.
+This creates a process that can be reviewed and reconstructed later
+without relying on individual memory.</p>
+<div class="page-break">
+
+</div>
+<h2 id="production-pseudocode">Production Pseudocode</h2>
+<h2 id="production-pseudocode-chemical-compliance-system">Production
+Pseudocode: Chemical Compliance System</h2>
+<p>This pseudocode reflects the public-safe structure of the compliance
+review workflow. It does not include production code, actual chemical
+data, internal field names, exact thresholds, internal URLs, or
+proprietary business rules.</p>
+<h3 id="step-1-load-compliance-records">Step 1 — Load Compliance
+Records</h3>
+<p>PSEUDOCODE:</p>
+<p>function load_compliance_records(source_rows): records = []</p>
+<pre><code>for each row in source_rows:
+    add {
+        record_id: create_public_safe_id(row),
+        material_group_label: row.material_group_label,
+        review_status: pending review,
+        component_identifier: row.component_identifier,
+        quantity_band: row.quantity_band,
+        review_flag: row.review_flag or none
+    } to records
+
+return records</code></pre>
+<h3 id="step-2-group-related-components">Step 2 — Group Related
+Components</h3>
+<p>PSEUDOCODE:</p>
+<p>function group_records_for_review(records): grouped = {}</p>
+<pre><code>for each record in records:
+    key = record.material_group_label
+
+    if grouped does not contain key:
+        grouped[key] = {
+            group_id: create_group_id(key),
+            material_group_label: key,
+            review_status: pending review,
+            components: []
+        }
+
+    add {
+        component_identifier: record.component_identifier,
+        quantity_band: record.quantity_band,
+        review_flag: record.review_flag
+    } to grouped[key].components
+
+return values from grouped</code></pre>
+<h3 id="step-3-capture-sign-off-event">Step 3 — Capture Sign-Off
+Event</h3>
+<p>PSEUDOCODE:</p>
+<p>function capture_signoff(group_id, reviewer_role, new_status):
+signoff_event = { signoff_id: create_event_id(), group_id: group_id,
+reviewer_role: reviewer_role, signoff_status: new_status,
+event_time_label: current public-safe timestamp, comment_status:
+optional }</p>
+<pre><code>append event to audit log:
+    event_type: signoff captured
+    group_id: group_id
+    reviewer_role: reviewer_role
+    event_time_label: signoff_event.event_time_label
+
+return signoff_event</code></pre>
+<h3 id="step-4-flag-threshold-or-exception-review">Step 4 — Flag
+Threshold or Exception Review</h3>
+<p>PSEUDOCODE:</p>
+<p>function evaluate_review_flags(grouped_records): for each group in
+grouped_records: requires_attention = any component review_flag is not
+none</p>
+<pre><code>    if requires_attention:
+        group.threshold_review = review required
+        group.review_status = flagged
+    else:
+        group.threshold_review = no additional review
+
+return grouped_records</code></pre>
+<h3 id="step-5-preserve-audit-history">Step 5 — Preserve Audit
+History</h3>
+<p>PSEUDOCODE:</p>
+<p>function append_to_audit_log(event): audit_log adds { audit_event_id:
+create_event_id(), record_or_group_id: event.group_id, event_type:
+event.event_type, reviewer_role: event.reviewer_role or system,
+event_time_label: event.event_time_label, event_source: review workflow
+}</p>
+<h3 id="public-safe-notes">Public-Safe Notes</h3>
+<ul>
+<li>Reviewer labels are generalized.</li>
+<li>Component identifiers are synthetic.</li>
+<li>Exact thresholds are omitted.</li>
+<li>The pseudocode shows workflow structure, not protected
+implementation.</li>
+</ul>
+<div class="page-break">
+
+</div>
+<h2 id="synthetic-output-examples">Synthetic Output Examples</h2>
+<h3 id="synthetic-output-examples-chemical-compliance-system">Synthetic
+Output Examples: Chemical Compliance System</h3>
+<p>All rows are synthetic. Identifiers, values, dates, component labels,
+and user roles are public-safe examples.</p>
+<h4 id="table-1-compliance-review-dashboard">Table 1 — Compliance Review
+Dashboard</h4>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr>
+<th>Record_ID</th>
+<th>Material_Group</th>
+<th style="text-align: right;">Component_Count</th>
+<th>Review_Status</th>
+<th>Threshold_Review</th>
+<th>Last_Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CR-001</td>
+<td>Material Group A</td>
+<td style="text-align: right;">3</td>
+<td>reviewed</td>
+<td>no additional review</td>
+<td>sign-off captured</td>
+</tr>
+<tr>
+<td>CR-002</td>
+<td>Material Group B</td>
+<td style="text-align: right;">5</td>
+<td>flagged</td>
+<td>review required</td>
+<td>exception flagged</td>
+</tr>
+<tr>
+<td>CR-003</td>
+<td>Material Group C</td>
+<td style="text-align: right;">2</td>
+<td>pending review</td>
+<td>no additional review</td>
+<td>record loaded</td>
+</tr>
+<tr>
+<td>CR-004</td>
+<td>Material Group D</td>
+<td style="text-align: right;">4</td>
+<td>needs correction</td>
+<td>review required</td>
+<td>comment added</td>
+</tr>
+<tr>
+<td>CR-005</td>
+<td>Material Group E</td>
+<td style="text-align: right;">1</td>
+<td>complete</td>
+<td>no additional review</td>
+<td>archived</td>
+</tr>
+</tbody>
+</table>
+<h4 id="table-2-sign-off-event-table">Table 2 — Sign-Off Event
+Table</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Signoff_ID</th>
+<th>Record_ID</th>
+<th>Reviewer_Role</th>
+<th>Signoff_Status</th>
+<th>Event_Time_Label</th>
+<th>Comment_Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SO-001</td>
+<td>CR-001</td>
+<td>Area Reviewer</td>
+<td>reviewed</td>
+<td>Synthetic Timestamp</td>
+<td>none</td>
+</tr>
+<tr>
+<td>SO-002</td>
+<td>CR-002</td>
+<td>Compliance Coordinator</td>
+<td>flagged</td>
+<td>Synthetic Timestamp</td>
+<td>comment added</td>
+</tr>
+<tr>
+<td>SO-003</td>
+<td>CR-004</td>
+<td>Process Owner</td>
+<td>needs correction</td>
+<td>Synthetic Timestamp</td>
+<td>comment added</td>
+</tr>
+</tbody>
+</table>
+<h4 id="table-3-audit-log-example">Table 3 — Audit Log Example</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Audit_Event_ID</th>
+<th>Record_ID</th>
+<th>Event_Type</th>
+<th>Reviewer_Role</th>
+<th>Event_Time_Label</th>
+<th>Event_Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AUD-001</td>
+<td>CR-001</td>
+<td>record loaded</td>
+<td>system</td>
+<td>Synthetic Timestamp</td>
+<td>review workflow</td>
+</tr>
+<tr>
+<td>AUD-002</td>
+<td>CR-001</td>
+<td>sign-off captured</td>
+<td>Area Reviewer</td>
+<td>Synthetic Timestamp</td>
+<td>review workflow</td>
+</tr>
+<tr>
+<td>AUD-003</td>
+<td>CR-002</td>
+<td>exception flagged</td>
+<td>Compliance Coordinator</td>
+<td>Synthetic Timestamp</td>
+<td>review workflow</td>
+</tr>
+<tr>
+<td>AUD-004</td>
+<td>CR-004</td>
+<td>comment added</td>
+<td>Process Owner</td>
+<td>Synthetic Timestamp</td>
+<td>review workflow</td>
+</tr>
+</tbody>
+</table>
+<h4 id="interpretation">Interpretation</h4>
+<p>These examples demonstrate review state, sign-off accountability, and
+audit trail preservation. They do not represent actual compliance
+records or actual chemical inventories.</p>
+<div class="page-break">
+
+</div>
+<h1 id="what-is-intentionally-excluded">What Is Intentionally
+Excluded</h1>
+<ul>
+<li>Proprietary source code</li>
+<li>Internal URLs, production system names, and protected
+identifiers</li>
+<li>Production screenshots</li>
+<li>Real operational data</li>
+<li>Exact financial values</li>
+<li>Customer, vendor, employee, or site-specific identifiers</li>
+</ul>
+<div class="page-break">
+
+</div>
+<h2 id="reader-note">Reader Note</h2>
+<p>This evidence packet is a public-safe reconstruction. It is intended
+to demonstrate system design, evidence structure, and applied data
+science reasoning without exposing confidential operational details.</p>
+</body>
+</html>
