@@ -428,3 +428,13 @@ strong {
   }
 }
 
+
+/* READER_IFRAME_WHITE_DOCUMENT_FIX_V1 */
+.reader-frame,
+.reader-frame iframe {
+  background: #ffffff;
+}
+
+.reader-frame iframe {
+  color-scheme: light;
+}

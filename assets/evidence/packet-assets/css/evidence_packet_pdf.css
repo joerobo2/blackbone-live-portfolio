@@ -199,3 +199,24 @@ table {
 .page-break + h2 {
   margin-top: 0;
 }
+
+/* SITE_READER_HTML_PACKET_WHITE_DOCUMENT_FIX_V1 */
+html,
+body {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+body {
+  padding: 0;
+}
+
+a {
+  color: #1d4ed8;
+}
+
+table,
+th,
+td {
+  color: #111827;
+}
