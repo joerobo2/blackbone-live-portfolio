@@ -1,0 +1,7 @@
+BLACKBONE live deploy marker
+commit: 7dfd079e2570ab6ea1d376adabe9663ec193b95e
+timestamp: 2026-05-07T21:34:03-05:00
+expected:
+- /portfolio/evidence/ has no resume card
+- /portfolio/resume/ exists
+- /portfolio/reader/?doc=resume redirects to /portfolio/resume/
