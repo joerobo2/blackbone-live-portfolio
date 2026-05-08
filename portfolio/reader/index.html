@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resume | Joseph Robinson Portfolio</title>
+  <title>Evidence Reader | Joseph Robinson Portfolio</title>
   <meta name="description" content="Evidence reader for Joseph Robinson's IST 782 applied data science portfolio.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=resume-mobile-back-link-v32">
+  <link rel="stylesheet" href="/assets/css/site.css?v=reader-resume-scope-fix-v15">
 </head>
 <body>
   <div class="reader-shell">
     <nav class="reader-toolbar">
       <div>
-        <div class="kicker">Resume</div>
+        <div class="kicker">Evidence Reader</div>
         <h1 class="reader-title" data-reader-title>Loading evidence…</h1>
         <p class="reader-meta" data-reader-meta>Loading metadata…</p>
       </div>
       <div class="reader-actions">
-        <a class="button primary" href="/portfolio/about/">Back to About</a>
-        <a class="button secondary" href="/assets/evidence/pdfs/Joseph_Robinson_Resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+        <a class="button secondary" href="/portfolio/evidence/">Evidence Library</a>
+        <a class="button secondary" href="/portfolio/">Portfolio Home</a>
+        <a class="button primary" href="#" data-reader-download>Open Source File</a>
       </div>
     </nav>
 
@@ -231,6 +232,84 @@
       }
 
       window.addEventListener("pageshow", patchBackLinks);
+    })();
+  </script>
+
+
+  <script>
+    /* READER_RESUME_SCOPE_FIX_V15
+       Default reader stays generic.
+       Resume preview/chrome is allowed only for ?doc=resume.
+       Non-resume documents keep normal PDF/source behavior.
+    */
+    (function () {
+      function isResumeDoc() {
+        var params = new URLSearchParams(window.location.search || "");
+        return (params.get("doc") || "").toLowerCase() === "resume";
+      }
+
+      function restoreGenericReaderChromeIfNeeded() {
+        if (isResumeDoc()) return;
+
+        document.title = "Evidence Reader | Joseph Robinson Portfolio";
+        document.body.classList.remove("resume-reader-image-page");
+
+        var kicker = document.querySelector(".kicker");
+        if (kicker) kicker.textContent = "Evidence Reader";
+
+        var h1 = document.querySelector("h1");
+        if (h1 && /Joseph Robinson|Resume/i.test(h1.textContent || "")) {
+          h1.textContent = "Evidence Reader";
+        }
+
+        document.querySelectorAll("a.button").forEach(function (a) {
+          var txt = (a.textContent || "").trim();
+
+          if (txt === "Back to About") {
+            a.textContent = "Evidence Library";
+            a.setAttribute("href", "/portfolio/evidence/");
+            a.classList.remove("primary");
+            a.classList.add("secondary");
+            a.removeAttribute("target");
+            a.removeAttribute("rel");
+          }
+
+          if (txt === "Open PDF" && /Joseph_Robinson_Resume\.pdf/.test(a.getAttribute("href") || "")) {
+            a.textContent = "Open Source File";
+            a.setAttribute("href", "#");
+            a.setAttribute("data-reader-download", "");
+            a.classList.remove("secondary");
+            a.classList.add("primary");
+            a.removeAttribute("target");
+            a.removeAttribute("rel");
+          }
+        });
+
+        var actionRow =
+          document.querySelector(".hero-actions") ||
+          document.querySelector(".reader-actions") ||
+          document.querySelector(".page-actions");
+
+        if (actionRow && !actionRow.querySelector('a[href="/portfolio/"]')) {
+          var home = document.createElement("a");
+          home.className = "button secondary";
+          home.href = "/portfolio/";
+          home.textContent = "Portfolio Home";
+
+          var download = actionRow.querySelector("[data-reader-download]");
+          if (download) {
+            actionRow.insertBefore(home, download);
+          } else {
+            actionRow.appendChild(home);
+          }
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", restoreGenericReaderChromeIfNeeded);
+      } else {
+        restoreGenericReaderChromeIfNeeded();
+      }
     })();
   </script>
 
