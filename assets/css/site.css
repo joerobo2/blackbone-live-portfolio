@@ -4693,3 +4693,128 @@ body.about-page-v3 .about-mobile-timeline {
   }
 }
 
+/* ABOUT_MOBILE_SCROLL_TIMELINE_V30
+   Mobile-only timeline as normal scroll-down centered page content.
+   Desktop modal remains untouched.
+*/
+
+body.about-page-v3 .about-mobile-scroll-timeline {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  /* Hide the older mobile inline tab timeline if V29 exists. */
+  body.about-page-v3 .about-mobile-timeline {
+    display: none !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline {
+    display: block !important;
+    width: min(100vw - 1.25rem, 430px) !important;
+    margin: 0 auto 4rem !important;
+    padding: 0.5rem 0 0 !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-heading {
+    margin: 0 0 1rem !important;
+    text-align: left !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-heading h2 {
+    margin: 0.4rem 0 0 !important;
+    max-width: 12ch !important;
+    font-size: clamp(2.1rem, 9vw, 3.1rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.055em !important;
+    color: rgba(248, 250, 252, 0.98) !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-list {
+    display: grid !important;
+    gap: 1.15rem !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-card {
+    border-radius: 28px !important;
+    border: 1px solid rgba(125, 211, 252, 0.22) !important;
+    background:
+      radial-gradient(circle at 20% 8%, rgba(56, 189, 248, 0.12), transparent 34%),
+      rgba(2, 6, 23, 0.74) !important;
+    box-shadow:
+      0 24px 70px rgba(0, 0, 0, 0.38),
+      0 0 58px rgba(56, 189, 248, 0.10) !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-card-label {
+    padding: 0.85rem 1rem 0 !important;
+    font-size: 0.72rem !important;
+    line-height: 1 !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: rgba(125, 211, 252, 0.86) !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-media {
+    margin: 0.85rem 0 0 !important;
+    width: 100% !important;
+    min-height: 230px !important;
+    max-height: 420px !important;
+    background: rgba(2, 6, 23, 0.86) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-media img,
+  body.about-page-v3 .about-mobile-scroll-timeline-media svg {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 420px !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-media img {
+    height: auto !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-copy {
+    padding: 1rem !important;
+    color: rgba(203, 213, 225, 0.9) !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-copy h2,
+  body.about-page-v3 .about-mobile-scroll-timeline-copy h3 {
+    margin: 0.25rem 0 0.65rem !important;
+    font-size: clamp(1.35rem, 6vw, 2rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.035em !important;
+    color: rgba(248, 250, 252, 0.96) !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-copy p {
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+    color: rgba(203, 213, 225, 0.9) !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-copy .timeline-card,
+  body.about-page-v3 .about-mobile-scroll-timeline-media .timeline-card {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page-v3 .about-mobile-scroll-timeline {
+    width: min(100vw - 1rem, 400px) !important;
+  }
+
+  body.about-page-v3 .about-mobile-scroll-timeline-media {
+    min-height: 210px !important;
+  }
+}
+

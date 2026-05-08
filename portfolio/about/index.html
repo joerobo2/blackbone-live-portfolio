@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Joseph Robinson | Operational Data Science Portfolio</title>
   <meta name="description" content="About Joseph Robinson: operational data scientist, applied AI systems builder, U.S. Air Force veteran, third culture kid, and Syracuse Applied Data Science graduate student.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=about-mobile-inline-timeline-v29">
+  <link rel="stylesheet" href="/assets/css/site.css?v=about-mobile-scroll-timeline-v30">
 </head>
 <body class="about-page-v3">
   <div class="site-shell about-shell">
@@ -82,7 +82,7 @@
         </p>
 
         <div class="about-mobile-actions">
-          <button class="button primary about-mobile-timeline-jump" type="button" data-mobile-timeline-jump>
+          <button class="button primary about-mobile-scroll-timeline-jump" type="button" data-mobile-scroll-timeline-jump>
             View My Timeline
           </button>
           <a class="button secondary" href="/portfolio/reader/?doc=resume">
@@ -788,6 +788,139 @@
       }
 
       window.addEventListener("resize", boot);
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", boot);
+      } else {
+        boot();
+      }
+    })();
+  </script>
+
+
+  <script>
+    /* ABOUT_MOBILE_SCROLL_TIMELINE_V30
+       Mobile-only timeline becomes normal page scroll.
+       Desktop keeps the existing modal.
+       This avoids iPhone Safari fixed-modal / viewport instability.
+    */
+    (function () {
+      const MOBILE_MAX = 860;
+
+      function isMobile() {
+        return window.innerWidth <= MOBILE_MAX;
+      }
+
+      function clean(value) {
+        return (value || "").trim().replace(/\s+/g, " ");
+      }
+
+      function closeMobileModalIfOpened() {
+        if (!isMobile()) return;
+
+        const overlay = document.querySelector("#timelineOverlay, .timeline-overlay");
+        if (!overlay) return;
+
+        overlay.classList.remove("is-open");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("timeline-lock");
+      }
+
+      function getSourceSlides() {
+        const tabLabels = [...document.querySelectorAll(".timeline-tab, [data-timeline-tab]")]
+          .map(tab => clean(tab.textContent))
+          .filter(Boolean);
+
+        const fallbackLabels = ["Doha", "Service", "Leadership", "Perspective", "Data", "People"];
+
+        return [...document.querySelectorAll(".timeline-slide")].map((slide, index) => {
+          const media =
+            slide.querySelector(".timeline-media") ||
+            [...slide.children].find(child => child.querySelector("img")) ||
+            null;
+
+          const copy =
+            slide.querySelector(".timeline-copy-panel") ||
+            [...slide.children].find(child => !child.querySelector("img") && clean(child.textContent)) ||
+            null;
+
+          return {
+            index,
+            label: tabLabels[index] || fallbackLabels[index] || `Part ${index + 1}`,
+            mediaHtml: media ? media.innerHTML : "",
+            copyHtml: copy ? copy.innerHTML : "",
+            copyText: copy ? clean(copy.textContent) : ""
+          };
+        }).filter(item => item.mediaHtml || item.copyText);
+      }
+
+      function renderMobileScrollTimeline() {
+        const list = document.querySelector("[data-mobile-scroll-timeline-list]");
+        if (!list) return;
+
+        const slides = getSourceSlides();
+
+        if (!slides.length) {
+          list.innerHTML = "<p class='about-mobile-scroll-timeline-loading'>Timeline unavailable.</p>";
+          return;
+        }
+
+        list.innerHTML = slides.map(item => `
+          <article class="about-mobile-scroll-timeline-card" data-mobile-scroll-card="${item.index}">
+            <div class="about-mobile-scroll-timeline-card-label">${item.label}</div>
+
+            ${item.mediaHtml ? `
+              <div class="about-mobile-scroll-timeline-media">
+                ${item.mediaHtml}
+              </div>
+            ` : ""}
+
+            ${item.copyHtml ? `
+              <div class="about-mobile-scroll-timeline-copy">
+                ${item.copyHtml}
+              </div>
+            ` : ""}
+          </article>
+        `).join("");
+      }
+
+      function jumpToTimeline() {
+        renderMobileScrollTimeline();
+        closeMobileModalIfOpened();
+
+        const section = document.querySelector("#aboutMobileScrollTimeline");
+        if (!section) return;
+
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      document.addEventListener("click", function (event) {
+        const mobileJump = event.target.closest("[data-mobile-scroll-timeline-jump]");
+
+        if (mobileJump && isMobile()) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          jumpToTimeline();
+          return;
+        }
+
+        const accidentalModalTrigger = event.target.closest(".about-mobile-landing [data-open-timeline], .about-mobile-landing .timeline-open");
+
+        if (accidentalModalTrigger && isMobile()) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          jumpToTimeline();
+        }
+      }, true);
+
+      function boot() {
+        if (isMobile()) {
+          renderMobileScrollTimeline();
+          closeMobileModalIfOpened();
+        }
+      }
+
+      window.addEventListener("resize", boot);
+
       if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", boot);
       } else {
