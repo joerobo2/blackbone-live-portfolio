@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Evidence Reader | Joseph Robinson Portfolio</title>
   <meta name="description" content="Evidence reader for Joseph Robinson's IST 782 applied data science portfolio.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=site-cobalt-v15">
+  <link rel="stylesheet" href="/assets/css/site.css?v=resume-reader-chrome-fix-v13">
 </head>
 <body>
   <div class="reader-shell">
@@ -118,6 +118,86 @@
     })();
   </script>
 
+
+
+  <script>
+    /* RESUME_READER_CHROME_FIX_V13
+       When reader is opened with ?doc=resume, replace old Evidence Reader chrome
+       with resume-specific title and actions.
+    */
+    (function () {
+      function isResumeDoc() {
+        const params = new URLSearchParams(window.location.search);
+        return (params.get("doc") || "").toLowerCase() === "resume";
+      }
+
+      function setText(selector, value) {
+        const el = document.querySelector(selector);
+        if (el) el.textContent = value;
+      }
+
+      function fixResumeChrome() {
+        if (!isResumeDoc()) return;
+
+        document.title = "Resume | Joseph Robinson Portfolio";
+        document.body.classList.add("resume-reader-image-page");
+
+        setText(".kicker", "Resume");
+
+        const h1 = document.querySelector("h1");
+        if (h1) h1.textContent = "Joseph Robinson";
+
+        const subtitle =
+          document.querySelector(".reader-subtitle") ||
+          document.querySelector(".page-subtitle") ||
+          document.querySelector("main p");
+
+        if (subtitle && /Resume|PDF|Evidence|Reader/i.test(subtitle.textContent || "")) {
+          subtitle.textContent = "PDF Resume";
+        }
+
+        const actionRow =
+          document.querySelector(".hero-actions") ||
+          document.querySelector(".reader-actions") ||
+          document.querySelector(".page-actions") ||
+          document.querySelector("main .actions") ||
+          document.querySelector("header + div") ||
+          document.querySelector("main");
+
+        const oldButtons = [...document.querySelectorAll("a.button")];
+
+        oldButtons.forEach(a => {
+          const txt = (a.textContent || "").trim();
+          if (/Evidence Library|Portfolio Home|Open Source File/i.test(txt)) {
+            a.remove();
+          }
+        });
+
+        const existingBack = [...document.querySelectorAll("a")]
+          .some(a => (a.textContent || "").trim() === "Back to About");
+
+        if (!existingBack) {
+          const container =
+            document.querySelector(".hero-actions") ||
+            document.querySelector(".reader-actions") ||
+            document.querySelector(".page-actions");
+
+          if (container) {
+            container.insertAdjacentHTML("afterbegin", `
+              <a class="button primary" href="/portfolio/about/">Back to About</a>
+              <a class="button secondary" href="/assets/evidence/pdfs/Joseph_Robinson_Resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+            `);
+          }
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", fixResumeChrome);
+      } else {
+        fixResumeChrome();
+      }
+    })();
+  </script>
 
 </body>
 </html>

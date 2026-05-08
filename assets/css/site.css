@@ -5047,3 +5047,18 @@ body.about-mobile-page .about-mobile-footer {
     font-size: 0.78rem;
   }
 }
+
+/* RESUME_READER_CHROME_FIX_V13
+   Resume reader chrome cleanup.
+*/
+
+body.resume-reader-image-page .kicker {
+  color: rgba(125, 211, 252, 0.9) !important;
+}
+
+body.resume-reader-image-page a[href="/portfolio/evidence/"],
+body.resume-reader-image-page a[href="/portfolio/"],
+body.resume-reader-image-page a[href*="source"],
+body.resume-reader-image-page a[href*="evidence"]:not([href*="pdf"]) {
+  display: none !important;
+}
