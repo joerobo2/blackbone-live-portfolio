@@ -4567,3 +4567,129 @@ body.about-page-v3 .about-mobile-landing {
     padding-bottom: 0.6rem !important;
   }
 }
+
+/* ABOUT_MOBILE_INLINE_TIMELINE_V29
+   Mobile/iPhone timeline view.
+   Normal page flow. No fixed modal. No Safari viewport fight.
+*/
+
+body.about-page-v3 .about-mobile-timeline {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  body.about-page-v3 .about-mobile-timeline {
+    display: block !important;
+    width: min(100vw - 2rem, 480px) !important;
+    margin: 0 auto 3.5rem !important;
+    padding: 0.5rem 0 0 !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-heading {
+    margin-bottom: 1rem !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-heading h2 {
+    margin: 0.35rem 0 0 !important;
+    max-width: 12ch !important;
+    font-size: clamp(2.1rem, 9vw, 3.15rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.055em !important;
+    color: rgba(248, 250, 252, 0.96) !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-card {
+    border-radius: 28px !important;
+    border: 1px solid rgba(125, 211, 252, 0.24) !important;
+    background:
+      radial-gradient(circle at 20% 8%, rgba(56, 189, 248, 0.12), transparent 34%),
+      rgba(2, 6, 23, 0.72) !important;
+    box-shadow:
+      0 28px 80px rgba(0, 0, 0, 0.42),
+      0 0 70px rgba(56, 189, 248, 0.12) !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-media {
+    margin: 0 !important;
+    width: 100% !important;
+    height: min(58vh, 430px) !important;
+    min-height: 260px !important;
+    background: rgba(2, 6, 23, 0.88) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-copy {
+    padding: 1rem !important;
+    color: rgba(203, 213, 225, 0.9) !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-copy h2,
+  body.about-page-v3 .about-mobile-timeline-copy h3 {
+    margin: 0.35rem 0 0.7rem !important;
+    font-size: clamp(1.35rem, 6vw, 2rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.035em !important;
+    color: rgba(248, 250, 252, 0.96) !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-copy p {
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+    color: rgba(203, 213, 225, 0.9) !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-tabs {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    margin-top: 0.85rem !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-tab {
+    appearance: none !important;
+    border: 1px solid rgba(125, 211, 252, 0.26) !important;
+    border-radius: 999px !important;
+    background: rgba(15, 23, 42, 0.68) !important;
+    color: rgba(226, 232, 240, 0.9) !important;
+    padding: 0.48rem 0.75rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1 !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-tab.is-active {
+    color: rgba(2, 6, 23, 0.96) !important;
+    background: linear-gradient(135deg, rgba(125, 211, 252, 0.98), rgba(56, 189, 248, 0.92)) !important;
+    border-color: rgba(186, 230, 253, 0.72) !important;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.28) !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-loading {
+    padding: 1rem !important;
+    color: rgba(203, 213, 225, 0.86) !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page-v3 .about-mobile-timeline {
+    width: min(100vw - 1.25rem, 400px) !important;
+  }
+
+  body.about-page-v3 .about-mobile-timeline-media {
+    height: min(50vh, 360px) !important;
+    min-height: 230px !important;
+  }
+}
+

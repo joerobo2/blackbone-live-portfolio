@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Joseph Robinson | Operational Data Science Portfolio</title>
   <meta name="description" content="About Joseph Robinson: operational data scientist, applied AI systems builder, U.S. Air Force veteran, third culture kid, and Syracuse Applied Data Science graduate student.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=mobile-timeline-iphone-safe-v28">
+  <link rel="stylesheet" href="/assets/css/site.css?v=about-mobile-inline-timeline-v29">
 </head>
 <body class="about-page-v3">
   <div class="site-shell about-shell">
@@ -82,7 +82,7 @@
         </p>
 
         <div class="about-mobile-actions">
-          <button class="button primary timeline-open" type="button" data-open-timeline>
+          <button class="button primary about-mobile-timeline-jump" type="button" data-mobile-timeline-jump>
             View My Timeline
           </button>
           <a class="button secondary" href="/portfolio/reader/?doc=resume">
@@ -675,6 +675,124 @@
       });
 
       schedule();
+    })();
+  </script>
+
+
+  <script>
+    /* ABOUT_MOBILE_INLINE_TIMELINE_V29
+       iPhone-safe timeline.
+       Desktop keeps the modal.
+       Mobile uses an inline, normal-flow timeline card instead of fixed modal layout.
+    */
+    (function () {
+      const MOBILE_MAX = 860;
+
+      function isMobile() {
+        return window.innerWidth <= MOBILE_MAX;
+      }
+
+      function cleanText(value) {
+        return (value || "").trim().replace(/\s+/g, " ");
+      }
+
+      function getSlides() {
+        return [...document.querySelectorAll(".timeline-slide")].map((slide, index) => {
+          const image = slide.querySelector("img");
+          const copy =
+            slide.querySelector(".timeline-copy-panel") ||
+            [...slide.children].find(child => !child.querySelector("img") && cleanText(child.textContent));
+
+          const fallbackLabel = ["Doha", "Service", "Leadership", "Perspective", "Data", "People"][index] || `Part ${index + 1}`;
+
+          let label = fallbackLabel;
+          const existingTabs = [...document.querySelectorAll(".timeline-tab, [data-timeline-tab]")];
+          if (existingTabs[index]) label = cleanText(existingTabs[index].textContent) || fallbackLabel;
+
+          return {
+            index,
+            label,
+            imageSrc: image ? (image.currentSrc || image.src) : "",
+            imageAlt: image ? image.alt : "",
+            copyHtml: copy ? copy.innerHTML : "",
+            copyText: copy ? cleanText(copy.textContent) : ""
+          };
+        }).filter(item => item.imageSrc || item.copyText);
+      }
+
+      function renderMobileTimeline(activeIndex) {
+        const section = document.querySelector("#aboutMobileTimeline");
+        const card = document.querySelector("[data-mobile-timeline-card]");
+        const tabs = document.querySelector("[data-mobile-timeline-tabs]");
+
+        if (!section || !card || !tabs) return;
+
+        const slides = getSlides();
+        if (!slides.length) {
+          card.innerHTML = "<p class='about-mobile-timeline-loading'>Timeline unavailable.</p>";
+          return;
+        }
+
+        const safeIndex = Math.max(0, Math.min(activeIndex || 0, slides.length - 1));
+        const item = slides[safeIndex];
+
+        card.innerHTML = `
+          ${item.imageSrc ? `
+            <figure class="about-mobile-timeline-media">
+              <img src="${item.imageSrc}" alt="${item.imageAlt || item.label}">
+            </figure>
+          ` : ""}
+          <div class="about-mobile-timeline-copy">
+            ${item.copyHtml}
+          </div>
+        `;
+
+        tabs.innerHTML = slides.map((slide, i) => `
+          <button
+            class="about-mobile-timeline-tab ${i === safeIndex ? "is-active" : ""}"
+            type="button"
+            data-mobile-timeline-tab="${i}"
+            aria-pressed="${i === safeIndex ? "true" : "false"}"
+          >
+            ${slide.label}
+          </button>
+        `).join("");
+      }
+
+      function jumpToMobileTimeline() {
+        renderMobileTimeline(0);
+        const section = document.querySelector("#aboutMobileTimeline");
+        if (!section) return;
+
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      document.addEventListener("click", function (event) {
+        const jump = event.target.closest("[data-mobile-timeline-jump]");
+        if (jump && isMobile()) {
+          event.preventDefault();
+          event.stopPropagation();
+          jumpToMobileTimeline();
+          return;
+        }
+
+        const tab = event.target.closest("[data-mobile-timeline-tab]");
+        if (tab) {
+          event.preventDefault();
+          renderMobileTimeline(Number(tab.getAttribute("data-mobile-timeline-tab") || 0));
+        }
+      }, true);
+
+      function boot() {
+        if (isMobile()) renderMobileTimeline(0);
+      }
+
+      window.addEventListener("resize", boot);
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", boot);
+      } else {
+        boot();
+      }
     })();
   </script>
 
