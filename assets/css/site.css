@@ -438,3 +438,2942 @@ strong {
 .reader-frame iframe {
   color-scheme: light;
 }
+
+/* ABOUT_PAGE_AND_COBALT_IDENTITY_PATCH_V1 */
+:root {
+  --accent: #2563eb;
+  --accent-strong: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.14);
+  --accent-border: rgba(56, 189, 248, 0.36);
+  --gold: #facc15;
+  --surface-blue: rgba(15, 23, 42, 0.92);
+  --surface-blue-2: rgba(15, 23, 42, 0.72);
+}
+
+.kicker {
+  color: var(--accent-strong);
+  letter-spacing: 0.18em;
+}
+
+.button.primary,
+.nav .nav-links a:hover,
+.evidence-icon {
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: #020617;
+}
+
+.button.secondary,
+.nav .nav-links a {
+  border-color: var(--accent-border);
+}
+
+.card,
+.evidence-card,
+.callout {
+  border-color: rgba(56, 189, 248, 0.18);
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding: clamp(3rem, 8vw, 7rem) 0 clamp(2.5rem, 6vw, 5rem);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.about-hero h1 {
+  font-size: clamp(3.2rem, 8vw, 7rem);
+  line-height: 0.88;
+  margin: 0.35rem 0 1rem;
+  letter-spacing: -0.07em;
+}
+
+.about-title {
+  color: #bae6fd;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  margin: 0 0 1.2rem;
+}
+
+.about-thesis {
+  font-size: clamp(1.35rem, 3vw, 2.2rem);
+  line-height: 1.05;
+  color: #f8fafc;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  max-width: 11em;
+  margin: 0 0 1.2rem;
+}
+
+.about-hero-image {
+  margin: 0;
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  border-radius: 28px;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.22), transparent 36%),
+              rgba(15, 23, 42, 0.78);
+  box-shadow: 0 24px 80px rgba(2, 132, 199, 0.16);
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: min(72vh, 760px);
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.about-section {
+  padding: clamp(2.5rem, 7vw, 5.5rem) 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.section-label {
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  font-size: 0.72rem;
+  margin-bottom: 1.4rem;
+}
+
+.about-two-column {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.about-two-column h2,
+.timeline-copy h2,
+.about-feature h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  margin: 0;
+}
+
+.about-two-column p,
+.timeline-copy p,
+.about-feature p {
+  color: #cbd5e1;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-top: 0;
+}
+
+.timeline-grid,
+.about-feature {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.about-feature.reverse {
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+}
+
+.timeline-image-card,
+.about-feature figure {
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  background: rgba(15, 23, 42, 0.78);
+}
+
+.timeline-image-card img,
+.about-feature img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.about-feature img {
+  aspect-ratio: 16 / 11;
+}
+
+.timeline-image-card figcaption,
+.about-feature figcaption {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  padding: 0.85rem 1rem 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.about-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.about-stat {
+  padding: 1rem;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.64);
+}
+
+.about-stat strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.about-stat span {
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.system-link-grid {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.3rem;
+}
+
+.system-link-grid a {
+  display: block;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: #e0f2fe;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.system-link-grid a:hover {
+  background: rgba(14, 165, 233, 0.16);
+  border-color: rgba(56, 189, 248, 0.44);
+}
+
+@media (max-width: 860px) {
+  .about-hero,
+  .about-two-column,
+  .timeline-grid,
+  .about-feature,
+  .about-feature.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-image img {
+    height: auto;
+    max-height: none;
+  }
+
+  .about-stat-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ABOUT_WIDE_DOHA_UNSMOOSH_PATCH_V2 */
+
+/* About is a feature page, not a document reader. Let it use more screen. */
+body:has(.about-hero) .site-shell {
+  max-width: min(1540px, calc(100vw - 72px));
+}
+
+/* Keep evidence/document pages bounded; only About expands. */
+body:has(.about-hero) main {
+  width: 100%;
+}
+
+/* Wider hero composition. */
+body:has(.about-hero) .about-hero {
+  grid-template-columns: minmax(520px, 1fr) minmax(460px, 0.82fr);
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+/* Let story sections breathe horizontally. */
+body:has(.about-hero) .about-two-column {
+  grid-template-columns: minmax(320px, 0.82fr) minmax(620px, 1.18fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+body:has(.about-hero) .timeline-grid,
+body:has(.about-hero) .about-feature {
+  grid-template-columns: minmax(500px, 0.95fr) minmax(620px, 1.05fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+body:has(.about-hero) .about-feature.reverse {
+  grid-template-columns: minmax(620px, 1.05fr) minmax(500px, 0.95fr);
+}
+
+/* Remove the smashed-card effect from About images. */
+body:has(.about-hero) .timeline-image-card img,
+body:has(.about-hero) .about-feature img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  background: #020617;
+}
+
+/* Hero remains intentionally cropped and polished. */
+body:has(.about-hero) .about-hero-image img {
+  height: auto;
+  max-height: 820px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Origin map should feel like a designed card. */
+body:has(.about-hero) .origin-feature img[src*="doha-qatar-origin-map"] {
+  aspect-ratio: 900 / 620;
+  object-fit: cover;
+  background: #020617;
+}
+
+/* Transition image should be cinematic, not tiny. */
+body:has(.about-hero) img[src*="joseph-perspective-transition"] {
+  max-height: 620px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Early service image should not stretch. */
+body:has(.about-hero) img[src*="joseph-early-service"] {
+  max-height: 760px;
+  object-fit: contain;
+  object-position: center top;
+}
+
+/* Human-centered image should be warm and wide. */
+body:has(.about-hero) img[src*="joseph-sitting-laughing"] {
+  max-height: 580px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* More open vertical rhythm. */
+body:has(.about-hero) .about-section {
+  padding-top: clamp(4rem, 8vw, 7.5rem);
+  padding-bottom: clamp(4rem, 8vw, 7.5rem);
+}
+
+/* Stronger page-width visual balance on large screens. */
+@media (min-width: 1280px) {
+  body:has(.about-hero) .about-hero h1 {
+    font-size: clamp(5.5rem, 7.5vw, 8.5rem);
+  }
+
+  body:has(.about-hero) .about-two-column h2,
+  body:has(.about-hero) .timeline-copy h2,
+  body:has(.about-hero) .about-feature h2 {
+    font-size: clamp(3rem, 4.8vw, 5rem);
+  }
+}
+
+/* Mobile safety. */
+@media (max-width: 1050px) {
+  body:has(.about-hero) .site-shell {
+    max-width: min(100% - 32px, 820px);
+  }
+
+  body:has(.about-hero) .about-hero,
+  body:has(.about-hero) .about-two-column,
+  body:has(.about-hero) .timeline-grid,
+  body:has(.about-hero) .about-feature,
+  body:has(.about-hero) .about-feature.reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ABOUT_HERO_TIMELINE_OVERLAY_REFACTOR_V3 */
+
+.about-page-v3 {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(37, 99, 235, 0.24), transparent 36%),
+    radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.12), transparent 32%),
+    #020617;
+}
+
+.about-page-v3 .about-shell {
+  max-width: min(1640px, calc(100vw - 72px));
+}
+
+.about-landing {
+  min-height: calc(100vh - 130px);
+  display: grid;
+  grid-template-columns: minmax(480px, 0.82fr) minmax(520px, 1.18fr);
+  gap: clamp(2rem, 6vw, 7rem);
+  align-items: center;
+  padding: clamp(2rem, 5vw, 5rem) 0;
+}
+
+.about-landing-copy {
+  max-width: 720px;
+}
+
+.about-landing h1 {
+  font-size: clamp(4.5rem, 9vw, 10rem);
+  line-height: 0.82;
+  margin: 0.35rem 0 1rem;
+  letter-spacing: -0.085em;
+}
+
+.about-landing .about-title {
+  color: #bae6fd;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  margin: 0 0 1.35rem;
+}
+
+.about-landing .about-thesis {
+  font-size: clamp(1.6rem, 3.3vw, 3rem);
+  line-height: 0.98;
+  color: #f8fafc;
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  max-width: 11.5em;
+  margin: 0 0 1.35rem;
+}
+
+.about-landing .lede {
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.72;
+  color: #cbd5e1;
+  max-width: 58ch;
+}
+
+.about-landing-image {
+  margin: 0;
+  min-height: min(78vh, 880px);
+  border-radius: 36px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  background: rgba(15, 23, 42, 0.88);
+  box-shadow: 0 28px 90px rgba(14, 165, 233, 0.18);
+}
+
+.about-landing-image img {
+  width: 100%;
+  height: min(78vh, 880px);
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.timeline-open {
+  cursor: pointer;
+}
+
+.resume-feature-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) auto;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  margin: 0 0 clamp(3rem, 7vw, 6rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(15, 23, 42, 0.78)),
+    rgba(15, 23, 42, 0.68);
+}
+
+.resume-feature-card h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  margin: 0 0 1rem;
+}
+
+.resume-feature-card p {
+  max-width: 70ch;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: flex-end;
+}
+
+.timeline-lock {
+  overflow: hidden;
+}
+
+.timeline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+}
+
+.timeline-overlay.is-open {
+  display: block;
+}
+
+.timeline-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 75% 10%, rgba(37, 99, 235, 0.32), transparent 35%),
+    rgba(2, 6, 23, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.timeline-viewer {
+  position: absolute;
+  inset: clamp(1rem, 2vw, 2rem);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 0.96)),
+    #020617;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+.timeline-viewer-header,
+.timeline-viewer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1.1rem, 2.5vw, 2rem);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.timeline-viewer-footer {
+  border-bottom: 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.timeline-viewer-header h2 {
+  margin: 0.2rem 0 0;
+  font-size: clamp(1.25rem, 2.4vw, 2.2rem);
+  letter-spacing: -0.04em;
+}
+
+.timeline-close {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.34);
+  background: rgba(15, 23, 42, 0.72);
+  color: #e0f2fe;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.timeline-stage {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.timeline-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(520px, 1.15fr) minmax(420px, 0.85fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 4rem) clamp(4.5rem, 7vw, 7rem);
+  opacity: 0;
+  transform: translateX(24px) scale(0.99);
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.timeline-slide.is-active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+
+.timeline-media {
+  height: min(64vh, 720px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 30px;
+  overflow: hidden;
+  background: rgba(2, 6, 23, 0.72);
+}
+
+.timeline-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.timeline-media.is-wide img,
+.timeline-media img[src*="joseph-perspective-transition"] {
+  object-fit: cover;
+}
+
+.timeline-copy-panel {
+  max-width: 640px;
+}
+
+.timeline-date {
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 900;
+  font-size: 0.78rem;
+}
+
+.timeline-copy-panel h3 {
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.075em;
+  margin: 0 0 1.3rem;
+  color: #f8fafc;
+}
+
+.timeline-copy-panel p {
+  color: #cbd5e1;
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.75;
+}
+
+.timeline-arrow {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 72px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  background: rgba(15, 23, 42, 0.76);
+  color: #e0f2fe;
+  font-size: 3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.timeline-prev {
+  left: 1rem;
+}
+
+.timeline-next {
+  right: 1rem;
+}
+
+.timeline-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.timeline-dots button {
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  background: rgba(15, 23, 42, 0.68);
+  color: #cbd5e1;
+  border-radius: 999px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.timeline-dots button.is-active {
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: #020617;
+  border-color: transparent;
+}
+
+.timeline-hint {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.system-card-stack {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.system-card-stack img {
+  min-height: 0;
+}
+
+.system-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+  padding: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.system-mini-grid span {
+  display: grid;
+  place-items: center;
+  min-height: 64px;
+  border-radius: 16px;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  color: #e0f2fe;
+  font-weight: 900;
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 1050px) {
+  .about-page-v3 .about-shell {
+    max-width: min(100% - 32px, 860px);
+  }
+
+  .about-landing,
+  .resume-feature-card {
+    grid-template-columns: 1fr;
+  }
+
+  .about-landing-image,
+  .about-landing-image img {
+    height: auto;
+    min-height: 0;
+  }
+
+  .resume-actions {
+    justify-content: flex-start;
+  }
+
+  .timeline-viewer {
+    inset: 0.65rem;
+    border-radius: 24px;
+  }
+
+  .timeline-slide {
+    grid-template-columns: 1fr;
+    padding: 1.25rem 1.25rem 2rem;
+    overflow-y: auto;
+  }
+
+  .timeline-media {
+    height: auto;
+    max-height: none;
+  }
+
+  .timeline-media img {
+    height: auto;
+    max-height: 46vh;
+  }
+
+  .timeline-arrow {
+    top: auto;
+    bottom: 5.8rem;
+    height: 52px;
+    width: 44px;
+    font-size: 2.2rem;
+  }
+
+  .timeline-viewer-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .system-mini-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ABOUT_HERO_SCALE_AND_VIEWPORT_FIX_V4 */
+
+/*
+  The About page should behave like a cinematic landing surface,
+  not like the narrower document/evidence pages.
+*/
+
+body.about-page-v3 {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body.about-page-v3 .site-shell,
+body.about-page-v3 .about-shell {
+  width: min(100vw - 96px, 1880px);
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Keep nav full-width inside the About shell. */
+body.about-page-v3 .nav {
+  width: 100%;
+}
+
+/* Make the landing fill the first screen and stop the small-centered-card effect. */
+body.about-page-v3 .about-landing {
+  min-height: calc(100vh - 88px);
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(520px, 0.9fr) minmax(680px, 1.15fr);
+  gap: clamp(4rem, 8vw, 10rem);
+  align-items: center;
+  justify-content: center;
+  padding: clamp(3rem, 7vh, 7rem) 0 clamp(5rem, 9vh, 8rem);
+}
+
+/* Let the text be large and readable on desktop. */
+body.about-page-v3 .about-landing-copy {
+  max-width: 760px;
+  justify-self: end;
+}
+
+body.about-page-v3 .about-landing h1 {
+  font-size: clamp(6rem, 10vw, 13rem);
+  line-height: 0.78;
+  letter-spacing: -0.09em;
+  margin: 0.35rem 0 1.25rem;
+}
+
+body.about-page-v3 .about-landing .about-title {
+  font-size: clamp(0.78rem, 0.85vw, 1rem);
+  letter-spacing: 0.075em;
+  max-width: 46rem;
+}
+
+body.about-page-v3 .about-landing .about-thesis {
+  font-size: clamp(2.1rem, 3.8vw, 4.5rem);
+  line-height: 0.92;
+  max-width: 11.5em;
+  margin-bottom: 1.4rem;
+}
+
+body.about-page-v3 .about-landing .lede {
+  font-size: clamp(1.05rem, 1.15vw, 1.32rem);
+  line-height: 1.68;
+  max-width: 62ch;
+}
+
+/* Make the hero image the dominant visual mass. */
+body.about-page-v3 .about-landing-image {
+  justify-self: stretch;
+  width: 100%;
+  height: min(82vh, 980px);
+  min-height: 680px;
+  border-radius: 38px;
+}
+
+body.about-page-v3 .about-landing-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Keep buttons from compressing awkwardly. */
+body.about-page-v3 .hero-actions {
+  gap: 0.9rem;
+  margin-top: 1.65rem;
+}
+
+body.about-page-v3 .hero-actions .button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Push resume below the fold so the landing has authority. */
+body.about-page-v3 .resume-feature-card {
+  margin-top: clamp(3rem, 8vh, 7rem);
+}
+
+/* Large monitor tuning. */
+@media (min-width: 1800px) {
+  body.about-page-v3 .site-shell,
+  body.about-page-v3 .about-shell {
+    width: min(100vw - 140px, 2040px);
+  }
+
+  body.about-page-v3 .about-landing {
+    grid-template-columns: minmax(620px, 0.9fr) minmax(780px, 1.1fr);
+  }
+}
+
+/* Laptop / smaller desktop safety. */
+@media (max-width: 1250px) {
+  body.about-page-v3 .site-shell,
+  body.about-page-v3 .about-shell {
+    width: min(100vw - 48px, 1180px);
+  }
+
+  body.about-page-v3 .about-landing {
+    grid-template-columns: minmax(420px, 0.95fr) minmax(420px, 1.05fr);
+    gap: clamp(2rem, 5vw, 5rem);
+  }
+
+  body.about-page-v3 .about-landing h1 {
+    font-size: clamp(4.5rem, 9vw, 8rem);
+  }
+
+  body.about-page-v3 .about-landing .about-thesis {
+    font-size: clamp(1.7rem, 3.5vw, 3rem);
+  }
+
+  body.about-page-v3 .about-landing-image {
+    min-height: 560px;
+  }
+}
+
+/* Mobile stacks normally. */
+@media (max-width: 900px) {
+  body.about-page-v3 .site-shell,
+  body.about-page-v3 .about-shell {
+    width: min(100vw - 32px, 760px);
+  }
+
+  body.about-page-v3 .about-landing {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 2rem;
+  }
+
+  body.about-page-v3 .about-landing-copy {
+    justify-self: stretch;
+  }
+
+  body.about-page-v3 .about-landing-image {
+    height: auto;
+    min-height: 0;
+  }
+
+  body.about-page-v3 .about-landing-image img {
+    height: auto;
+  }
+}
+
+/* ABOUT_HERO_AND_TIMELINE_SIZING_FIX_V5 */
+
+/*
+  Goal:
+  - Hero text and hero image live on opposite sides.
+  - Hero image shows full length, not cropped.
+  - Timeline overlay remains immersive, but slide content is bounded and calmer.
+*/
+
+/* --- HERO: opposite sides, no collision --- */
+
+body.about-page-v3 .about-shell {
+  width: min(100vw - 96px, 1920px);
+  max-width: none;
+}
+
+body.about-page-v3 .about-landing {
+  min-height: calc(100vh - 90px);
+  display: grid;
+  grid-template-columns: minmax(520px, 680px) minmax(560px, 760px);
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(6rem, 12vw, 16rem);
+  padding-top: clamp(3rem, 7vh, 7rem);
+  padding-bottom: clamp(5rem, 9vh, 8rem);
+}
+
+body.about-page-v3 .about-landing-copy {
+  justify-self: start;
+  max-width: 680px;
+  z-index: 2;
+}
+
+body.about-page-v3 .about-landing h1 {
+  font-size: clamp(5.6rem, 8.6vw, 11rem);
+  line-height: 0.8;
+  letter-spacing: -0.09em;
+  max-width: 7.4em;
+}
+
+/* Keep the thesis powerful but prevent text block from spilling toward the image. */
+body.about-page-v3 .about-landing .about-thesis {
+  font-size: clamp(2rem, 3.2vw, 3.7rem);
+  line-height: 0.94;
+  max-width: 11.2em;
+}
+
+body.about-page-v3 .about-landing .lede {
+  max-width: 54ch;
+}
+
+/* The image frame should be tall and full-length, not a cropped landscape block. */
+body.about-page-v3 .about-landing-image {
+  justify-self: end;
+  width: min(42vw, 760px);
+  height: min(84vh, 940px);
+  min-height: 680px;
+  border-radius: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(56, 189, 248, 0.14), transparent 34%),
+    rgba(15, 23, 42, 0.78);
+}
+
+body.about-page-v3 .about-landing-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  background: transparent;
+}
+
+/* --- RESUME: stop making the browser PDF viewer the primary visual experience --- */
+
+body.about-page-v3 .resume-feature-card {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- TIMELINE: immersive shell, bounded slide content --- */
+
+body.about-page-v3 .timeline-viewer {
+  inset: clamp(1.25rem, 2.4vw, 2.5rem);
+  max-width: 1680px;
+  max-height: 930px;
+  margin: auto;
+}
+
+body.about-page-v3 .timeline-stage {
+  display: grid;
+  place-items: center;
+}
+
+body.about-page-v3 .timeline-slide {
+  position: absolute;
+  inset: auto;
+  width: min(100% - 7rem, 1420px);
+  height: min(100% - 4rem, 680px);
+  display: grid;
+  grid-template-columns: minmax(520px, 0.98fr) minmax(420px, 0.82fr);
+  gap: clamp(2rem, 4vw, 5rem);
+  align-items: center;
+  padding: 0;
+}
+
+/* Media frame should be contained, not stretched across the entire overlay. */
+body.about-page-v3 .timeline-media {
+  height: min(58vh, 620px);
+  max-height: 620px;
+  border-radius: 24px;
+}
+
+/* Default: show full image without fighting the frame. */
+body.about-page-v3 .timeline-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Wide-angle photo gets a cinematic crop, but bounded. */
+body.about-page-v3 .timeline-media.is-wide,
+body.about-page-v3 .timeline-media:has(img[src*="joseph-perspective-transition"]) {
+  height: min(52vh, 540px);
+}
+
+body.about-page-v3 .timeline-media.is-wide img,
+body.about-page-v3 .timeline-media img[src*="joseph-perspective-transition"] {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Portrait/service images should not float tiny inside massive boxes. */
+body.about-page-v3 .timeline-media img[src*="joseph-early-service"],
+body.about-page-v3 .timeline-media img[src*="joseph-leadership-milestone"],
+body.about-page-v3 .timeline-media img[src*="joseph-sitting-laughing"] {
+  object-fit: contain;
+  object-position: center center;
+}
+
+/* Human-centered photo can be a little warmer/cropped, but not huge. */
+body.about-page-v3 .timeline-media img[src*="joseph-sitting-laughing"] {
+  object-fit: cover;
+}
+
+/* Copy panel should feel like a deliberate reading block. */
+body.about-page-v3 .timeline-copy-panel {
+  max-width: 560px;
+}
+
+body.about-page-v3 .timeline-copy-panel h3 {
+  font-size: clamp(3.2rem, 5vw, 5.7rem);
+  line-height: 0.86;
+}
+
+body.about-page-v3 .timeline-copy-panel p {
+  max-width: 58ch;
+}
+
+/* Applied Data Science cards: replace fighting photo with clean system proof cards. */
+body.about-page-v3 .system-card-media {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(56, 189, 248, 0.13), transparent 32%),
+    rgba(2, 6, 23, 0.68);
+}
+
+body.about-page-v3 .timeline-system-cards {
+  width: min(100%, 820px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: clamp(1rem, 2.5vw, 2rem);
+}
+
+body.about-page-v3 .timeline-system-card {
+  padding: clamp(1rem, 2vw, 1.4rem);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 20px;
+  background: rgba(14, 165, 233, 0.075);
+}
+
+body.about-page-v3 .timeline-system-card span {
+  display: block;
+  color: #38bdf8;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  font-weight: 900;
+  margin-bottom: 0.45rem;
+}
+
+body.about-page-v3 .timeline-system-card strong {
+  display: block;
+  color: #f8fafc;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1;
+  margin-bottom: 0.45rem;
+}
+
+body.about-page-v3 .timeline-system-card p {
+  color: #94a3b8;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* Dots and arrows remain accessible but less visually dominant. */
+body.about-page-v3 .timeline-arrow {
+  opacity: 0.78;
+}
+
+body.about-page-v3 .timeline-arrow:hover {
+  opacity: 1;
+}
+
+/* Large monitor tuning. */
+@media (min-width: 1800px) {
+  body.about-page-v3 .about-landing {
+    grid-template-columns: minmax(620px, 760px) minmax(660px, 820px);
+  }
+}
+
+/* Desktop/laptop safety. */
+@media (max-width: 1300px) {
+  body.about-page-v3 .about-shell {
+    width: min(100vw - 48px, 1220px);
+  }
+
+  body.about-page-v3 .about-landing {
+    grid-template-columns: minmax(420px, 0.9fr) minmax(420px, 0.95fr);
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+
+  body.about-page-v3 .about-landing-image {
+    width: 100%;
+    min-height: 560px;
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: min(100% - 4rem, 1120px);
+    grid-template-columns: minmax(420px, 1fr) minmax(360px, 0.9fr);
+  }
+}
+
+/* Mobile safety. */
+@media (max-width: 900px) {
+  body.about-page-v3 .about-shell {
+    width: min(100vw - 32px, 760px);
+  }
+
+  body.about-page-v3 .about-landing {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 2rem;
+  }
+
+  body.about-page-v3 .about-landing-image {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  body.about-page-v3 .about-landing-image img {
+    height: auto;
+  }
+
+  body.about-page-v3 .timeline-viewer {
+    inset: 0.65rem;
+    max-width: none;
+    max-height: none;
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: calc(100% - 2rem);
+    height: auto;
+    max-height: calc(100% - 8rem);
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+
+  body.about-page-v3 .timeline-media {
+    height: auto;
+    max-height: none;
+  }
+
+  body.about-page-v3 .timeline-media img {
+    height: auto;
+    max-height: 44vh;
+  }
+}
+
+/* ABOUT_TIMELINE_FIT_IMAGE_AND_GROW_PATCH_V6 */
+
+/*
+  Goal:
+  - Keep the carousel direction.
+  - Make the overlay just a little larger.
+  - Make media containers wrap the image instead of fighting it.
+  - Avoid returning to the giant over-wide timeline.
+*/
+
+body.about-page-v3 .timeline-viewer {
+  max-width: 1780px;
+  max-height: 980px;
+  width: min(calc(100vw - 72px), 1780px);
+  height: min(calc(100vh - 72px), 980px);
+}
+
+/* Slightly larger slide, still bounded. */
+body.about-page-v3 .timeline-slide {
+  width: min(100% - 5.5rem, 1540px);
+  height: min(100% - 3.5rem, 740px);
+  grid-template-columns: minmax(560px, 0.98fr) minmax(430px, 0.78fr);
+  gap: clamp(2.5rem, 4.5vw, 5.5rem);
+}
+
+/* Media block should fit its image/content, not impose a huge empty frame. */
+body.about-page-v3 .timeline-media {
+  width: fit-content;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  justify-self: center;
+  align-self: center;
+  display: inline-flex;
+  padding: 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Default image behavior: preserve full image, let the container fit it. */
+body.about-page-v3 .timeline-media img {
+  width: auto;
+  height: auto;
+  max-width: min(100%, 760px);
+  max-height: min(64vh, 650px);
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* Doha SVG can be a wider designed card. */
+body.about-page-v3 .timeline-media img[src*="doha-qatar-origin-map"] {
+  width: min(100%, 760px);
+  max-width: 760px;
+  max-height: min(58vh, 600px);
+}
+
+/* Portrait images: let the card hug the portrait instead of leaving dead side space. */
+body.about-page-v3 .timeline-media img[src*="joseph-early-service"],
+body.about-page-v3 .timeline-media img[src*="joseph-leadership-milestone"] {
+  max-width: min(100%, 560px);
+  max-height: min(64vh, 650px);
+}
+
+/* Wide-angle image: cinematic but contained. */
+body.about-page-v3 .timeline-media.is-wide,
+body.about-page-v3 .timeline-media:has(img[src*="joseph-perspective-transition"]) {
+  width: min(100%, 860px);
+}
+
+body.about-page-v3 .timeline-media.is-wide img,
+body.about-page-v3 .timeline-media img[src*="joseph-perspective-transition"] {
+  width: 100%;
+  max-width: 860px;
+  max-height: min(54vh, 560px);
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Applied Data cards: let the card block breathe, but stay inside the frame. */
+body.about-page-v3 .system-card-media {
+  width: min(100%, 760px);
+}
+
+body.about-page-v3 .timeline-system-cards {
+  width: min(100%, 760px);
+  padding: clamp(1.1rem, 2vw, 1.8rem);
+}
+
+/* Human-centered image: larger, warm, but still fitted to the actual photo. */
+body.about-page-v3 .timeline-media img[src*="joseph-sitting-laughing"] {
+  width: min(100%, 760px);
+  max-width: 760px;
+  max-height: min(58vh, 600px);
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Copy can grow just a touch with the slightly larger carousel. */
+body.about-page-v3 .timeline-copy-panel {
+  max-width: 600px;
+}
+
+body.about-page-v3 .timeline-copy-panel h3 {
+  font-size: clamp(3.4rem, 5.35vw, 6.2rem);
+}
+
+body.about-page-v3 .timeline-copy-panel p {
+  font-size: clamp(1rem, 1.22vw, 1.18rem);
+}
+
+/* Keep arrows aligned with the larger but still bounded stage. */
+body.about-page-v3 .timeline-prev {
+  left: clamp(0.75rem, 1.4vw, 1.4rem);
+}
+
+body.about-page-v3 .timeline-next {
+  right: clamp(0.75rem, 1.4vw, 1.4rem);
+}
+
+/* Laptop safety. */
+@media (max-width: 1300px) {
+  body.about-page-v3 .timeline-viewer {
+    width: min(calc(100vw - 40px), 1220px);
+    height: min(calc(100vh - 40px), 860px);
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: min(100% - 4rem, 1120px);
+    height: min(100% - 3rem, 680px);
+    grid-template-columns: minmax(420px, 1fr) minmax(360px, 0.9fr);
+  }
+
+  body.about-page-v3 .timeline-media img {
+    max-height: min(58vh, 560px);
+  }
+}
+
+/* Mobile remains stacked. */
+@media (max-width: 900px) {
+  body.about-page-v3 .timeline-viewer {
+    width: auto;
+    height: auto;
+    inset: 0.65rem;
+    max-width: none;
+    max-height: none;
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: calc(100% - 2rem);
+    height: auto;
+    max-height: calc(100% - 8rem);
+    grid-template-columns: 1fr;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .system-card-media {
+    width: 100%;
+  }
+
+  body.about-page-v3 .timeline-media img,
+  body.about-page-v3 .timeline-media img[src*="doha-qatar-origin-map"],
+  body.about-page-v3 .timeline-media img[src*="joseph-early-service"],
+  body.about-page-v3 .timeline-media img[src*="joseph-leadership-milestone"],
+  body.about-page-v3 .timeline-media img[src*="joseph-sitting-laughing"] {
+    width: 100%;
+    max-width: 100%;
+    max-height: 44vh;
+  }
+}
+
+/* ABOUT_TIMELINE_CONSISTENT_APERTURE_PATCH_V7 */
+
+/*
+  Fixes the fit-content problem:
+  - Every timeline slide gets a stable visual aperture.
+  - Images stop randomly changing size from slide to slide.
+  - Carousel grows slightly, but remains bounded.
+*/
+
+body.about-page-v3 .timeline-viewer {
+  width: min(calc(100vw - 64px), 1360px);
+  height: min(calc(100vh - 72px), 780px);
+  max-width: 1360px;
+  max-height: 780px;
+  margin: auto;
+}
+
+/* Center the active slide inside the viewer. */
+body.about-page-v3 .timeline-stage {
+  display: grid;
+  place-items: center;
+}
+
+/* Stable slide grid. */
+body.about-page-v3 .timeline-slide {
+  width: min(calc(100% - 96px), 1120px);
+  height: min(calc(100% - 72px), 560px);
+  grid-template-columns: 620px 1fr;
+  gap: 3.75rem;
+  align-items: center;
+  padding: 0;
+}
+
+/* One default visual aperture. */
+body.about-page-v3 .timeline-media {
+  width: 620px;
+  height: 390px;
+  max-width: 620px;
+  max-height: 390px;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(56, 189, 248, 0.10), transparent 35%),
+    rgba(2, 6, 23, 0.72);
+}
+
+/* Default image fills the stable aperture. */
+body.about-page-v3 .timeline-media img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  display: block;
+  object-position: center center;
+}
+
+/* Slide 0 — Doha map: fill the full landscape card. */
+body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media img {
+  object-fit: cover;
+}
+
+/* Slides 1 and 2 — service/leadership portraits: consistent, not tiny. */
+body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media,
+body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media {
+  width: 520px;
+  height: 420px;
+  max-width: 520px;
+  max-height: 420px;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media img,
+body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media img {
+  object-fit: contain;
+  background: rgba(2, 6, 23, 0.78);
+}
+
+/* Slide 3 — wide-angle: cinematic landscape. */
+body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media {
+  width: 700px;
+  height: 360px;
+  max-width: 700px;
+  max-height: 360px;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Slide 4 — applied data science cards: same aperture, no photo fighting it. */
+body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-media {
+  width: 620px;
+  height: 390px;
+  max-width: 620px;
+  max-height: 390px;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-system-cards {
+  width: 100%;
+  height: 100%;
+  padding: 1.15rem;
+  display: grid;
+  align-content: center;
+  gap: 0.85rem;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-system-card {
+  padding: 0.95rem 1rem;
+}
+
+/* Slide 5 — people/human-centered: warm landscape, same visual weight. */
+body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media {
+  width: 620px;
+  height: 390px;
+  max-width: 620px;
+  max-height: 390px;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Copy panel stabilized. */
+body.about-page-v3 .timeline-copy-panel {
+  max-width: 460px;
+}
+
+body.about-page-v3 .timeline-copy-panel h3 {
+  font-size: clamp(3.1rem, 4.6vw, 5.35rem);
+  line-height: 0.88;
+}
+
+body.about-page-v3 .timeline-copy-panel p {
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+/* Keep controls readable but not dominant. */
+body.about-page-v3 .timeline-arrow {
+  width: 42px;
+  height: 58px;
+  font-size: 2.4rem;
+}
+
+/* Laptop safety. */
+@media (max-width: 1300px) {
+  body.about-page-v3 .timeline-viewer {
+    width: min(calc(100vw - 40px), 1180px);
+    height: min(calc(100vh - 40px), 740px);
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: min(calc(100% - 72px), 1040px);
+    height: min(calc(100% - 64px), 540px);
+    grid-template-columns: 560px 1fr;
+    gap: 3rem;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media {
+    width: 560px;
+    height: 350px;
+    max-width: 560px;
+    max-height: 350px;
+  }
+
+  body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media {
+    width: 460px;
+    height: 360px;
+    max-width: 460px;
+    max-height: 360px;
+  }
+
+  body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media {
+    width: 600px;
+    height: 320px;
+    max-width: 600px;
+    max-height: 320px;
+  }
+}
+
+/* Mobile safety. */
+@media (max-width: 900px) {
+  body.about-page-v3 .timeline-viewer {
+    inset: 0.65rem;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: calc(100% - 2rem);
+    height: auto;
+    max-height: calc(100% - 8rem);
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    overflow-y: auto;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: none;
+  }
+
+  body.about-page-v3 .timeline-media img {
+    height: auto;
+    max-height: 44vh;
+    object-fit: contain;
+  }
+
+  body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-system-cards {
+    height: auto;
+  }
+}
+
+/* ABOUT_TIMELINE_HARDCODED_IMAGE_APERTURES_V8 */
+
+/*
+  Ground truth:
+  - Most timeline photos are 3:4 portrait.
+  - Stop forcing portrait photos into landscape frames.
+  - Use one stable portrait aperture for photo slides.
+  - Use a landscape aperture only for the Doha map and data cards.
+*/
+
+body.about-page-v3 .timeline-viewer {
+  width: min(calc(100vw - 72px), 1440px);
+  height: min(calc(100vh - 72px), 820px);
+  max-width: 1440px;
+  max-height: 820px;
+  margin: auto;
+}
+
+body.about-page-v3 .timeline-slide {
+  width: min(calc(100% - 96px), 1180px);
+  height: min(calc(100% - 72px), 640px);
+  grid-template-columns: 520px 1fr;
+  gap: 4.25rem;
+  align-items: center;
+}
+
+/* Default media aperture: portrait-native 3:4 frame. */
+body.about-page-v3 .timeline-media {
+  width: 450px;
+  height: 600px;
+  max-width: 450px;
+  max-height: 600px;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(2, 6, 23, 0.74);
+}
+
+body.about-page-v3 .timeline-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Slide 0: Doha map is landscape, not portrait. */
+body.about-page-v3 .timeline-slide[data-slide="0"] {
+  grid-template-columns: 640px 1fr;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media {
+  width: 640px;
+  height: 440px;
+  max-width: 640px;
+  max-height: 440px;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media img {
+  object-fit: cover;
+}
+
+/* Slide 1: Uniform_Coin is 3:4 portrait. */
+body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media {
+  width: 420px;
+  height: 560px;
+}
+
+/* Slide 2: Awards_Graduation is 3:4 portrait. */
+body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media {
+  width: 420px;
+  height: 560px;
+}
+
+/* Slide 3: Plane_Scenery is actually 3:4 portrait. Keep it portrait so the full composition makes sense. */
+body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media {
+  width: 450px;
+  height: 600px;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Slide 4: Data cards are landscape/system surface. */
+body.about-page-v3 .timeline-slide[data-slide="4"] {
+  grid-template-columns: 640px 1fr;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-media {
+  width: 640px;
+  height: 440px;
+  max-width: 640px;
+  max-height: 440px;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-system-cards {
+  width: 100%;
+  height: 100%;
+  padding: 1.35rem;
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+}
+
+/* Slide 5: Sitting Laughing is 3:4 portrait, but crop slightly wider inside the portrait aperture. */
+body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media {
+  width: 450px;
+  height: 600px;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Copy block tuned to the fixed apertures. */
+body.about-page-v3 .timeline-copy-panel {
+  max-width: 520px;
+}
+
+body.about-page-v3 .timeline-copy-panel h3 {
+  font-size: clamp(3.4rem, 5vw, 5.9rem);
+  line-height: 0.86;
+}
+
+body.about-page-v3 .timeline-copy-panel p {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 54ch;
+}
+
+/* Keep footer dots from crowding the visual stage. */
+body.about-page-v3 .timeline-viewer-footer {
+  min-height: 64px;
+}
+
+/* Laptop safety. */
+@media (max-width: 1300px) {
+  body.about-page-v3 .timeline-viewer {
+    width: min(calc(100vw - 44px), 1200px);
+    height: min(calc(100vh - 44px), 760px);
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: min(calc(100% - 72px), 1040px);
+    height: min(calc(100% - 64px), 580px);
+    grid-template-columns: 420px 1fr;
+    gap: 3rem;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media {
+    width: 390px;
+    height: 520px;
+  }
+
+  body.about-page-v3 .timeline-slide[data-slide="0"],
+  body.about-page-v3 .timeline-slide[data-slide="4"] {
+    grid-template-columns: 520px 1fr;
+  }
+
+  body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-media {
+    width: 520px;
+    height: 360px;
+  }
+}
+
+/* Mobile safety. */
+@media (max-width: 900px) {
+  body.about-page-v3 .timeline-viewer {
+    inset: 0.65rem;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+
+  body.about-page-v3 .timeline-slide,
+  body.about-page-v3 .timeline-slide[data-slide="0"],
+  body.about-page-v3 .timeline-slide[data-slide="4"] {
+    width: calc(100% - 2rem);
+    height: auto;
+    max-height: calc(100% - 8rem);
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    overflow-y: auto;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: none;
+  }
+
+  body.about-page-v3 .timeline-media img {
+    height: auto;
+    max-height: 48vh;
+    object-fit: contain;
+  }
+}
+
+/* ABOUT_TIMELINE_SNIP_SIZE_MODAL_PATCH_V9 */
+
+/*
+  User-provided visual target:
+  - Carousel modal should fill the screenshot/snipped region.
+  - Target region is approximately 1557 x 1024.
+  - Keep modal cinematic, bounded, and consistent.
+*/
+
+body.about-page-v3 .timeline-viewer {
+  position: absolute;
+  inset: auto !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  width: min(1557px, calc(100vw - 96px)) !important;
+  height: min(1024px, calc(100vh - 96px)) !important;
+  max-width: 1557px !important;
+  max-height: 1024px !important;
+
+  display: grid !important;
+  grid-template-rows: 112px minmax(0, 1fr) 84px !important;
+
+  border-radius: 34px !important;
+}
+
+/* Header should feel like the top band in your snip. */
+body.about-page-v3 .timeline-viewer-header {
+  min-height: 112px;
+  padding: 1.45rem 2rem !important;
+}
+
+body.about-page-v3 .timeline-viewer-header h2 {
+  font-size: clamp(1.65rem, 2vw, 2.35rem) !important;
+}
+
+/* Footer stays clean and low. */
+body.about-page-v3 .timeline-viewer-footer {
+  min-height: 84px;
+  padding: 1rem 2rem !important;
+}
+
+/* Stage uses the real available middle area. */
+body.about-page-v3 .timeline-stage {
+  position: relative !important;
+  display: grid !important;
+  place-items: center !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Main slide fills the middle region, not the entire browser. */
+body.about-page-v3 .timeline-slide {
+  position: absolute !important;
+  inset: auto !important;
+
+  width: min(100% - 160px, 1280px) !important;
+  height: min(100% - 72px, 700px) !important;
+
+  display: grid !important;
+  grid-template-columns: 560px minmax(420px, 1fr) !important;
+  gap: 5.25rem !important;
+  align-items: center !important;
+
+  padding: 0 !important;
+}
+
+/* Default photo aperture: 3:4 portrait-native and large. */
+body.about-page-v3 .timeline-media {
+  width: 500px !important;
+  height: 667px !important;
+  max-width: 500px !important;
+  max-height: 667px !important;
+
+  justify-self: center !important;
+  align-self: center !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  background: rgba(2, 6, 23, 0.78) !important;
+}
+
+/* Default photo behavior: fill the aperture cleanly. */
+body.about-page-v3 .timeline-media img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Doha slide: landscape design card. */
+body.about-page-v3 .timeline-slide[data-slide="0"] {
+  grid-template-columns: 720px minmax(420px, 1fr) !important;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media {
+  width: 720px !important;
+  height: 500px !important;
+  max-width: 720px !important;
+  max-height: 500px !important;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media img {
+  object-fit: cover !important;
+}
+
+/* Service and leadership: use portrait aperture, but preserve the whole photo better. */
+body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media,
+body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media {
+  width: 470px !important;
+  height: 627px !important;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media img,
+body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media img {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Plane scenery is a portrait source image; keep it portrait and large. */
+body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media {
+  width: 500px !important;
+  height: 667px !important;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media img {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Data slide: landscape system card. */
+body.about-page-v3 .timeline-slide[data-slide="4"] {
+  grid-template-columns: 720px minmax(420px, 1fr) !important;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-media {
+  width: 720px !important;
+  height: 500px !important;
+  max-width: 720px !important;
+  max-height: 500px !important;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-system-cards {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 1.6rem !important;
+  display: grid !important;
+  align-content: center !important;
+  gap: 1.15rem !important;
+}
+
+/* People slide: portrait source, large and clean. */
+body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media {
+  width: 500px !important;
+  height: 667px !important;
+}
+
+body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media img {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Copy panel scaled to the larger snip-sized modal. */
+body.about-page-v3 .timeline-copy-panel {
+  max-width: 560px !important;
+}
+
+body.about-page-v3 .timeline-copy-panel h3 {
+  font-size: clamp(4rem, 5.4vw, 6.6rem) !important;
+  line-height: 0.84 !important;
+  letter-spacing: -0.075em !important;
+}
+
+body.about-page-v3 .timeline-copy-panel p {
+  font-size: clamp(1.05rem, 1.18vw, 1.22rem) !important;
+  line-height: 1.65 !important;
+  max-width: 54ch !important;
+}
+
+/* Arrows align with larger modal body. */
+body.about-page-v3 .timeline-arrow {
+  width: 54px !important;
+  height: 72px !important;
+  font-size: 3rem !important;
+}
+
+body.about-page-v3 .timeline-prev {
+  left: 2rem !important;
+}
+
+body.about-page-v3 .timeline-next {
+  right: 2rem !important;
+}
+
+/* Dots readable at larger modal size. */
+body.about-page-v3 .timeline-dots button {
+  padding: 0.6rem 0.9rem !important;
+  font-size: 0.88rem !important;
+}
+
+/* Laptop safety: scale the same geometry down proportionally. */
+@media (max-width: 1500px) {
+  body.about-page-v3 .timeline-viewer {
+    width: min(1360px, calc(100vw - 64px)) !important;
+    height: min(880px, calc(100vh - 64px)) !important;
+    grid-template-rows: 96px minmax(0, 1fr) 76px !important;
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: min(100% - 120px, 1120px) !important;
+    height: min(100% - 56px, 610px) !important;
+    grid-template-columns: 470px minmax(360px, 1fr) !important;
+    gap: 4rem !important;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media {
+    width: 430px !important;
+    height: 573px !important;
+  }
+
+  body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media {
+    width: 405px !important;
+    height: 540px !important;
+  }
+
+  body.about-page-v3 .timeline-slide[data-slide="0"],
+  body.about-page-v3 .timeline-slide[data-slide="4"] {
+    grid-template-columns: 600px minmax(360px, 1fr) !important;
+  }
+
+  body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-media {
+    width: 600px !important;
+    height: 416px !important;
+  }
+
+  body.about-page-v3 .timeline-copy-panel h3 {
+    font-size: clamp(3.4rem, 5vw, 5.7rem) !important;
+  }
+}
+
+/* Mobile safety. */
+@media (max-width: 900px) {
+  body.about-page-v3 .timeline-viewer {
+    inset: 0.65rem !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    grid-template-rows: auto minmax(0, 1fr) auto !important;
+  }
+
+  body.about-page-v3 .timeline-slide,
+  body.about-page-v3 .timeline-slide[data-slide="0"],
+  body.about-page-v3 .timeline-slide[data-slide="4"] {
+    width: calc(100% - 2rem) !important;
+    height: auto !important;
+    max-height: calc(100% - 8rem) !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    overflow-y: auto !important;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="0"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="1"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="2"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="3"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="4"] .timeline-media,
+  body.about-page-v3 .timeline-slide[data-slide="5"] .timeline-media {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: none !important;
+  }
+
+  body.about-page-v3 .timeline-media img {
+    height: auto !important;
+    max-height: 48vh !important;
+    object-fit: contain !important;
+  }
+}/* Mobile/tablet: stack cleanly, no overlap. */
+@media (max-width: 980px) {}
+
+/* ABOUT_FINAL_HERO_SYSTEM_V9
+   Main About landing only.
+   Final cleanup after failed override stack.
+   Goal: large magazine-cover hero with readable left identity block and big glam portrait.
+   Timeline carousel untouched.
+   CSS only. No image generation.
+*/
+
+body.about-page-v3 .about-shell {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body.about-page-v3 main > .about-landing {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) clamp(980px, 42vw, 1500px) !important;
+  align-items: center !important;
+  gap: clamp(96px, 3.5vw, 140px) !important;
+
+  width: min(92vw, 3360px) !important;
+  max-width: none !important;
+  min-height: calc(100vh - 110px) !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding:
+    clamp(64px, 5vh, 110px)
+    0
+    clamp(72px, 6vh, 120px)
+    0 !important;
+
+  overflow: visible !important;
+}
+
+/* LEFT SIDE: cover-style identity block */
+body.about-page-v3 main > .about-landing .about-landing-copy {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: auto !important;
+
+  justify-self: start !important;
+  align-self: center !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+
+  gap: clamp(14px, 1vh, 24px) !important;
+  z-index: 2 !important;
+}
+
+body.about-page-v3 main > .about-landing .kicker {
+  margin: 0 0 clamp(6px, 0.6vh, 14px) !important;
+  font-size: clamp(0.95rem, 0.85vw, 1.25rem) !important;
+  letter-spacing: 0.34em !important;
+  text-transform: uppercase !important;
+  color: rgba(125, 211, 252, 0.88) !important;
+}
+
+body.about-page-v3 main > .about-landing .about-identity-name {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: clamp(7rem, 5.8vw, 14rem) !important;
+  line-height: 0.96 !important;
+  letter-spacing: -0.078em !important;
+  text-transform: uppercase !important;
+
+  max-width: 12ch !important;
+}
+
+body.about-page-v3 main > .about-landing .about-identity-name .name-line {
+  display: block !important;
+}
+
+body.about-page-v3 main > .about-landing .about-identity-name .name-first {
+  color: rgba(248, 250, 252, 0.98) !important;
+  text-shadow:
+    0 0 34px rgba(255, 255, 255, 0.08),
+    0 22px 64px rgba(0, 0, 0, 0.42) !important;
+}
+
+body.about-page-v3 main > .about-landing .about-identity-name .name-last {
+  color: rgba(56, 189, 248, 0.88) !important;
+  margin-top: 0.04em !important;
+  text-shadow:
+    0 0 54px rgba(56, 189, 248, 0.24),
+    0 22px 70px rgba(0, 0, 0, 0.45) !important;
+}
+
+body.about-page-v3 main > .about-landing .about-title {
+  margin: clamp(18px, 1.4vh, 28px) 0 0 !important;
+  max-width: 92ch !important;
+
+  font-size: clamp(1rem, 0.9vw, 1.25rem) !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+
+  color: rgba(125, 211, 252, 0.74) !important;
+}
+
+body.about-page-v3 main > .about-landing .about-thesis {
+  margin: clamp(18px, 1.3vh, 28px) 0 0 !important;
+  max-width: 23ch !important;
+
+  font-size: clamp(2.4rem, 2.35vw, 5rem) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.045em !important;
+  font-weight: 600 !important;
+
+  color: rgba(248, 250, 252, 0.96) !important;
+}
+
+body.about-page-v3 main > .about-landing .lede {
+  margin: clamp(16px, 1vh, 24px) 0 0 !important;
+  max-width: 72ch !important;
+
+  font-size: clamp(1.08rem, 0.95vw, 1.35rem) !important;
+  line-height: 1.68 !important;
+
+  color: rgba(203, 213, 225, 0.88) !important;
+}
+
+body.about-page-v3 main > .about-landing .hero-actions {
+  margin-top: clamp(22px, 1.7vh, 36px) !important;
+
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+/* RIGHT SIDE: big glam portrait */
+body.about-page-v3 main > .about-landing .about-landing-image {
+  position: relative !important;
+  inset: auto !important;
+
+  width: clamp(980px, 42vw, 1500px) !important;
+  height: min(88vh, 2020px) !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+
+  justify-self: end !important;
+  align-self: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+  border-radius: 46px !important;
+  border: 1px solid rgba(125, 211, 252, 0.24) !important;
+  background: rgba(5, 10, 18, 0.82) !important;
+
+  box-shadow:
+    0 52px 150px rgba(0, 0, 0, 0.60),
+    0 0 130px rgba(56, 189, 248, 0.22) !important;
+}
+
+body.about-page-v3 main > .about-landing .about-landing-image img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+
+  opacity: 0.97 !important;
+  filter: contrast(1.1) saturate(1.12) brightness(0.96) !important;
+  transform: scale(1.025) !important;
+}
+
+body.about-page-v3 main > .about-landing .about-landing-image::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.12), transparent 30%),
+    linear-gradient(90deg, rgba(4, 8, 15, 0.22), transparent 40%),
+    linear-gradient(180deg, transparent 56%, rgba(3, 7, 14, 0.34)) !important;
+}
+
+/* Normal desktop and laptop scaling */
+@media (max-width: 1900px) {
+  body.about-page-v3 main > .about-landing {
+    grid-template-columns: minmax(0, 1fr) clamp(620px, 40vw, 820px) !important;
+    width: min(92vw, 1760px) !important;
+    gap: clamp(64px, 5vw, 100px) !important;
+  }
+
+  body.about-page-v3 main > .about-landing .about-landing-image {
+    width: clamp(620px, 40vw, 820px) !important;
+    height: min(84vh, 980px) !important;
+  }
+
+  body.about-page-v3 main > .about-landing .about-identity-name {
+    font-size: clamp(5.4rem, 7.2vw, 10.5rem) !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  body.about-page-v3 main > .about-landing {
+    grid-template-columns: minmax(0, 1fr) clamp(460px, 38vw, 620px) !important;
+    width: min(92vw, 1120px) !important;
+    gap: clamp(42px, 4vw, 64px) !important;
+  }
+
+  body.about-page-v3 main > .about-landing .about-landing-image {
+    width: clamp(460px, 38vw, 620px) !important;
+    height: min(80vh, 760px) !important;
+  }
+
+  body.about-page-v3 main > .about-landing .about-identity-name {
+    font-size: clamp(4.5rem, 7vw, 7.5rem) !important;
+  }
+}
+
+/* Mobile/tablet */
+@media (max-width: 860px) {
+  body.about-page-v3 main > .about-landing {
+    width: min(100vw - 2rem, 760px) !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    padding: 2rem 0 3rem !important;
+  }
+
+  body.about-page-v3 main > .about-landing .about-identity-name {
+    font-size: clamp(4rem, 17vw, 7rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.about-page-v3 main > .about-landing .about-landing-image {
+    width: min(100%, 680px) !important;
+    height: 760px !important;
+    justify-self: center !important;
+    border-radius: 34px !important;
+  }
+}
+
+
+/* ABOUT_NAV_ALIGNMENT_V10
+   Fixes top bar after ABOUT_FINAL_HERO_SYSTEM_V9.
+   Aligns nav with the hero container instead of the browser glass.
+   Timeline carousel untouched.
+*/
+
+body.about-page-v3 .nav {
+  width: min(92vw, 3360px) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 20px 0 !important;
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+body.about-page-v3 .brand {
+  flex: 0 0 auto !important;
+}
+
+body.about-page-v3 .nav-links {
+  flex: 0 1 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+}
+
+@media (max-width: 860px) {
+  body.about-page-v3 .nav {
+    width: min(100vw - 2rem, 760px) !important;
+  }
+}
+
+/* RESUME_READER_ABOUT_BOUND_V11
+   Clean resume route for /portfolio/reader/?doc=resume.
+   Removes ugly embedded PDF viewer experience.
+*/
+
+body.resume-reader-page {
+  min-height: 100vh;
+}
+
+body.resume-reader-page .reader-shell {
+  width: min(92vw, 1480px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.resume-reader-page .reader-toolbar {
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+body.resume-reader-page .reader-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+body.resume-reader-page .reader-frame {
+  width: 100%;
+  min-height: min(72vh, 980px);
+  height: auto;
+  margin-top: 2rem;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+
+body.resume-reader-page .reader-frame iframe,
+body.resume-reader-page .reader-frame embed,
+body.resume-reader-page .reader-frame object {
+  display: none !important;
+}
+
+body.resume-reader-page .resume-reader-card {
+  min-height: min(72vh, 980px);
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.14), transparent 34%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(2, 6, 23, 0.88));
+  box-shadow:
+    0 38px 110px rgba(0, 0, 0, 0.42),
+    0 0 90px rgba(56, 189, 248, 0.12);
+}
+
+body.resume-reader-page .resume-reader-card-inner {
+  width: min(760px, calc(100% - 4rem));
+  text-align: left;
+}
+
+body.resume-reader-page .resume-reader-card h2 {
+  margin: 0.65rem 0 1rem;
+  font-size: clamp(2.4rem, 4vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  color: rgba(248, 250, 252, 0.98);
+}
+
+body.resume-reader-page .resume-reader-card p {
+  max-width: 62ch;
+  color: rgba(203, 213, 225, 0.88);
+  font-size: clamp(1rem, 1.05vw, 1.2rem);
+  line-height: 1.65;
+}
+
+body.resume-reader-page .resume-reader-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+/* Restore About-page resume icon after final hero cleanup. */
+body.about-page-v3 .resume-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 1rem !important;
+}
+
+body.about-page-v3 .resume-icon-link {
+  width: 48px !important;
+  height: 48px !important;
+  flex: 0 0 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(148, 163, 184, 0.34) !important;
+  color: rgba(226, 232, 240, 0.78) !important;
+  background: rgba(15, 23, 42, 0.38) !important;
+  text-decoration: none !important;
+}
+
+body.about-page-v3 .resume-icon-link:hover {
+  transform: translateY(-1px) !important;
+  border-color: rgba(125, 211, 252, 0.62) !important;
+  color: rgba(248, 250, 252, 0.96) !important;
+  background: rgba(14, 165, 233, 0.12) !important;
+}
+
+body.about-page-v3 .resume-icon-link svg {
+  width: 23px !important;
+  height: 23px !important;
+}
+
+@media (max-width: 760px) {
+  body.resume-reader-page .reader-shell {
+    width: min(100vw - 2rem, 760px);
+  }
+
+  body.resume-reader-page .reader-toolbar {
+    flex-direction: column;
+  }
+
+  body.resume-reader-page .reader-actions {
+    justify-content: flex-start;
+  }
+
+  body.resume-reader-page .resume-reader-card-inner {
+    width: min(100% - 2rem, 680px);
+  }
+}
+
+/* RESUME_READER_IMAGE_PREVIEW_V12
+   Resume route shows a clean image preview instead of embedded PDF viewer chrome.
+*/
+
+body.resume-reader-image-page .reader-shell {
+  width: min(92vw, 1760px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.resume-reader-image-page .reader-toolbar {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 2rem !important;
+  padding-top: 2rem !important;
+}
+
+body.resume-reader-image-page .reader-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.75rem !important;
+  flex-wrap: wrap !important;
+}
+
+body.resume-reader-image-page .reader-frame {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 4rem !important;
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.resume-reader-image-page .reader-frame iframe,
+body.resume-reader-image-page .reader-frame embed,
+body.resume-reader-image-page .reader-frame object {
+  display: none !important;
+}
+
+body.resume-reader-image-page .resume-preview-stage {
+  width: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+body.resume-reader-image-page .resume-preview-link {
+  display: block !important;
+  width: min(980px, 100%) !important;
+  text-decoration: none !important;
+}
+
+body.resume-reader-image-page .resume-preview-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(148, 163, 184, 0.28) !important;
+  background: white !important;
+  box-shadow:
+    0 34px 100px rgba(0, 0, 0, 0.48),
+    0 0 80px rgba(56, 189, 248, 0.12) !important;
+}
+
+body.resume-reader-image-page .resume-preview-fallback {
+  padding: 3rem !important;
+}
+
+/* keep About resume icon fixed */
+body.about-page-v3 .resume-icon-link {
+  width: 48px !important;
+  height: 48px !important;
+  flex: 0 0 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.about-page-v3 .resume-icon-link svg {
+  width: 23px !important;
+  height: 23px !important;
+}
+
+
+/* ABOUT_TIMELINE_ARROW_GLOW_V13
+   Timeline carousel arrows only.
+   Visual glow pass. No carousel logic changes.
+*/
+
+body.about-page-v3 .timeline-viewer button[aria-label*="Previous"],
+body.about-page-v3 .timeline-viewer button[aria-label*="Next"],
+body.about-page-v3 .timeline-viewer button[title*="Previous"],
+body.about-page-v3 .timeline-viewer button[title*="Next"],
+body.about-page-v3 .timeline-viewer [data-timeline-prev],
+body.about-page-v3 .timeline-viewer [data-timeline-next],
+body.about-page-v3 .timeline-viewer .timeline-prev,
+body.about-page-v3 .timeline-viewer .timeline-next,
+body.about-page-v3 .timeline-viewer .timeline-arrow,
+body.about-page-v3 .timeline-viewer .carousel-arrow {
+  position: relative !important;
+  border-color: rgba(125, 211, 252, 0.58) !important;
+  color: rgba(240, 249, 255, 0.96) !important;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(56, 189, 248, 0.20), rgba(15, 23, 42, 0.72) 62%) !important;
+  box-shadow:
+    0 0 18px rgba(56, 189, 248, 0.42),
+    0 0 44px rgba(56, 189, 248, 0.20),
+    inset 0 0 18px rgba(125, 211, 252, 0.12) !important;
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.70),
+    0 0 18px rgba(56, 189, 248, 0.55) !important;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease !important;
+}
+
+body.about-page-v3 .timeline-viewer button[aria-label*="Previous"]:hover,
+body.about-page-v3 .timeline-viewer button[aria-label*="Next"]:hover,
+body.about-page-v3 .timeline-viewer button[title*="Previous"]:hover,
+body.about-page-v3 .timeline-viewer button[title*="Next"]:hover,
+body.about-page-v3 .timeline-viewer [data-timeline-prev]:hover,
+body.about-page-v3 .timeline-viewer [data-timeline-next]:hover,
+body.about-page-v3 .timeline-viewer .timeline-prev:hover,
+body.about-page-v3 .timeline-viewer .timeline-next:hover,
+body.about-page-v3 .timeline-viewer .timeline-arrow:hover,
+body.about-page-v3 .timeline-viewer .carousel-arrow:hover {
+  transform: translateY(-1px) scale(1.04) !important;
+  border-color: rgba(186, 230, 253, 0.92) !important;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(125, 211, 252, 0.34), rgba(15, 23, 42, 0.80) 64%) !important;
+  box-shadow:
+    0 0 24px rgba(125, 211, 252, 0.68),
+    0 0 72px rgba(56, 189, 248, 0.34),
+    inset 0 0 24px rgba(186, 230, 253, 0.16) !important;
+}
+
+body.about-page-v3 .timeline-viewer button[aria-label*="Previous"]:focus-visible,
+body.about-page-v3 .timeline-viewer button[aria-label*="Next"]:focus-visible,
+body.about-page-v3 .timeline-viewer [data-timeline-prev]:focus-visible,
+body.about-page-v3 .timeline-viewer [data-timeline-next]:focus-visible {
+  outline: 2px solid rgba(186, 230, 253, 0.95) !important;
+  outline-offset: 4px !important;
+}
+
+/* ABOUT_TIMELINE_ARROW_POSITION_FIX_V14
+   Fixes V13 glow accidentally pulling carousel arrows into the center.
+   Keeps glow. Restores side positioning.
+   Timeline logic untouched.
+*/
+
+body.about-page-v3 .timeline-viewer button[aria-label*="Previous"],
+body.about-page-v3 .timeline-viewer button[title*="Previous"],
+body.about-page-v3 .timeline-viewer [data-timeline-prev],
+body.about-page-v3 .timeline-viewer .timeline-prev {
+  position: absolute !important;
+  left: clamp(18px, 2.2vw, 42px) !important;
+  right: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 80 !important;
+}
+
+body.about-page-v3 .timeline-viewer button[aria-label*="Next"],
+body.about-page-v3 .timeline-viewer button[title*="Next"],
+body.about-page-v3 .timeline-viewer [data-timeline-next],
+body.about-page-v3 .timeline-viewer .timeline-next {
+  position: absolute !important;
+  right: clamp(18px, 2.2vw, 42px) !important;
+  left: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 80 !important;
+}
+
+/* If both arrows share a generic class, do not let V13 center them by itself. */
+body.about-page-v3 .timeline-viewer .timeline-arrow,
+body.about-page-v3 .timeline-viewer .carousel-arrow {
+  z-index: 80 !important;
+}
+
+/* Preserve hover lift without breaking side placement. */
+body.about-page-v3 .timeline-viewer button[aria-label*="Previous"]:hover,
+body.about-page-v3 .timeline-viewer button[title*="Previous"]:hover,
+body.about-page-v3 .timeline-viewer [data-timeline-prev]:hover,
+body.about-page-v3 .timeline-viewer .timeline-prev:hover {
+  transform: translateY(-50%) scale(1.04) !important;
+}
+
+body.about-page-v3 .timeline-viewer button[aria-label*="Next"]:hover,
+body.about-page-v3 .timeline-viewer button[title*="Next"]:hover,
+body.about-page-v3 .timeline-viewer [data-timeline-next]:hover,
+body.about-page-v3 .timeline-viewer .timeline-next:hover {
+  transform: translateY(-50%) scale(1.04) !important;
+}
+
+/* SITE_COBALT_THEME_STANDARD_V15
+   Standardizes portfolio pages to the About-page cobalt/cyan visual language.
+   Replaces the older gold/amber feel with dark slate, cobalt, cyan, and soft blue glow.
+   Visual-only pass.
+*/
+
+:root {
+  --portfolio-bg: #020617;
+  --portfolio-surface: rgba(15, 23, 42, 0.82);
+  --portfolio-surface-strong: rgba(15, 23, 42, 0.94);
+  --portfolio-border: rgba(125, 211, 252, 0.24);
+  --portfolio-border-strong: rgba(125, 211, 252, 0.46);
+  --portfolio-text: rgba(248, 250, 252, 0.96);
+  --portfolio-muted: rgba(203, 213, 225, 0.84);
+  --portfolio-soft: rgba(148, 163, 184, 0.72);
+  --portfolio-accent: rgba(56, 189, 248, 0.92);
+  --portfolio-accent-soft: rgba(125, 211, 252, 0.72);
+  --portfolio-accent-glow: rgba(56, 189, 248, 0.22);
+}
+
+/* Global page base */
+body {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(56, 189, 248, 0.10), transparent 34%),
+    radial-gradient(circle at 82% 18%, rgba(37, 99, 235, 0.10), transparent 32%),
+    var(--portfolio-bg) !important;
+  color: var(--portfolio-text) !important;
+}
+
+/* Top nav / brand language */
+.nav,
+.reader-toolbar {
+  color: var(--portfolio-text) !important;
+}
+
+.brand,
+.reader-title,
+h1,
+h2,
+h3 {
+  color: var(--portfolio-text);
+}
+
+.nav-links a,
+.reader-meta,
+p,
+li {
+  color: var(--portfolio-muted);
+}
+
+.nav-links a:hover {
+  color: var(--portfolio-accent-soft) !important;
+}
+
+/* Labels that may still be gold */
+.kicker,
+.section-label,
+.card-kicker,
+.eyebrow,
+.label,
+.tagline {
+  color: var(--portfolio-accent-soft) !important;
+  letter-spacing: 0.18em;
+}
+
+/* Cards / panels / evidence blocks */
+.card,
+.case-card,
+.evidence-card,
+.reflection-card,
+.resume-feature-card,
+.reader-frame,
+.reader-shell,
+section[class*="card"],
+article[class*="card"] {
+  border-color: var(--portfolio-border) !important;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.10), transparent 30%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(2, 6, 23, 0.84)) !important;
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.34),
+    0 0 54px rgba(56, 189, 248, 0.08) !important;
+}
+
+/* Buttons */
+.button.primary,
+a.button.primary,
+button.primary {
+  color: rgba(2, 6, 23, 0.96) !important;
+  background:
+    linear-gradient(135deg, rgba(125, 211, 252, 0.98), rgba(56, 189, 248, 0.92)) !important;
+  border-color: rgba(186, 230, 253, 0.78) !important;
+  box-shadow:
+    0 0 24px rgba(56, 189, 248, 0.28),
+    0 16px 38px rgba(0, 0, 0, 0.28) !important;
+}
+
+.button.primary:hover,
+a.button.primary:hover,
+button.primary:hover {
+  background:
+    linear-gradient(135deg, rgba(186, 230, 253, 1), rgba(56, 189, 248, 1)) !important;
+  box-shadow:
+    0 0 34px rgba(125, 211, 252, 0.42),
+    0 18px 42px rgba(0, 0, 0, 0.32) !important;
+}
+
+.button.secondary,
+a.button.secondary,
+button.secondary {
+  color: rgba(226, 232, 240, 0.92) !important;
+  background: rgba(15, 23, 42, 0.46) !important;
+  border-color: rgba(125, 211, 252, 0.28) !important;
+}
+
+.button.secondary:hover,
+a.button.secondary:hover,
+button.secondary:hover {
+  color: rgba(248, 250, 252, 0.98) !important;
+  background: rgba(14, 165, 233, 0.12) !important;
+  border-color: rgba(125, 211, 252, 0.58) !important;
+  box-shadow: 0 0 28px rgba(56, 189, 248, 0.18) !important;
+}
+
+/* Badges / pills / tags */
+.badge,
+.pill,
+.tag,
+.chip,
+[class*="badge"],
+[class*="pill"],
+[class*="tag"] {
+  color: rgba(186, 230, 253, 0.94) !important;
+  background: rgba(14, 165, 233, 0.10) !important;
+  border-color: rgba(125, 211, 252, 0.26) !important;
+}
+
+/* Links */
+a {
+  color: inherit;
+}
+
+main a:not(.button):not(.brand) {
+  color: var(--portfolio-accent-soft);
+}
+
+main a:not(.button):not(.brand):hover {
+  color: rgba(240, 249, 255, 0.98);
+}
+
+/* Explicitly neutralize old gold/amber emphasis classes if present */
+.gold,
+.amber,
+.yellow,
+.text-gold,
+.text-amber,
+.accent-gold,
+.accent-amber {
+  color: var(--portfolio-accent-soft) !important;
+}
+
+.bg-gold,
+.bg-amber,
+.bg-yellow,
+.gold-bg,
+.amber-bg {
+  background: rgba(14, 165, 233, 0.12) !important;
+}
+
+.border-gold,
+.border-amber,
+.border-yellow {
+  border-color: var(--portfolio-border-strong) !important;
+}

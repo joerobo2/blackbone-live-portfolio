@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Evidence Reader | Joseph Robinson Portfolio</title>
   <meta name="description" content="Evidence reader for Joseph Robinson's IST 782 applied data science portfolio.">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/site.css?v=site-cobalt-v15">
 </head>
 <body>
   <div class="reader-shell">
@@ -30,5 +30,94 @@
   </div>
 
   <script src="/assets/js/reader.js"></script>
+
+  <script>
+    /* RESUME_READER_IMAGE_PREVIEW_V12
+       Makes /portfolio/reader/?doc=resume an About-bound resume preview.
+       No embedded PDF viewer. No explanation block. No Evidence Library default path.
+    */
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const isResume = params.get("doc") === "resume";
+      if (!isResume) return;
+
+      const pdfHref = "/assets/evidence/pdfs/Joseph_Robinson_Resume.pdf";
+      const previewHref = "/assets/evidence/images/Joseph_Robinson_Resume_preview.png";
+
+      function previewMarkup() {
+        return `
+          <section class="resume-preview-stage" aria-label="Joseph Robinson resume preview">
+            <a class="resume-preview-link" href="${pdfHref}" target="_blank" rel="noopener" aria-label="Open resume PDF">
+              <img class="resume-preview-image" src="${previewHref}" alt="Joseph Robinson resume preview">
+            </a>
+            <div class="resume-preview-fallback" hidden>
+              <a class="button primary" href="${pdfHref}" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+          </section>
+        `;
+      }
+
+      function applyResumeMode() {
+        document.body.classList.add("resume-reader-page", "resume-reader-image-page");
+        document.title = "Joseph Robinson Resume";
+
+        const kicker = document.querySelector(".reader-toolbar .kicker");
+        if (kicker) kicker.textContent = "Resume";
+
+        const title = document.querySelector("[data-reader-title]");
+        if (title) title.textContent = "Joseph Robinson";
+
+        const meta = document.querySelector("[data-reader-meta]");
+        if (meta) meta.textContent = "PDF Resume";
+
+        const actions = document.querySelector(".reader-actions");
+        if (actions) {
+          actions.innerHTML = `
+            <a class="button primary" href="/portfolio/about/">Back to About</a>
+            <a class="button secondary" href="${pdfHref}" target="_blank" rel="noopener">Open PDF</a>
+          `;
+        }
+
+        const frame = document.querySelector("[data-reader-frame]");
+        if (frame && !frame.querySelector(".resume-preview-stage")) {
+          frame.innerHTML = previewMarkup();
+        }
+
+        const previewImg = document.querySelector(".resume-preview-image");
+        const fallback = document.querySelector(".resume-preview-fallback");
+        if (previewImg && fallback) {
+          previewImg.addEventListener("error", function () {
+            previewImg.hidden = true;
+            fallback.hidden = false;
+          }, { once: true });
+        }
+      }
+
+      function startObserver() {
+        const frame = document.querySelector("[data-reader-frame]");
+        if (!frame) return;
+
+        const observer = new MutationObserver(() => applyResumeMode());
+        observer.observe(frame, { childList: true, subtree: true });
+        setTimeout(() => observer.disconnect(), 4000);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+          applyResumeMode();
+          startObserver();
+        });
+      } else {
+        applyResumeMode();
+        startObserver();
+      }
+
+      setTimeout(applyResumeMode, 250);
+      setTimeout(applyResumeMode, 750);
+      setTimeout(applyResumeMode, 1500);
+    })();
+  </script>
+
+
 </body>
 </html>
