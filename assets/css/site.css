@@ -4818,3 +4818,232 @@ body.about-page-v3 .about-mobile-scroll-timeline {
   }
 }
 
+
+/* ABOUT_DEDICATED_MOBILE_PAGE_V31
+   Separate mobile About page.
+   Normal scroll story. No modal. No desktop squeeze. No Safari fixed-overlay fight.
+*/
+
+body.about-mobile-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 20% 6%, rgba(56, 189, 248, 0.14), transparent 32%),
+    radial-gradient(circle at 84% 18%, rgba(37, 99, 235, 0.12), transparent 30%),
+    #020617 !important;
+  color: rgba(248, 250, 252, 0.96) !important;
+}
+
+body.about-mobile-page .about-mobile-shell {
+  width: min(100vw - 1.25rem, 430px);
+  margin: 0 auto;
+  padding: 1rem 0 2.5rem;
+}
+
+body.about-mobile-page .about-mobile-nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0 1.65rem;
+}
+
+body.about-mobile-page .about-mobile-brand {
+  color: rgba(248, 250, 252, 0.96);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+}
+
+body.about-mobile-page .about-mobile-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
+body.about-mobile-page .about-mobile-nav-links a {
+  color: rgba(203, 213, 225, 0.86);
+  text-decoration: none;
+  font-size: 0.78rem;
+}
+
+body.about-mobile-page .about-mobile-kicker,
+body.about-mobile-page .section-label,
+body.about-mobile-page .about-mobile-card-kicker {
+  color: rgba(125, 211, 252, 0.86) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  line-height: 1.2;
+}
+
+body.about-mobile-page .about-mobile-story-name {
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(4rem, 17vw, 5.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.078em;
+  text-transform: uppercase;
+}
+
+body.about-mobile-page .about-mobile-story-name span {
+  display: block;
+}
+
+body.about-mobile-page .about-mobile-story-name span:first-child {
+  color: rgba(248, 250, 252, 0.98);
+}
+
+body.about-mobile-page .about-mobile-story-name span:last-child {
+  color: rgba(56, 189, 248, 0.92);
+  text-shadow: 0 0 34px rgba(56, 189, 248, 0.26);
+}
+
+body.about-mobile-page .about-mobile-story-title {
+  margin: 0 0 1.3rem;
+  max-width: 32ch;
+  color: rgba(125, 211, 252, 0.74);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+body.about-mobile-page .about-mobile-story-photo {
+  margin: 1.4rem 0 1.6rem;
+  height: min(64vh, 560px);
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  background: rgba(2, 6, 23, 0.82);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.46),
+    0 0 70px rgba(56, 189, 248, 0.14);
+}
+
+body.about-mobile-page .about-mobile-story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+body.about-mobile-page .about-mobile-story-hook {
+  margin: 0 0 1rem;
+  max-width: 17ch;
+  font-size: clamp(2rem, 9vw, 3rem);
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  color: rgba(248, 250, 252, 0.97);
+}
+
+body.about-mobile-page .about-mobile-story-lede {
+  margin: 0;
+  max-width: 36ch;
+  color: rgba(203, 213, 225, 0.9);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+body.about-mobile-page .about-mobile-story-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+body.about-mobile-page .about-mobile-scroll-story {
+  margin-top: 3.25rem;
+}
+
+body.about-mobile-page .about-mobile-scroll-story > h2 {
+  margin: 0.45rem 0 1.25rem;
+  max-width: 12ch;
+  font-size: clamp(2.1rem, 9vw, 3.1rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  color: rgba(248, 250, 252, 0.98);
+}
+
+body.about-mobile-page .about-mobile-story-card {
+  margin: 0 0 1.15rem;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  background:
+    radial-gradient(circle at 20% 8%, rgba(56, 189, 248, 0.12), transparent 34%),
+    rgba(2, 6, 23, 0.74);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.38),
+    0 0 58px rgba(56, 189, 248, 0.10);
+}
+
+body.about-mobile-page .about-mobile-story-card figure {
+  margin: 0;
+  min-height: 220px;
+  max-height: 420px;
+  background: rgba(2, 6, 23, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+body.about-mobile-page .about-mobile-story-card figure img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+}
+
+body.about-mobile-page .about-mobile-story-card > div {
+  padding: 1rem;
+}
+
+body.about-mobile-page .about-mobile-story-card h3 {
+  margin: 0.35rem 0 0.65rem;
+  color: rgba(248, 250, 252, 0.98);
+  font-size: clamp(1.35rem, 6vw, 2rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+body.about-mobile-page .about-mobile-story-card p {
+  color: rgba(203, 213, 225, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+body.about-mobile-page .about-mobile-story-card p:last-child {
+  margin-bottom: 0;
+}
+
+body.about-mobile-page .about-mobile-footer {
+  margin-top: 2.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(125, 211, 252, 0.16);
+  color: rgba(148, 163, 184, 0.76);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 390px) {
+  body.about-mobile-page .about-mobile-shell {
+    width: min(100vw - 1rem, 390px);
+  }
+
+  body.about-mobile-page .about-mobile-story-photo {
+    min-height: 380px;
+  }
+
+  body.about-mobile-page .about-mobile-story-actions .button {
+    padding-inline: 0.82rem;
+    font-size: 0.78rem;
+  }
+}

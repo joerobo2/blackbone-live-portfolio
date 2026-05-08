@@ -5,7 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Joseph Robinson | Operational Data Science Portfolio</title>
   <meta name="description" content="About Joseph Robinson: operational data scientist, applied AI systems builder, U.S. Air Force veteran, third culture kid, and Syracuse Applied Data Science graduate student.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=about-mobile-scroll-timeline-v30">
+  <link rel="stylesheet" href="/assets/css/site.css?v=about-dedicated-mobile-redirect-v31">
+
+  <script>
+    /* ABOUT_DEDICATED_MOBILE_PAGE_V31
+       Mobile visitors use /portfolio/about/mobile/.
+       Desktop visitors stay on the editorial About page.
+       Add ?desktop=1 to bypass redirect during testing.
+    */
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get("desktop") === "1") return;
+
+      var isMobileWidth = window.matchMedia && window.matchMedia("(max-width: 860px)").matches;
+      var isMobileUA = /iPhone|Android|Mobile|iPod/i.test(navigator.userAgent || "");
+
+      if ((isMobileWidth || isMobileUA) && !window.location.pathname.includes("/portfolio/about/mobile")) {
+        window.location.replace("/portfolio/about/mobile/");
+      }
+    })();
+  </script>
+
 </head>
 <body class="about-page-v3">
   <div class="site-shell about-shell">
