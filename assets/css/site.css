@@ -4437,3 +4437,133 @@ body.about-page-v3 .about-mobile-landing {
     padding-bottom: 0.6rem !important;
   }
 }
+
+/* ABOUT_MOBILE_TIMELINE_IPHONE_SAFE_V28
+   Mobile timeline only.
+   iPhone/Safari-safe version.
+   Stops relying on :has(img) for the main timeline layout.
+   JS labels slide blocks as:
+   .timeline-mobile-media-block
+   .timeline-mobile-copy-block
+   .timeline-mobile-control-block
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-viewer {
+    position: fixed !important;
+    top: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+
+    width: min(100vw, 572px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 100svh !important;
+    max-height: 100dvh !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto var(--timeline-mobile-stage-height, 680px) auto !important;
+
+    overflow: hidden !important;
+    border-radius: 0 0 28px 28px !important;
+  }
+
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-stage {
+    height: var(--timeline-mobile-stage-height, 680px) !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-stage .timeline-slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+
+    width: min(100% - 1.25rem, 540px) !important;
+    max-width: 540px !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.7rem !important;
+
+    padding: 0.7rem 0.65rem 0 !important;
+    overflow: visible !important;
+  }
+
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-mobile-media-block {
+    order: 1 !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    height: var(--timeline-mobile-image-height, 320px) !important;
+    min-height: 210px !important;
+    max-height: 380px !important;
+    flex: 0 0 auto !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+    border-radius: 22px !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+    border: 1px solid rgba(125, 211, 252, 0.20) !important;
+  }
+
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-mobile-media-block img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-mobile-copy-block {
+    order: 2 !important;
+    display: block !important;
+
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+
+    min-height: 0 !important;
+    max-height: var(--timeline-mobile-copy-max-height, 230px) !important;
+
+    padding: 0.8rem !important;
+    margin: 0 auto !important;
+
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    border-radius: 18px !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+    border: 1px solid rgba(125, 211, 252, 0.16) !important;
+  }
+
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-mobile-control-block,
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-footer,
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-tabs,
+  body.about-page-v3.timeline-mobile-iphone-safe .timeline-controls,
+  body.about-page-v3.timeline-mobile-iphone-safe [class*="timeline-footer"],
+  body.about-page-v3.timeline-mobile-iphone-safe [class*="timeline-tabs"] {
+    order: 3 !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    margin: 0 auto !important;
+    padding-top: 0.45rem !important;
+    padding-bottom: 0.6rem !important;
+  }
+}

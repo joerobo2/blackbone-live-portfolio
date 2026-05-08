@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Joseph Robinson | Operational Data Science Portfolio</title>
   <meta name="description" content="About Joseph Robinson: operational data scientist, applied AI systems builder, U.S. Air Force veteran, third culture kid, and Syracuse Applied Data Science graduate student.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=mobile-timeline-dynamic-v27">
+  <link rel="stylesheet" href="/assets/css/site.css?v=mobile-timeline-iphone-safe-v28">
 </head>
 <body class="about-page-v3">
   <div class="site-shell about-shell">
@@ -487,6 +487,194 @@
       });
 
       scheduleUpdate();
+    })();
+  </script>
+
+
+  <script>
+    /* ABOUT_MOBILE_TIMELINE_IPHONE_SAFE_V28
+       Labels timeline slide blocks explicitly for iPhone/Safari.
+       Avoids CSS :has(img) as the primary mobile timeline layout mechanism.
+    */
+    (function () {
+      const MOBILE_MAX = 860;
+      let timer = null;
+
+      function isOpen() {
+        const overlay = document.querySelector("#timelineOverlay, .timeline-overlay");
+        return window.innerWidth <= MOBILE_MAX && overlay && overlay.classList.contains("is-open");
+      }
+
+      function vh() {
+        if (window.visualViewport && window.visualViewport.height) {
+          return window.visualViewport.height;
+        }
+        return window.innerHeight;
+      }
+
+      function visibleArea(el, container) {
+        const r = el.getBoundingClientRect();
+        const c = container.getBoundingClientRect();
+        const left = Math.max(r.left, c.left);
+        const right = Math.min(r.right, c.right);
+        const top = Math.max(r.top, c.top);
+        const bottom = Math.min(r.bottom, c.bottom);
+        return Math.max(0, right - left) * Math.max(0, bottom - top);
+      }
+
+      function activeSlide(stage) {
+        const marked = stage.querySelector(
+          ".timeline-slide.is-active, .timeline-slide.active, .timeline-slide[aria-current='true'], .timeline-slide[aria-hidden='false']"
+        );
+        if (marked) return marked;
+
+        const slides = [...stage.querySelectorAll(".timeline-slide")];
+        if (!slides.length) return null;
+
+        return slides
+          .map(slide => ({ slide, score: visibleArea(slide, stage) }))
+          .sort((a, b) => b.score - a.score)[0].slide;
+      }
+
+      function classify(slide) {
+        [...slide.children].forEach(el => {
+          el.classList.remove(
+            "timeline-mobile-media-block",
+            "timeline-mobile-copy-block",
+            "timeline-mobile-control-block"
+          );
+
+          const cls = String(el.className || "");
+          const txt = el.textContent || "";
+
+          if (el.querySelector("img")) {
+            el.classList.add("timeline-mobile-media-block");
+          } else if (/tabs|footer|controls/i.test(cls) || /Doha|Service|Leadership|Perspective|Data|People/i.test(txt)) {
+            el.classList.add("timeline-mobile-control-block");
+          } else {
+            el.classList.add("timeline-mobile-copy-block");
+          }
+        });
+      }
+
+      function naturalCopyHeight(copy) {
+        if (!copy) return 0;
+        const priorMax = copy.style.maxHeight;
+        copy.style.maxHeight = "none";
+        const h = copy.scrollHeight || copy.getBoundingClientRect().height || 0;
+        copy.style.maxHeight = priorMax;
+        return h;
+      }
+
+      function update() {
+        const body = document.body;
+        const viewer = document.querySelector(".timeline-viewer");
+        const stage = document.querySelector(".timeline-stage");
+
+        if (!isOpen() || !viewer || !stage) {
+          body.classList.remove("timeline-mobile-iphone-safe");
+          return;
+        }
+
+        body.classList.add("timeline-mobile-iphone-safe");
+
+        const slide = activeSlide(stage);
+        if (!slide) return;
+
+        classify(slide);
+
+        const header =
+          viewer.querySelector(".timeline-header, .timeline-head, header") ||
+          viewer.firstElementChild;
+
+        const footer =
+          viewer.querySelector(".timeline-footer, .timeline-tabs, .timeline-controls, [class*='timeline-footer'], [class*='timeline-tabs']");
+
+        const headerH = header ? header.getBoundingClientRect().height : 100;
+        const footerH = footer ? footer.getBoundingClientRect().height : 112;
+
+        const available = Math.max(430, vh() - headerH - footerH - 18);
+
+        const media = slide.querySelector(".timeline-mobile-media-block");
+        const copy = slide.querySelector(".timeline-mobile-copy-block");
+
+        const imageH = Math.round(
+          Math.min(
+            Math.max(window.innerWidth * 0.56, 220),
+            Math.min(380, available * 0.58)
+          )
+        );
+
+        const copyNatural = naturalCopyHeight(copy);
+        const copyH = Math.round(
+          Math.min(
+            Math.max(copyNatural, 140),
+            Math.min(265, available - imageH - 32)
+          )
+        );
+
+        const stageH = Math.round(
+          Math.min(
+            Math.max(imageH + copyH + 30, 500),
+            available
+          )
+        );
+
+        viewer.style.setProperty("--timeline-mobile-image-height", imageH + "px");
+        viewer.style.setProperty("--timeline-mobile-copy-max-height", copyH + "px");
+        viewer.style.setProperty("--timeline-mobile-stage-height", stageH + "px");
+      }
+
+      function schedule() {
+        requestAnimationFrame(() => {
+          update();
+          setTimeout(update, 80);
+          setTimeout(update, 240);
+          setTimeout(update, 600);
+        });
+      }
+
+      function startTimer() {
+        if (timer) return;
+        timer = setInterval(() => {
+          if (!isOpen()) {
+            clearInterval(timer);
+            timer = null;
+            document.body.classList.remove("timeline-mobile-iphone-safe");
+            return;
+          }
+          update();
+        }, 350);
+      }
+
+      document.addEventListener("click", function (event) {
+        if (event.target.closest("[data-open-timeline], .timeline-open, .timeline-tab, .timeline-next, .timeline-prev, .timeline-arrow, .carousel-arrow, button")) {
+          schedule();
+          startTimer();
+        }
+      }, true);
+
+      window.addEventListener("resize", schedule);
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", schedule);
+        window.visualViewport.addEventListener("scroll", schedule);
+      }
+
+      const observer = new MutationObserver(() => {
+        if (isOpen()) {
+          schedule();
+          startTimer();
+        }
+      });
+
+      observer.observe(document.documentElement, {
+        subtree: true,
+        childList: true,
+        attributes: true,
+        attributeFilter: ["class", "style", "aria-hidden", "aria-current"]
+      });
+
+      schedule();
     })();
   </script>
 
