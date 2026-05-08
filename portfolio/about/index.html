@@ -3,49 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Joseph Robinson | Operational Data Science Portfolio</title>
-  <meta name="description" content="About Joseph Robinson: operational data scientist, applied AI systems builder, U.S. Air Force veteran, third culture kid, and Syracuse Applied Data Science graduate student.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=about-mobile-redirect-harden-v32">
-
+  
   <script>
-    /* ABOUT_MOBILE_REDIRECT_HARDEN_V32
-       Stronger mobile routing for /portfolio/about/.
-       Sends phones/tablets/small touch viewports to /portfolio/about/mobile/.
-       Add ?desktop=1 to intentionally bypass.
+    /* ABOUT_MOBILE_REDIRECT_EARLY_HEAD_V33
+       Executes early in head.
+       Sends mobile/touch/small-screen visitors to /portfolio/about/mobile/.
+       Add ?desktop=1 to bypass.
+       Writes redirect_debug to sessionStorage for iPhone debugging.
     */
     (function () {
+      function log(msg) {
+        try {
+          sessionStorage.setItem(
+            "redirect_debug",
+            new Date().toISOString() + " | " + msg
+          );
+        } catch (error) {}
+      }
+
       try {
         var path = window.location.pathname || "";
         var params = new URLSearchParams(window.location.search || "");
 
-        if (params.get("desktop") === "1") return;
-        if (path.indexOf("/portfolio/about/mobile") !== -1) return;
+        if (params.get("desktop") === "1") {
+          log("bypass: desktop=1");
+          return;
+        }
+
+        if (path.indexOf("/portfolio/about/mobile") !== -1) {
+          log("bypass: already mobile route");
+          return;
+        }
 
         var ua = navigator.userAgent || "";
         var platform = navigator.platform || "";
-        var maxTouchPoints = navigator.maxTouchPoints || 0;
+        var touch = navigator.maxTouchPoints || 0;
 
-        var width = Math.min(
-          window.innerWidth || 9999,
-          screen.width || 9999,
-          document.documentElement ? document.documentElement.clientWidth || 9999 : 9999
+        var screenW = screen && screen.width ? screen.width : 9999;
+        var innerW = window.innerWidth || 9999;
+        var docW = document.documentElement && document.documentElement.clientWidth
+          ? document.documentElement.clientWidth
+          : 9999;
+
+        var width = Math.min(screenW, innerW, docW);
+
+        var mediaSmall = false;
+        try {
+          mediaSmall = !!(window.matchMedia && window.matchMedia("(max-width: 860px)").matches);
+        } catch (error) {}
+
+        var isPhoneUA = /iPhone|iPod|Android.*Mobile|Mobile Safari|CriOS|FxiOS/i.test(ua);
+        var isTabletTouch = /iPad|Android/i.test(ua) || (platform === "MacIntel" && touch > 1);
+        var isTouchSmall = touch > 0 && width <= 1024;
+        var isSmall = width <= 860 || mediaSmall;
+
+        log(
+          "checked | width=" + width +
+          " | innerW=" + innerW +
+          " | screenW=" + screenW +
+          " | docW=" + docW +
+          " | mediaSmall=" + mediaSmall +
+          " | touch=" + touch +
+          " | isPhoneUA=" + isPhoneUA +
+          " | isTabletTouch=" + isTabletTouch +
+          " | isTouchSmall=" + isTouchSmall
         );
 
-        var isSmallViewport = width <= 860;
-        var isPhoneUA = /iPhone|iPod|Android.*Mobile|Mobile Safari|CriOS.*Mobile|FxiOS/i.test(ua);
-        var isTabletTouch = /iPad|Android/i.test(ua) || (platform === "MacIntel" && maxTouchPoints > 1);
-        var isTouchSmall = maxTouchPoints > 0 && width <= 1024;
-
-        if (isSmallViewport || isPhoneUA || isTabletTouch || isTouchSmall) {
+        if (isSmall || isPhoneUA || isTabletTouch || isTouchSmall) {
+          log("redirecting to /portfolio/about/mobile/");
           window.location.replace("/portfolio/about/mobile/");
+        } else {
+          log("bypass: desktop environment");
         }
       } catch (error) {
+        log("error: " + error.message);
         if ((window.innerWidth || 9999) <= 860) {
           window.location.href = "/portfolio/about/mobile/";
         }
       }
     })();
   </script>
+
+<title>About Joseph Robinson | Operational Data Science Portfolio</title>
+  <meta name="description" content="About Joseph Robinson: operational data scientist, applied AI systems builder, U.S. Air Force veteran, third culture kid, and Syracuse Applied Data Science graduate student.">
+  <link rel="stylesheet" href="/assets/css/site.css?v=about-mobile-redirect-early-head-v33">
 
 
 </head>
