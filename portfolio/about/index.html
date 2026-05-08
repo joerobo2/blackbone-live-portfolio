@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Joseph Robinson | Operational Data Science Portfolio</title>
   <meta name="description" content="About Joseph Robinson: operational data scientist, applied AI systems builder, U.S. Air Force veteran, third culture kid, and Syracuse Applied Data Science graduate student.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=about-no-resume-card-v16">
+  <link rel="stylesheet" href="/assets/css/site.css?v=mobile-timeline-dynamic-v27">
 </head>
 <body class="about-page-v3">
   <div class="site-shell about-shell">
@@ -56,6 +56,44 @@
           <img src="/assets/images/about/joseph-hero-blue-suit.jpeg" alt="Joseph Robinson in a blue suit.">
         </figure>
       </section>
+
+      <section class="about-mobile-landing" aria-label="Mobile About introduction">
+        <div class="about-mobile-kicker">About</div>
+
+        <h1 class="about-mobile-name" aria-label="Joseph Robinson">
+          <span>Joseph</span>
+          <span>Robinson</span>
+        </h1>
+
+        <p class="about-mobile-title">
+          Operational Data Scientist | Applied AI &amp; Data Systems Builder
+        </p>
+
+        <figure class="about-mobile-image">
+          <img src="/assets/images/about/joseph-hero-blue-suit.jpeg" alt="Joseph Robinson in a blue suit.">
+        </figure>
+
+        <p class="about-mobile-hook">
+          I became a systems thinker through operations before I became one through data science.
+        </p>
+
+        <p class="about-mobile-lede">
+          I build evidence-backed systems that make complex work more visible, reviewable, and resilient. My work connects operational discipline, applied data science, regulated industrial systems, and human-centered AI workflows.
+        </p>
+
+        <div class="about-mobile-actions">
+          <button class="button primary timeline-open" type="button" data-open-timeline>
+            View My Timeline
+          </button>
+          <a class="button secondary" href="/portfolio/reader/?doc=resume">
+            Open Resume
+          </a>
+          <a class="button secondary" href="/portfolio/evidence/">
+            Explore Evidence
+          </a>
+        </div>
+      </section>
+
 </main>
 
     <footer class="footer">
@@ -244,5 +282,213 @@
       });
     })();
   </script>
+
+  <script>
+    /* ABOUT_MOBILE_TIMELINE_OPEN_FIX_V18
+       Mobile About view has its own View My Timeline button.
+       The original timeline logic was bound before the mobile view existed / only to the desktop trigger.
+       This delegates mobile clicks to the existing working desktop trigger.
+    */
+    (function () {
+      document.addEventListener("click", function (event) {
+        const mobileTrigger = event.target.closest(".about-mobile-landing [data-open-timeline]");
+        if (!mobileTrigger) return;
+
+        const desktopTrigger = document.querySelector("main > .about-landing [data-open-timeline]");
+        if (!desktopTrigger || desktopTrigger === mobileTrigger) return;
+
+        event.preventDefault();
+        desktopTrigger.click();
+      }, true);
+    })();
+  </script>
+
+
+  <script>
+    /* ABOUT_MOBILE_TIMELINE_DYNAMIC_HEIGHT_V27
+       Measures the active mobile timeline slide and sets stage height dynamically.
+       Prevents giant gaps without crushing the copy panel.
+    */
+    (function () {
+      const MOBILE_MAX = 860;
+      let timer = null;
+
+      function isMobileTimelineOpen() {
+        const overlay = document.querySelector("#timelineOverlay, .timeline-overlay");
+        return (
+          window.innerWidth <= MOBILE_MAX &&
+          overlay &&
+          overlay.classList.contains("is-open")
+        );
+      }
+
+      function rectArea(r) {
+        return Math.max(0, r.width) * Math.max(0, r.height);
+      }
+
+      function visibleAreaWithin(el, container) {
+        const r = el.getBoundingClientRect();
+        const c = container.getBoundingClientRect();
+
+        const left = Math.max(r.left, c.left);
+        const right = Math.min(r.right, c.right);
+        const top = Math.max(r.top, c.top);
+        const bottom = Math.min(r.bottom, c.bottom);
+
+        return Math.max(0, right - left) * Math.max(0, bottom - top);
+      }
+
+      function getActiveSlide(stage) {
+        const preferred = stage.querySelector(
+          ".timeline-slide.is-active, .timeline-slide.active, .timeline-slide[aria-current='true'], .timeline-slide[aria-hidden='false']"
+        );
+        if (preferred) return preferred;
+
+        const slides = [...stage.querySelectorAll(".timeline-slide")];
+        if (!slides.length) return null;
+
+        return slides
+          .map(slide => {
+            const cs = getComputedStyle(slide);
+            const r = slide.getBoundingClientRect();
+            return {
+              slide,
+              score:
+                visibleAreaWithin(slide, stage) +
+                rectArea(r) * (parseFloat(cs.opacity || "1") || 1)
+            };
+          })
+          .sort((a, b) => b.score - a.score)[0].slide;
+      }
+
+      function getContentBlocks(slide) {
+        return [...slide.children].filter(el => {
+          const r = el.getBoundingClientRect();
+          const cs = getComputedStyle(el);
+
+          if (cs.display === "none" || cs.visibility === "hidden") return false;
+          if (r.width < 8 || r.height < 8) return false;
+          if (/tabs|footer|controls/i.test(el.className || "")) return false;
+
+          return true;
+        });
+      }
+
+      function updateTimelineHeight() {
+        const body = document.body;
+        const viewer = document.querySelector(".timeline-viewer");
+        const stage = document.querySelector(".timeline-stage");
+
+        if (!isMobileTimelineOpen() || !viewer || !stage) {
+          body.classList.remove("timeline-mobile-dynamic");
+          return;
+        }
+
+        body.classList.add("timeline-mobile-dynamic");
+
+        const slide = getActiveSlide(stage);
+        if (!slide) return;
+
+        const blocks = getContentBlocks(slide);
+        if (!blocks.length) return;
+
+        const viewerRect = viewer.getBoundingClientRect();
+        const header = viewer.querySelector(".timeline-header, .timeline-head, header");
+        const footer = viewer.querySelector(".timeline-footer, .timeline-tabs, .timeline-controls, [class*='timeline-footer'], [class*='timeline-tabs']");
+
+        const headerH = header ? header.getBoundingClientRect().height : 96;
+        const footerH = footer ? footer.getBoundingClientRect().height : 110;
+
+        const available = Math.max(420, window.innerHeight - headerH - footerH - 20);
+
+        const imgBlock = blocks.find(el => el.querySelector("img"));
+        const copyBlocks = blocks.filter(el => !el.querySelector("img"));
+
+        const desiredImageH = Math.round(
+          Math.min(
+            Math.max(window.innerWidth * 0.56, 220),
+            Math.min(380, available * 0.58)
+          )
+        );
+
+        const copyNaturalH = copyBlocks.reduce((sum, el) => {
+          const currentMax = el.style.maxHeight;
+          el.style.maxHeight = "none";
+          const h = el.scrollHeight || el.getBoundingClientRect().height || 0;
+          el.style.maxHeight = currentMax;
+          return sum + h;
+        }, 0);
+
+        const desiredCopyH = Math.round(
+          Math.min(
+            Math.max(copyNaturalH, 145),
+            Math.min(260, available - desiredImageH - 34)
+          )
+        );
+
+        const gap = 14;
+        const slidePadding = 18;
+        const stageH = Math.round(
+          Math.min(
+            Math.max(desiredImageH + desiredCopyH + gap + slidePadding, 480),
+            available
+          )
+        );
+
+        viewer.style.setProperty("--timeline-mobile-image-height", desiredImageH + "px");
+        viewer.style.setProperty("--timeline-mobile-copy-max-height", desiredCopyH + "px");
+        viewer.style.setProperty("--timeline-mobile-stage-height", stageH + "px");
+      }
+
+      function scheduleUpdate() {
+        requestAnimationFrame(() => {
+          updateTimelineHeight();
+          setTimeout(updateTimelineHeight, 80);
+          setTimeout(updateTimelineHeight, 240);
+        });
+      }
+
+      function startTimer() {
+        if (timer) return;
+        timer = setInterval(() => {
+          if (!isMobileTimelineOpen()) {
+            clearInterval(timer);
+            timer = null;
+            document.body.classList.remove("timeline-mobile-dynamic");
+            return;
+          }
+          updateTimelineHeight();
+        }, 350);
+      }
+
+      document.addEventListener("click", function (event) {
+        if (
+          event.target.closest("[data-open-timeline], .timeline-open, .timeline-tab, .timeline-next, .timeline-prev, .timeline-arrow, .carousel-arrow, button")
+        ) {
+          scheduleUpdate();
+          startTimer();
+        }
+      }, true);
+
+      window.addEventListener("resize", scheduleUpdate);
+
+      const observer = new MutationObserver(() => {
+        if (isMobileTimelineOpen()) {
+          scheduleUpdate();
+          startTimer();
+        }
+      });
+
+      observer.observe(document.documentElement, {
+        subtree: true,
+        childList: true,
+        attributes: true,
+        attributeFilter: ["class", "style", "aria-hidden", "aria-current"]
+      });
+
+      scheduleUpdate();
+    })();
+  </script>
+
 </body>
 </html>

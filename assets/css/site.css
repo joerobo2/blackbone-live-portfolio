@@ -3377,3 +3377,1063 @@ main a:not(.button):not(.brand):hover {
 .border-yellow {
   border-color: var(--portfolio-border-strong) !important;
 }
+
+/* ABOUT_MOBILE_VIEW_V17
+   Separate mobile-only About view.
+   Desktop hero remains untouched.
+   Mobile gets its own intentional layout instead of a squeezed desktop layout.
+*/
+
+body.about-page-v3 .about-mobile-landing {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  body.about-page-v3 main > .about-landing {
+    display: none !important;
+  }
+
+  body.about-page-v3 .about-mobile-landing {
+    display: block !important;
+    width: min(100vw - 2rem, 480px) !important;
+    margin: 0 auto !important;
+    padding: 2rem 0 3.25rem !important;
+  }
+
+  body.about-page-v3 .about-mobile-kicker {
+    margin: 0 0 0.85rem !important;
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.34em !important;
+    text-transform: uppercase !important;
+    color: rgba(125, 211, 252, 0.9) !important;
+  }
+
+  body.about-page-v3 .about-mobile-name {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(3.9rem, 17vw, 5.6rem) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.075em !important;
+    text-transform: uppercase !important;
+  }
+
+  body.about-page-v3 .about-mobile-name span {
+    display: block !important;
+  }
+
+  body.about-page-v3 .about-mobile-name span:first-child {
+    color: rgba(248, 250, 252, 0.98) !important;
+  }
+
+  body.about-page-v3 .about-mobile-name span:last-child {
+    color: rgba(56, 189, 248, 0.9) !important;
+    text-shadow: 0 0 34px rgba(56, 189, 248, 0.24) !important;
+  }
+
+  body.about-page-v3 .about-mobile-title {
+    margin: 1.25rem 0 1.5rem !important;
+    max-width: 34ch !important;
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    color: rgba(125, 211, 252, 0.74) !important;
+  }
+
+  body.about-page-v3 .about-mobile-image {
+    margin: 1.5rem 0 1.75rem !important;
+    width: 100% !important;
+    height: min(68vh, 620px) !important;
+    min-height: 430px !important;
+    overflow: hidden !important;
+    border-radius: 28px !important;
+    border: 1px solid rgba(125, 211, 252, 0.24) !important;
+    background: rgba(5, 10, 18, 0.82) !important;
+    box-shadow:
+      0 28px 80px rgba(0, 0, 0, 0.46),
+      0 0 70px rgba(56, 189, 248, 0.16) !important;
+  }
+
+  body.about-page-v3 .about-mobile-image img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    filter: contrast(1.08) saturate(1.1) brightness(0.96) !important;
+  }
+
+  body.about-page-v3 .about-mobile-hook {
+    margin: 0 0 1rem !important;
+    max-width: 16ch !important;
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+    line-height: 1.03 !important;
+    letter-spacing: -0.045em !important;
+    font-weight: 700 !important;
+    color: rgba(248, 250, 252, 0.96) !important;
+  }
+
+  body.about-page-v3 .about-mobile-lede {
+    margin: 0 !important;
+    max-width: 36ch !important;
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+    color: rgba(203, 213, 225, 0.88) !important;
+  }
+
+  body.about-page-v3 .about-mobile-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.75rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  body.about-page-v3 .about-mobile-actions .button {
+    min-height: 44px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body.about-page-v3 .about-mobile-landing {
+    width: min(100vw - 1.25rem, 400px) !important;
+  }
+
+  body.about-page-v3 .about-mobile-image {
+    height: 520px !important;
+    min-height: 0 !important;
+  }
+
+  body.about-page-v3 .about-mobile-actions {
+    gap: 0.65rem !important;
+  }
+
+  body.about-page-v3 .about-mobile-actions .button {
+    padding-inline: 0.85rem !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+
+/* ABOUT_MOBILE_TIMELINE_LANDSCAPE_V19
+   Mobile timeline only.
+   Forces the timeline modal into a landscape-style full-screen viewer.
+   Goal: make timeline images visible on phones.
+   Timeline logic untouched.
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3 .timeline-viewer {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(56, 189, 248, 0.12), transparent 34%),
+      rgba(2, 6, 23, 0.96) !important;
+    z-index: 9999 !important;
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: 100% !important;
+    height: 100dvh !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: clamp(0.75rem, 2vw, 1.25rem) !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr) !important;
+    gap: clamp(0.75rem, 2vw, 1.25rem) !important;
+    align-items: stretch !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide figure,
+  body.about-page-v3 .timeline-slide [class*="media"],
+  body.about-page-v3 .timeline-slide [class*="image"] {
+    width: 100% !important;
+    height: calc(100dvh - 2rem) !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border-radius: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+  }
+
+  body.about-page-v3 .timeline-media img,
+  body.about-page-v3 .timeline-slide figure img,
+  body.about-page-v3 .timeline-slide [class*="media"] img,
+  body.about-page-v3 .timeline-slide [class*="image"] img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+
+  body.about-page-v3 .timeline-copy,
+  body.about-page-v3 .timeline-content,
+  body.about-page-v3 .timeline-text,
+  body.about-page-v3 .timeline-panel,
+  body.about-page-v3 .timeline-caption {
+    width: 100% !important;
+    height: calc(100dvh - 2rem) !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    border-radius: 24px !important;
+    padding: 1rem !important;
+    background: rgba(2, 6, 23, 0.76) !important;
+    border: 1px solid rgba(125, 211, 252, 0.22) !important;
+  }
+
+  body.about-page-v3 .timeline-viewer h2,
+  body.about-page-v3 .timeline-viewer h3 {
+    font-size: clamp(1.15rem, 5vw, 1.65rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  body.about-page-v3 .timeline-viewer p {
+    font-size: 0.86rem !important;
+    line-height: 1.45 !important;
+  }
+
+  body.about-page-v3 .timeline-viewer button[aria-label*="Close"],
+  body.about-page-v3 .timeline-viewer .timeline-close,
+  body.about-page-v3 .timeline-viewer [data-close-timeline] {
+    position: fixed !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    z-index: 10020 !important;
+  }
+
+  body.about-page-v3 .timeline-viewer button[aria-label*="Previous"],
+  body.about-page-v3 .timeline-viewer button[title*="Previous"],
+  body.about-page-v3 .timeline-viewer [data-timeline-prev],
+  body.about-page-v3 .timeline-viewer .timeline-prev {
+    left: 0.65rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10010 !important;
+  }
+
+  body.about-page-v3 .timeline-viewer button[aria-label*="Next"],
+  body.about-page-v3 .timeline-viewer button[title*="Next"],
+  body.about-page-v3 .timeline-viewer [data-timeline-next],
+  body.about-page-v3 .timeline-viewer .timeline-next {
+    right: 0.65rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10010 !important;
+  }
+}
+
+/* Very narrow portrait fallback:
+   keep the image first and readable instead of hiding it behind the text panel.
+*/
+@media (max-width: 520px) and (orientation: portrait) {
+  body.about-page-v3 .timeline-slide {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: minmax(0, 58dvh) minmax(0, 34dvh) !important;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide figure,
+  body.about-page-v3 .timeline-slide [class*="media"],
+  body.about-page-v3 .timeline-slide [class*="image"] {
+    height: 58dvh !important;
+  }
+
+  body.about-page-v3 .timeline-copy,
+  body.about-page-v3 .timeline-content,
+  body.about-page-v3 .timeline-text,
+  body.about-page-v3 .timeline-panel,
+  body.about-page-v3 .timeline-caption {
+    height: 34dvh !important;
+  }
+}
+
+/* ABOUT_MOBILE_TIMELINE_PHOTO_FIRST_V20
+   Mobile timeline only.
+   Forces timeline slides into:
+   photo first, words underneath, tabs/actions at bottom.
+   Timeline logic untouched.
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3 .timeline-viewer {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .timeline-slide {
+    width: 100% !important;
+    height: 100dvh !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 4.75rem 0.9rem 4.9rem !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.85rem !important;
+    overflow: hidden !important;
+  }
+
+  /* Put the visual first. */
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide figure,
+  body.about-page-v3 .timeline-slide [class*="media"],
+  body.about-page-v3 .timeline-slide [class*="image"] {
+    order: 1 !important;
+    width: 100% !important;
+    height: 46dvh !important;
+    min-height: 280px !important;
+    max-height: 440px !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+    border-radius: 22px !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+    border: 1px solid rgba(125, 211, 252, 0.20) !important;
+  }
+
+  body.about-page-v3 .timeline-media img,
+  body.about-page-v3 .timeline-slide figure img,
+  body.about-page-v3 .timeline-slide [class*="media"] img,
+  body.about-page-v3 .timeline-slide [class*="image"] img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+
+  /* Put the words underneath the photo. */
+  body.about-page-v3 .timeline-copy,
+  body.about-page-v3 .timeline-content,
+  body.about-page-v3 .timeline-text,
+  body.about-page-v3 .timeline-panel,
+  body.about-page-v3 .timeline-caption {
+    order: 2 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 28dvh !important;
+    margin: 0 !important;
+    padding: 0.95rem !important;
+
+    overflow-y: auto !important;
+    border-radius: 20px !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+    border: 1px solid rgba(125, 211, 252, 0.18) !important;
+  }
+
+  body.about-page-v3 .timeline-copy h2,
+  body.about-page-v3 .timeline-copy h3,
+  body.about-page-v3 .timeline-content h2,
+  body.about-page-v3 .timeline-content h3,
+  body.about-page-v3 .timeline-text h2,
+  body.about-page-v3 .timeline-text h3,
+  body.about-page-v3 .timeline-panel h2,
+  body.about-page-v3 .timeline-panel h3,
+  body.about-page-v3 .timeline-caption h2,
+  body.about-page-v3 .timeline-caption h3 {
+    margin-top: 0 !important;
+    font-size: clamp(1.25rem, 5vw, 1.85rem) !important;
+    line-height: 1.06 !important;
+  }
+
+  body.about-page-v3 .timeline-copy p,
+  body.about-page-v3 .timeline-content p,
+  body.about-page-v3 .timeline-text p,
+  body.about-page-v3 .timeline-panel p,
+  body.about-page-v3 .timeline-caption p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Keep tab rail at the bottom. */
+  body.about-page-v3 .timeline-tabs,
+  body.about-page-v3 .timeline-footer,
+  body.about-page-v3 .timeline-controls,
+  body.about-page-v3 [class*="timeline-tabs"],
+  body.about-page-v3 [class*="timeline-footer"] {
+    order: 3 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page-v3 .timeline-slide {
+    padding: 4.6rem 0.75rem 4.8rem !important;
+  }
+
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide figure,
+  body.about-page-v3 .timeline-slide [class*="media"],
+  body.about-page-v3 .timeline-slide [class*="image"] {
+    height: 44dvh !important;
+    min-height: 260px !important;
+  }
+
+  body.about-page-v3 .timeline-copy,
+  body.about-page-v3 .timeline-content,
+  body.about-page-v3 .timeline-text,
+  body.about-page-v3 .timeline-panel,
+  body.about-page-v3 .timeline-caption {
+    max-height: 30dvh !important;
+  }
+}
+
+/* ABOUT_MOBILE_TIMELINE_CENTER_V21
+   Mobile timeline only.
+   Keeps photo first and forces the mobile slide content into a centered column.
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3 .timeline-slide {
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Center the media block */
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide figure,
+  body.about-page-v3 .timeline-slide [class*="media"],
+  body.about-page-v3 .timeline-slide [class*="image"] {
+    order: 1 !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
+    align-self: center !important;
+  }
+
+  body.about-page-v3 .timeline-media img,
+  body.about-page-v3 .timeline-slide figure img,
+  body.about-page-v3 .timeline-slide [class*="media"] img,
+  body.about-page-v3 .timeline-slide [class*="image"] img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Center the text/copy block under the photo */
+  body.about-page-v3 .timeline-copy,
+  body.about-page-v3 .timeline-content,
+  body.about-page-v3 .timeline-text,
+  body.about-page-v3 .timeline-panel,
+  body.about-page-v3 .timeline-caption {
+    order: 2 !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
+    align-self: center !important;
+    text-align: left !important;
+  }
+
+  /* Keep bottom controls visually centered too */
+  body.about-page-v3 .timeline-tabs,
+  body.about-page-v3 .timeline-footer,
+  body.about-page-v3 .timeline-controls,
+  body.about-page-v3 [class*="timeline-tabs"],
+  body.about-page-v3 [class*="timeline-footer"] {
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page-v3 .timeline-media,
+  body.about-page-v3 .timeline-slide figure,
+  body.about-page-v3 .timeline-slide [class*="media"],
+  body.about-page-v3 .timeline-slide [class*="image"],
+  body.about-page-v3 .timeline-copy,
+  body.about-page-v3 .timeline-content,
+  body.about-page-v3 .timeline-text,
+  body.about-page-v3 .timeline-panel,
+  body.about-page-v3 .timeline-caption,
+  body.about-page-v3 .timeline-tabs,
+  body.about-page-v3 .timeline-footer,
+  body.about-page-v3 .timeline-controls,
+  body.about-page-v3 [class*="timeline-tabs"],
+  body.about-page-v3 [class*="timeline-footer"] {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* ABOUT_MOBILE_TIMELINE_TRUE_PHOTO_FIRST_V22
+   Mobile timeline only.
+   Fixes mixed slide structures where photo slides still place text above the image.
+   Rule: image-containing block first, words underneath, tabs/footer bottom.
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3 .timeline-slide {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.8rem !important;
+
+    width: 100% !important;
+    height: 100dvh !important;
+    max-height: none !important;
+
+    padding: 4.75rem 0.85rem 4.8rem !important;
+    overflow: hidden !important;
+  }
+
+  /* Default: all slide children are text/content unless proven otherwise. */
+  body.about-page-v3 .timeline-slide > * {
+    order: 2 !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Any direct child containing an image becomes the first visible content block. */
+  body.about-page-v3 .timeline-slide > *:has(img) {
+    order: 1 !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    height: 42dvh !important;
+    min-height: 250px !important;
+    max-height: 410px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+    border-radius: 22px !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+    border: 1px solid rgba(125, 211, 252, 0.20) !important;
+  }
+
+  body.about-page-v3 .timeline-slide > *:has(img) img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+
+  /* Text block under photo. This catches the slide copy even when class names vary. */
+  body.about-page-v3 .timeline-slide > *:not(:has(img)):not([class*="tabs"]):not([class*="footer"]):not([class*="controls"]) {
+    order: 2 !important;
+    max-height: 30dvh !important;
+    overflow-y: auto !important;
+    padding: 0.85rem !important;
+    border-radius: 18px !important;
+    background: rgba(2, 6, 23, 0.58) !important;
+    border: 1px solid rgba(125, 211, 252, 0.14) !important;
+  }
+
+  /* Keep tab/footer controls at the bottom. */
+  body.about-page-v3 .timeline-slide > [class*="tabs"],
+  body.about-page-v3 .timeline-slide > [class*="footer"],
+  body.about-page-v3 .timeline-slide > [class*="controls"],
+  body.about-page-v3 .timeline-tabs,
+  body.about-page-v3 .timeline-footer,
+  body.about-page-v3 .timeline-controls {
+    order: 3 !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    margin-top: auto !important;
+  }
+
+  body.about-page-v3 .timeline-slide h2,
+  body.about-page-v3 .timeline-slide h3 {
+    margin-top: 0 !important;
+    font-size: clamp(1.2rem, 5vw, 1.75rem) !important;
+    line-height: 1.06 !important;
+  }
+
+  body.about-page-v3 .timeline-slide p {
+    font-size: 0.88rem !important;
+    line-height: 1.48 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page-v3 .timeline-slide > *:has(img) {
+    width: 100% !important;
+    max-width: none !important;
+    height: 40dvh !important;
+    min-height: 240px !important;
+  }
+
+  body.about-page-v3 .timeline-slide > * {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* ABOUT_MOBILE_TIMELINE_PIN_TOP_V23
+   Mobile timeline only.
+   Fixes photo slides floating/centering too low in the stage.
+   Pins the active slide content to the top of the timeline stage.
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3 .timeline-stage {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    width: min(100% - 1.5rem, 540px) !important;
+    max-width: 540px !important;
+    height: 100% !important;
+    max-height: none !important;
+
+    margin: 0 auto !important;
+    padding: 0.85rem 0 0 !important;
+
+    overflow: visible !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.85rem !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > * {
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:has(img) {
+    order: 1 !important;
+    height: 38dvh !important;
+    min-height: 250px !important;
+    max-height: 430px !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:not(:has(img)):not([class*="tabs"]):not([class*="footer"]):not([class*="controls"]) {
+    order: 2 !important;
+    max-height: 28dvh !important;
+    overflow-y: auto !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > [class*="tabs"],
+  body.about-page-v3 .timeline-stage .timeline-slide > [class*="footer"],
+  body.about-page-v3 .timeline-stage .timeline-slide > [class*="controls"] {
+    order: 3 !important;
+    margin-top: auto !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page-v3 .timeline-stage .timeline-slide {
+    width: calc(100% - 1rem) !important;
+    padding-top: 0.75rem !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:has(img) {
+    height: 36dvh !important;
+    min-height: 230px !important;
+  }
+}
+
+/* ABOUT_MOBILE_TIMELINE_COMPACT_MODAL_V24
+   Mobile timeline only.
+   Shortens the modal so footer/tabs sit closer to the writing.
+   Keeps photo first and copy underneath.
+   Timeline logic untouched.
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3 .timeline-viewer {
+    position: fixed !important;
+    top: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+
+    width: min(100vw, 572px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 100dvh !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto auto !important;
+
+    overflow: hidden !important;
+    border-radius: 0 0 28px 28px !important;
+  }
+
+  body.about-page-v3 .timeline-stage {
+    height: min(68dvh, 760px) !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide {
+    top: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding: 0.65rem 0.75rem 0.35rem !important;
+    gap: 0.65rem !important;
+    overflow: visible !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:has(img) {
+    height: min(34dvh, 380px) !important;
+    min-height: 220px !important;
+    max-height: 380px !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:not(:has(img)):not([class*="tabs"]):not([class*="footer"]):not([class*="controls"]) {
+    max-height: min(24dvh, 250px) !important;
+    padding: 0.75rem !important;
+  }
+
+  body.about-page-v3 .timeline-footer,
+  body.about-page-v3 .timeline-tabs,
+  body.about-page-v3 .timeline-controls,
+  body.about-page-v3 [class*="timeline-footer"],
+  body.about-page-v3 [class*="timeline-tabs"] {
+    margin-top: 0 !important;
+    padding-top: 0.55rem !important;
+    padding-bottom: 0.65rem !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page-v3 .timeline-stage {
+    height: min(66dvh, 620px) !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:has(img) {
+    height: min(32dvh, 330px) !important;
+    min-height: 200px !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:not(:has(img)):not([class*="tabs"]):not([class*="footer"]):not([class*="controls"]) {
+    max-height: min(25dvh, 230px) !important;
+  }
+}
+
+/* ABOUT_MOBILE_TIMELINE_STAGE_COMPACT_V25
+   Mobile timeline only.
+   Fixes large empty space between explanation card and bottom timeline tabs.
+   Uses width-based sizing instead of huge viewport-height stage sizing.
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3 .timeline-viewer {
+    height: auto !important;
+    max-height: 100dvh !important;
+    grid-template-rows: auto auto auto !important;
+  }
+
+  body.about-page-v3 .timeline-stage {
+    height: clamp(500px, 112vw, 680px) !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding: 0.65rem 0.75rem 0 !important;
+    gap: 0.65rem !important;
+    overflow: visible !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:has(img) {
+    height: clamp(230px, 62vw, 360px) !important;
+    min-height: 0 !important;
+    max-height: 360px !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:not(:has(img)):not([class*="tabs"]):not([class*="footer"]):not([class*="controls"]) {
+    max-height: clamp(145px, 36vw, 230px) !important;
+    padding: 0.75rem !important;
+    overflow-y: auto !important;
+  }
+
+  body.about-page-v3 .timeline-footer,
+  body.about-page-v3 .timeline-tabs,
+  body.about-page-v3 .timeline-controls,
+  body.about-page-v3 [class*="timeline-footer"],
+  body.about-page-v3 [class*="timeline-tabs"] {
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.55rem !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page-v3 .timeline-stage {
+    height: clamp(455px, 118vw, 560px) !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:has(img) {
+    height: clamp(215px, 64vw, 300px) !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:not(:has(img)):not([class*="tabs"]):not([class*="footer"]):not([class*="controls"]) {
+    max-height: clamp(140px, 40vw, 210px) !important;
+  }
+}
+
+/* ABOUT_MOBILE_TIMELINE_RESTORE_WORDS_V26
+   Mobile timeline only.
+   Fixes V25 overcompression where the copy card disappeared.
+   Keeps photo first, words under photo, tabs closer but not crushing content.
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3 .timeline-viewer {
+    height: auto !important;
+    max-height: 100dvh !important;
+    grid-template-rows: auto auto auto !important;
+  }
+
+  body.about-page-v3 .timeline-stage {
+    height: clamp(610px, 126vw, 760px) !important;
+    min-height: 610px !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    width: min(100% - 1.5rem, 540px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    padding: 0.7rem 0.75rem 0 !important;
+    gap: 0.7rem !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow: visible !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:has(img) {
+    order: 1 !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    height: clamp(240px, 58vw, 360px) !important;
+    min-height: 240px !important;
+    max-height: 360px !important;
+    flex: 0 0 auto !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:has(img) img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > .timeline-copy-panel,
+  body.about-page-v3 .timeline-stage .timeline-slide > *:not(:has(img)):not([class*="tabs"]):not([class*="footer"]):not([class*="controls"]) {
+    order: 2 !important;
+    display: block !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+
+    min-height: 135px !important;
+    max-height: clamp(170px, 36vw, 230px) !important;
+
+    padding: 0.8rem !important;
+    margin: 0 auto !important;
+
+    overflow-y: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    border-radius: 18px !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+    border: 1px solid rgba(125, 211, 252, 0.16) !important;
+  }
+
+  body.about-page-v3 .timeline-footer,
+  body.about-page-v3 .timeline-tabs,
+  body.about-page-v3 .timeline-controls,
+  body.about-page-v3 [class*="timeline-footer"],
+  body.about-page-v3 [class*="timeline-tabs"] {
+    padding-top: 0.45rem !important;
+    padding-bottom: 0.6rem !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.about-page-v3 .timeline-stage {
+    height: clamp(560px, 138vw, 660px) !important;
+    min-height: 560px !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > *:has(img) {
+    height: clamp(220px, 62vw, 310px) !important;
+    min-height: 220px !important;
+  }
+
+  body.about-page-v3 .timeline-stage .timeline-slide > .timeline-copy-panel,
+  body.about-page-v3 .timeline-stage .timeline-slide > *:not(:has(img)):not([class*="tabs"]):not([class*="footer"]):not([class*="controls"]) {
+    min-height: 130px !important;
+    max-height: clamp(165px, 44vw, 220px) !important;
+  }
+}
+
+/* ABOUT_MOBILE_TIMELINE_DYNAMIC_HEIGHT_V27
+   Mobile timeline only.
+   Dynamic stage height controlled by JS variable:
+   --timeline-mobile-stage-height.
+   Goal: photo + words determine spacing; tabs sit close underneath.
+*/
+
+@media (max-width: 860px) {
+  body.about-page-v3.timeline-mobile-dynamic .timeline-viewer {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 100dvh !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto var(--timeline-mobile-stage-height, 680px) auto !important;
+
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3.timeline-mobile-dynamic .timeline-stage {
+    height: var(--timeline-mobile-stage-height, 680px) !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  body.about-page-v3.timeline-mobile-dynamic .timeline-stage .timeline-slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+
+    width: min(100% - 1.5rem, 540px) !important;
+    max-width: 540px !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding: 0.7rem 0.75rem 0 !important;
+    gap: 0.7rem !important;
+    overflow: visible !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  body.about-page-v3.timeline-mobile-dynamic .timeline-stage .timeline-slide > *:has(img) {
+    order: 1 !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+
+    height: var(--timeline-mobile-image-height, clamp(230px, 56vw, 360px)) !important;
+    min-height: 210px !important;
+    max-height: 380px !important;
+
+    flex: 0 0 auto !important;
+  }
+
+  body.about-page-v3.timeline-mobile-dynamic .timeline-stage .timeline-slide > *:has(img) img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+
+  body.about-page-v3.timeline-mobile-dynamic .timeline-stage .timeline-slide > .timeline-copy-panel,
+  body.about-page-v3.timeline-mobile-dynamic .timeline-stage .timeline-slide > *:not(:has(img)):not([class*="tabs"]):not([class*="footer"]):not([class*="controls"]) {
+    order: 2 !important;
+    display: block !important;
+
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+
+    min-height: 0 !important;
+    max-height: var(--timeline-mobile-copy-max-height, 240px) !important;
+
+    padding: 0.8rem !important;
+    margin: 0 auto !important;
+
+    overflow-y: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    border-radius: 18px !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+    border: 1px solid rgba(125, 211, 252, 0.16) !important;
+  }
+
+  body.about-page-v3.timeline-mobile-dynamic .timeline-footer,
+  body.about-page-v3.timeline-mobile-dynamic .timeline-tabs,
+  body.about-page-v3.timeline-mobile-dynamic .timeline-controls,
+  body.about-page-v3.timeline-mobile-dynamic [class*="timeline-footer"],
+  body.about-page-v3.timeline-mobile-dynamic [class*="timeline-tabs"] {
+    margin-top: 0 !important;
+    padding-top: 0.45rem !important;
+    padding-bottom: 0.6rem !important;
+  }
+}
