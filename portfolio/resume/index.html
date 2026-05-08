@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume | Joseph Robinson Portfolio</title>
+  <meta name="description" content="Joseph Robinson resume preview and PDF download.">
+  <link rel="stylesheet" href="/assets/css/site.css?v=resume-separated-v16">
+</head>
+<body class="resume-reader-image-page resume-dedicated-page">
+  <main class="resume-preview-shell">
+    <section class="resume-preview-hero">
+      <div>
+        <div class="kicker">Resume</div>
+        <h1>Joseph Robinson</h1>
+        <p>PDF Resume</p>
+      </div>
+
+      <div class="resume-preview-actions">
+        <a class="button primary resume-back-link" href="/portfolio/about/">Back to About</a>
+        <a class="button secondary" href="/assets/evidence/pdfs/Joseph_Robinson_Resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+      </div>
+    </section>
+
+    <section class="resume-preview-frame" aria-label="Resume preview">
+      <img class="resume-preview-image" src="/assets/evidence/images/Joseph_Robinson_Resume_preview.png" alt="Joseph Robinson resume preview">
+    </section>
+  </main>
+
+  <script>
+    /* RESUME_DEDICATED_MOBILE_BACK_V16 */
+    (function () {
+      var ua = navigator.userAgent || "";
+      var width = Math.min(
+        window.innerWidth || 9999,
+        screen.width || 9999,
+        document.documentElement ? document.documentElement.clientWidth || 9999 : 9999
+      );
+
+      var isMobile = width <= 860 || /iPhone|iPod|Android.*Mobile|Mobile Safari|CriOS|FxiOS/i.test(ua);
+
+      if (isMobile) {
+        document.querySelectorAll(".resume-back-link").forEach(function (a) {
+          a.setAttribute("href", "/portfolio/about/mobile/");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

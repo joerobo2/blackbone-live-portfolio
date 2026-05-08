@@ -5062,3 +5062,88 @@ body.resume-reader-image-page a[href*="source"],
 body.resume-reader-image-page a[href*="evidence"]:not([href*="pdf"]) {
   display: none !important;
 }
+
+/* RESUME_DEDICATED_PAGE_V16
+   Resume is now separate from Evidence Reader.
+*/
+
+body.resume-dedicated-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(56, 189, 248, 0.14), transparent 34%),
+    radial-gradient(circle at 80% 12%, rgba(37, 99, 235, 0.12), transparent 34%),
+    #020617 !important;
+}
+
+body.resume-dedicated-page .resume-preview-shell {
+  width: min(100vw - 2rem, 1120px);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2.5rem) 0 4rem;
+}
+
+body.resume-dedicated-page .resume-preview-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+body.resume-dedicated-page .resume-preview-hero h1 {
+  margin: 0.3rem 0 0.2rem;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  color: rgba(248, 250, 252, 0.98);
+}
+
+body.resume-dedicated-page .resume-preview-hero p {
+  margin: 0;
+  color: rgba(125, 211, 252, 0.82);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.82rem;
+}
+
+body.resume-dedicated-page .resume-preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+body.resume-dedicated-page .resume-preview-frame {
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  background: rgba(248, 250, 252, 0.96);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.42),
+    0 0 70px rgba(56, 189, 248, 0.12);
+}
+
+body.resume-dedicated-page .resume-preview-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 860px) {
+  body.resume-dedicated-page .resume-preview-shell {
+    width: min(100vw - 1rem, 430px);
+    padding-top: 1rem;
+  }
+
+  body.resume-dedicated-page .resume-preview-hero {
+    display: block;
+  }
+
+  body.resume-dedicated-page .resume-preview-actions {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+
+  body.resume-dedicated-page .resume-preview-frame {
+    border-radius: 18px;
+  }
+}
