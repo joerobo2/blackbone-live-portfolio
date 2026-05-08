@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Resume | Joseph Robinson Portfolio</title>
   <meta name="description" content="Evidence reader for Joseph Robinson's IST 782 applied data science portfolio.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=resume-reader-static-chrome-v14">
+  <link rel="stylesheet" href="/assets/css/site.css?v=resume-mobile-back-link-v32">
 </head>
 <body>
   <div class="reader-shell">
@@ -195,6 +195,42 @@
       } else {
         fixResumeChrome();
       }
+    })();
+  </script>
+
+
+  <script>
+    /* RESUME_MOBILE_BACK_LINK_V32
+       On mobile, Back to About goes directly to the dedicated mobile About page.
+    */
+    (function () {
+      function isMobile() {
+        var ua = navigator.userAgent || "";
+        var width = Math.min(
+          window.innerWidth || 9999,
+          screen.width || 9999,
+          document.documentElement ? document.documentElement.clientWidth || 9999 : 9999
+        );
+        return width <= 860 || /iPhone|iPod|Android.*Mobile|Mobile Safari|CriOS.*Mobile|FxiOS/i.test(ua);
+      }
+
+      function patchBackLinks() {
+        if (!isMobile()) return;
+
+        document.querySelectorAll('a[href="/portfolio/about/"]').forEach(function (a) {
+          if ((a.textContent || "").trim() === "Back to About") {
+            a.setAttribute("href", "/portfolio/about/mobile/");
+          }
+        });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", patchBackLinks);
+      } else {
+        patchBackLinks();
+      }
+
+      window.addEventListener("pageshow", patchBackLinks);
     })();
   </script>
 
