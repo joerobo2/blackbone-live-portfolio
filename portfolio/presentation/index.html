@@ -3,72 +3,216 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Presentation | Joseph Robinson Portfolio</title>
-  <meta name="description" content="Presentation mode for Joseph Robinson's IST 782 applied data science portfolio.">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <title>IST 782 Portfolio Presentation | Joseph Robinson</title>
+  <meta name="description" content="Website-native slide presentation for Joseph Robinson's IST 782 Applied Data Science Portfolio.">
+  <link rel="stylesheet" href="/assets/css/site.css?v=presentation-page-v1">
 </head>
-<body>
-  <div class="progress" data-progress></div>
-
-  <section class="slide" data-slide>
-    <div class="slide-inner">
-      <div class="kicker">IST 782 Portfolio</div>
-      <h1>My work informs my degree, and my degree informs my work.</h1>
-      <p class="lede">A guided walkthrough of applied data science, operational systems, and professional growth.</p>
-    </div>
-  </section>
-
-  <section class="slide" data-slide>
-    <div class="slide-inner">
-      <div class="kicker">Thesis</div>
-      <h1>Applied data science becomes valuable when it stabilizes decisions.</h1>
-      <p class="lede">The portfolio is not just a collection of projects. It is evidence of a method: structure the problem, clarify the state, preserve evidence, and support human action.</p>
-    </div>
-  </section>
-
-  <section class="slide" data-slide>
-    <div class="slide-inner">
-      <div class="kicker">System 1</div>
-      <h1>Financial control.</h1>
-      <p class="lede">A fragmented reconciliation challenge became a more explainable control workflow through data cleaning, comparison logic, trend reasoning, and audit-ready communication.</p>
-    </div>
-  </section>
-
-  <section class="slide" data-slide>
-    <div class="slide-inner">
-      <div class="kicker">System 2</div>
-      <h1>Chemical compliance.</h1>
-      <p class="lede">A high-consequence reporting process required governance, traceability, review states, and documentation that could support accountable sign-off.</p>
-    </div>
-  </section>
-
-  <section class="slide" data-slide>
-    <div class="slide-inner">
-      <div class="kicker">System 3</div>
-      <h1>Inventory control.</h1>
-      <p class="lede">Expiration-sensitive inventory became a prioritization surface using FEFO logic, exception review, snapshot evidence, and operational adoption design.</p>
-    </div>
-  </section>
-
-  <section class="slide" data-slide>
-    <div class="slide-inner">
-      <div class="kicker">Reflection</div>
-      <h1>Coursework gave the work language. Work gave the coursework consequence.</h1>
-      <p class="lede">The result is a practical method for turning ambiguous operations into structured, reviewable, decision-support systems.</p>
-    </div>
-  </section>
-
-  <section class="slide" data-slide>
-    <div class="slide-inner">
-      <div class="kicker">Close</div>
-      <h1>The portfolio is both an academic artifact and a professional evidence system.</h1>
-      <p class="lede">It shows the movement from analysis to control, trust, and workflow design.</p>
-      <div class="button-row">
-        <a class="button primary" href="/portfolio/">Return to Portfolio</a>
+<body class="presentation-page">
+  <div class="presentation-shell">
+    <nav class="presentation-nav" aria-label="Presentation navigation">
+      <a class="brand" href="/">BLACKBONE™</a>
+      <div class="presentation-nav-links">
+        <a href="/portfolio/">Portfolio</a>
+        <a href="/portfolio/evidence/">Evidence</a>
+        <a href="/portfolio/presentation/">Presentation</a>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <script src="/assets/js/site.js"></script>
+    <main class="presentation-deck" aria-live="polite">
+      <section class="presentation-slide is-active" data-slide="1">
+        <div class="slide-kicker">01 · IST 782 Portfolio</div>
+        <h1>My work informs my degree, and my degree informs my work.</h1>
+        <p class="slide-lede">
+          A guided walkthrough of applied data science, operational systems, and professional growth.
+        </p>
+        <div class="slide-card">
+          <strong>Portfolio website</strong>
+          <p><a href="/portfolio/">blackbone.live/portfolio/</a></p>
+        </div>
+      </section>
+
+      <section class="presentation-slide" data-slide="2">
+        <div class="slide-kicker">02 · Thesis</div>
+        <h1>Applied data science becomes valuable when it stabilizes decisions.</h1>
+        <p class="slide-lede">
+          This portfolio is evidence of a method: structure the problem, clarify the state, preserve evidence, and support human action.
+        </p>
+        <div class="slide-card">
+          <strong>Core shift</strong>
+          <p>From isolated reports toward systems that make work reviewable, repeatable, and trusted.</p>
+        </div>
+      </section>
+
+      <section class="presentation-slide" data-slide="3">
+        <div class="slide-kicker">03 · System 1</div>
+        <h1>Financial control.</h1>
+        <p class="slide-lede">
+          A fragmented reconciliation challenge became a more explainable control workflow through data cleaning, comparison logic, trend reasoning, and audit-ready communication.
+        </p>
+        <div class="slide-grid">
+          <div class="slide-card">
+            <strong>Problem</strong>
+            <p>Financial and operational records did not naturally reconcile into one clean decision surface.</p>
+          </div>
+          <div class="slide-card">
+            <strong>Method</strong>
+            <p>Classify variance, preserve traceability, and make review logic repeatable.</p>
+          </div>
+        </div>
+        <a class="slide-evidence-link" href="/portfolio/reader/?doc=financial-packet">View evidence packet</a>
+      </section>
+
+      <section class="presentation-slide" data-slide="4">
+        <div class="slide-kicker">04 · System 2</div>
+        <h1>Chemical compliance.</h1>
+        <p class="slide-lede">
+          A high-consequence reporting process required governance, traceability, review states, and documentation that could support accountable sign-off.
+        </p>
+        <div class="slide-grid">
+          <div class="slide-card">
+            <strong>Problem</strong>
+            <p>Compliance information needed to be reviewed, trusted, and reconstructed later.</p>
+          </div>
+          <div class="slide-card">
+            <strong>Method</strong>
+            <p>Build review-state control, sign-off logic, and traceable evidence into the workflow.</p>
+          </div>
+        </div>
+        <a class="slide-evidence-link" href="/portfolio/reader/?doc=chemical-packet">View evidence packet</a>
+      </section>
+
+      <section class="presentation-slide" data-slide="5">
+        <div class="slide-kicker">05 · System 3</div>
+        <h1>Inventory control.</h1>
+        <p class="slide-lede">
+          Expiration-sensitive inventory became a prioritization surface using FEFO logic, exception review, snapshot evidence, and operational adoption design.
+        </p>
+        <div class="slide-grid">
+          <div class="slide-card">
+            <strong>Problem</strong>
+            <p>Visibility alone did not tell users what needed attention first.</p>
+          </div>
+          <div class="slide-card">
+            <strong>Method</strong>
+            <p>Use priority bands, exception detection, filters, and snapshots to support action.</p>
+          </div>
+        </div>
+        <a class="slide-evidence-link" href="/portfolio/reader/?doc=inventory-packet">View evidence packet</a>
+      </section>
+
+      <section class="presentation-slide" data-slide="6">
+        <div class="slide-kicker">06 · Cross-system pattern</div>
+        <h1>The same method appeared across all three systems.</h1>
+        <div class="method-strip">
+          <span>Context</span>
+          <span>Structure</span>
+          <span>Modularity</span>
+          <span>Evidence</span>
+          <span>Iteration</span>
+        </div>
+        <p class="slide-lede">
+          The case studies operate in different domains, but they share one deeper method: turn ambiguous operational work into structured, reviewable, decision-support systems.
+        </p>
+      </section>
+
+      <section class="presentation-slide" data-slide="7">
+        <div class="slide-kicker">07 · Reflection</div>
+        <h1>Coursework gave the work language. Work gave the coursework consequence.</h1>
+        <p class="slide-lede">
+          The result is a practical method for turning messy operations into shared structure: a way to make information more trustworthy, work more understandable, and decisions more grounded in evidence.
+        </p>
+        <div class="slide-grid">
+          <div class="slide-card">
+            <strong>School gave me</strong>
+            <p>Requirements thinking, governance, data modeling, documentation, and evidence-based reasoning.</p>
+          </div>
+          <div class="slide-card">
+            <strong>Work tested</strong>
+            <p>Those ideas against messy data, stakeholder constraints, operational risk, and adoption friction.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="presentation-slide" data-slide="8">
+        <div class="slide-kicker">08 · Close</div>
+        <h1>From analysis to control, trust, and workflow design.</h1>
+        <p class="slide-lede">
+          This portfolio is both an academic artifact and professional evidence of a method.
+        </p>
+        <div class="slide-card">
+          <strong>Final takeaway</strong>
+          <p>I build systems that make information more trustworthy, work more understandable, and decisions more grounded in evidence.</p>
+        </div>
+        <div class="slide-actions">
+          <a class="button primary" href="/portfolio/">Return to Portfolio</a>
+          <a class="button secondary" href="/portfolio/evidence/">Open Evidence Library</a>
+        </div>
+      </section>
+
+      <section class="presentation-slide references-slide" data-slide="9">
+        <div class="slide-kicker">09 · References</div>
+        <h1>Selected sources.</h1>
+        <ol class="references-list">
+          <li>Abraham, René, Johannes Schneider, and Jan vom Brocke. “Data Governance: A Conceptual Framework, Structured Review, and Research Agenda.” <em>International Journal of Information Management</em> 49 (2019): 424–438.</li>
+          <li>Alles, Michael G., Gerard Brennan, Alexander Kogan, and Miklos A. Vasarhelyi. “Continuous Monitoring of Business Process Controls.” <em>International Journal of Accounting Information Systems</em> 7, no. 2 (2006): 137–161.</li>
+          <li>Brauner, Philipp, Ralf Philipsen, André Calero Valdez, and Martina Ziefle. “What Happens When Decision Support Systems Fail?” <em>Behaviour &amp; Information Technology</em> 38, no. 12 (2019): 1225–1242.</li>
+          <li>Brous, Paul, and Marijn Janssen. “Trusted Decision-Making.” <em>Administrative Sciences</em> 10, no. 4 (2020): 81.</li>
+          <li>Olakotan, Olufisayo Olusegun, and Maryati Mohd Yusof. “The Appropriateness of Clinical Decision Support Systems Alerts.” <em>Health Informatics Journal</em> 27, no. 2 (2021).</li>
+          <li>Staff, Marta E., and Navonil Mustafee. “Discrete-Event Simulation for Effective Perishable Inventory Management.” <em>Simulation</em> 101, no. 9 (2025): 981–1000.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="presentation-controls" aria-label="Slide controls">
+      <button class="button secondary" type="button" data-slide-prev>Previous</button>
+      <div class="slide-progress">
+        <span data-slide-current>1</span> / <span data-slide-total>9</span>
+      </div>
+      <button class="button primary" type="button" data-slide-next>Next</button>
+      <a class="button secondary" href="/portfolio/">Return to Portfolio</a>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const slides = Array.from(document.querySelectorAll(".presentation-slide"));
+      const current = document.querySelector("[data-slide-current]");
+      const total = document.querySelector("[data-slide-total]");
+      const prev = document.querySelector("[data-slide-prev]");
+      const next = document.querySelector("[data-slide-next]");
+      let index = 0;
+
+      if (total) total.textContent = String(slides.length);
+
+      function show(nextIndex) {
+        index = Math.max(0, Math.min(slides.length - 1, nextIndex));
+        slides.forEach((slide, i) => slide.classList.toggle("is-active", i === index));
+        if (current) current.textContent = String(index + 1);
+        if (prev) prev.disabled = index === 0;
+        if (next) next.disabled = index === slides.length - 1;
+        history.replaceState(null, "", "#slide-" + (index + 1));
+      }
+
+      function fromHash() {
+        const match = window.location.hash.match(/slide-(\d+)/);
+        if (match) show(Number(match[1]) - 1);
+        else show(0);
+      }
+
+      prev && prev.addEventListener("click", () => show(index - 1));
+      next && next.addEventListener("click", () => show(index + 1));
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") show(index - 1);
+        if (event.key === "ArrowRight" || event.key === " ") {
+          event.preventDefault();
+          show(index + 1);
+        }
+      });
+
+      window.addEventListener("hashchange", fromHash);
+      fromHash();
+    })();
+  </script>
 </body>
 </html>

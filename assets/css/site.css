@@ -5147,3 +5147,213 @@ body.resume-dedicated-page .resume-preview-image {
     border-radius: 18px;
   }
 }
+
+/* PRESENTATION_PAGE_V1_START */
+.presentation-page {
+  min-height: 100vh;
+}
+
+.presentation-shell {
+  width: min(1180px, calc(100vw - 48px));
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.presentation-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 0 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.presentation-nav-links {
+  display: flex;
+  gap: 18px;
+  font-size: 0.84rem;
+}
+
+.presentation-nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.presentation-nav-links a:hover {
+  color: var(--text);
+}
+
+.presentation-deck {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 70vh;
+  padding: 48px 0;
+}
+
+.presentation-slide {
+  display: none;
+  max-width: 920px;
+}
+
+.presentation-slide.is-active {
+  display: block;
+}
+
+.presentation-slide h1 {
+  max-width: 900px;
+  margin: 0 0 24px;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+.slide-kicker {
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.slide-lede {
+  max-width: 760px;
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  line-height: 1.45;
+}
+
+.slide-card {
+  max-width: 780px;
+  padding: 24px;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 18px;
+  background: rgba(8, 18, 34, 0.72);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.24);
+}
+
+.slide-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 1.02rem;
+}
+
+.slide-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.slide-card a,
+.slide-evidence-link {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.slide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.slide-evidence-link {
+  display: inline-block;
+  margin-top: 4px;
+  text-decoration: none;
+}
+
+.slide-evidence-link:hover {
+  text-decoration: underline;
+}
+
+.method-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.method-strip span {
+  padding: 12px 16px;
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(56, 189, 248, 0.16);
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  font-weight: 800;
+}
+
+.references-slide h1 {
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+}
+
+.references-list {
+  max-width: 920px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.references-list li {
+  margin-bottom: 14px;
+}
+
+.presentation-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.slide-progress {
+  min-width: 70px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.presentation-controls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@media (max-width: 760px) {
+  .presentation-shell {
+    width: min(100% - 28px, 680px);
+  }
+
+  .presentation-nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .presentation-nav-links {
+    flex-wrap: wrap;
+  }
+
+  .presentation-deck {
+    align-items: start;
+    min-height: 68vh;
+    padding: 34px 0;
+  }
+
+  .presentation-slide h1 {
+    font-size: clamp(2.55rem, 15vw, 4.2rem);
+  }
+
+  .slide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .presentation-controls {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+/* PRESENTATION_PAGE_V1_END */
