@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IST 782 Portfolio Presentation | Joseph Robinson</title>
   <meta name="description" content="Website-native slide presentation for Joseph Robinson's IST 782 Applied Data Science Portfolio.">
-  <link rel="stylesheet" href="/assets/css/site.css?v=presentation-page-v1">
+  <link rel="stylesheet" href="/assets/css/site.css?v=presentation-visual-v2-scroll-all">
 </head>
 <body class="presentation-page">
   <div class="presentation-shell">
@@ -19,130 +19,189 @@
     </nav>
 
     <main class="presentation-deck" aria-live="polite">
-      <section class="presentation-slide is-active" data-slide="1">
-        <div class="slide-kicker">01 · IST 782 Portfolio</div>
-        <h1>My work informs my degree, and my degree informs my work.</h1>
-        <p class="slide-lede">
-          A guided walkthrough of applied data science, operational systems, and professional growth.
-        </p>
-        <div class="slide-card">
-          <strong>Portfolio website</strong>
-          <p><a href="/portfolio/">blackbone.live/portfolio/</a></p>
+      <section class="presentation-slide is-active visual-title-slide" data-slide="1">
+        <div class="slide-copy">
+          <div class="slide-kicker">01 · IST 782 Portfolio</div>
+          <h1>My work informs my degree, and my degree informs my work.</h1>
+          <p class="slide-lede">
+            A guided walkthrough of applied data science, operational systems, and professional growth.
+          </p>
+          <div class="slide-card compact">
+            <strong>Joseph Robinson</strong>
+            <p>M.S. Applied Data Science · Syracuse University</p>
+            <p class="pdf-only"><a href="/portfolio/">blackbone.live/portfolio/</a></p>
+          </div>
         </div>
+        <figure class="slide-hero-frame">
+          <img src="/assets/images/about/joseph-hero-blue-suit.jpeg" alt="Joseph Robinson in professional attire.">
+        </figure>
       </section>
 
-      <section class="presentation-slide" data-slide="2">
+      <section class="presentation-slide visual-framework-slide" data-slide="2">
         <div class="slide-kicker">02 · Thesis</div>
         <h1>Applied data science becomes valuable when it stabilizes decisions.</h1>
-        <p class="slide-lede">
-          This portfolio is evidence of a method: structure the problem, clarify the state, preserve evidence, and support human action.
-        </p>
-        <div class="slide-card">
-          <strong>Core shift</strong>
-          <p>From isolated reports toward systems that make work reviewable, repeatable, and trusted.</p>
+        <div class="flow-diagram method-flow" aria-label="Portfolio method diagram">
+          <div class="flow-node">Operational<br>Problem</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node">Structured<br>Data</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node">Evidence<br>Layer</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node">Review<br>Workflow</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node accent-node">Human<br>Action</div>
         </div>
+        <p class="slide-lede narrow">
+          The portfolio is evidence of a method: structure the problem, clarify the state, preserve evidence, and support human action.
+        </p>
       </section>
 
-      <section class="presentation-slide" data-slide="3">
-        <div class="slide-kicker">03 · System 1</div>
-        <h1>Financial control.</h1>
-        <p class="slide-lede">
-          A fragmented reconciliation challenge became a more explainable control workflow through data cleaning, comparison logic, trend reasoning, and audit-ready communication.
-        </p>
-        <div class="slide-grid">
-          <div class="slide-card">
-            <strong>Problem</strong>
-            <p>Financial and operational records did not naturally reconcile into one clean decision surface.</p>
+      <section class="presentation-slide visual-system-slide" data-slide="3">
+        <div class="slide-copy">
+          <div class="slide-kicker">03 · System 1</div>
+          <h1>Financial control.</h1>
+          <p class="slide-lede">
+            A fragmented reconciliation challenge became a more explainable control workflow.
+          </p>
+          <div class="mini-list">
+            <span>Fragmented records</span>
+            <span>Comparison logic</span>
+            <span>Variance review</span>
+            <span>Audit-ready communication</span>
           </div>
-          <div class="slide-card">
-            <strong>Method</strong>
-            <p>Classify variance, preserve traceability, and make review logic repeatable.</p>
-          </div>
+          <a class="slide-evidence-link" href="/portfolio/reader/?doc=financial-packet&from=presentation&slide=3">View evidence packet</a>
         </div>
-        <a class="slide-evidence-link" href="/portfolio/reader/?doc=financial-packet">View evidence packet</a>
+        <figure class="system-visual-frame">
+          <img src="/assets/visuals/FINANCIAL_CONTROL_SYSTEM.png" alt="Financial Control System visual evidence.">
+        </figure>
       </section>
 
-      <section class="presentation-slide" data-slide="4">
-        <div class="slide-kicker">04 · System 2</div>
-        <h1>Chemical compliance.</h1>
-        <p class="slide-lede">
-          A high-consequence reporting process required governance, traceability, review states, and documentation that could support accountable sign-off.
-        </p>
-        <div class="slide-grid">
-          <div class="slide-card">
-            <strong>Problem</strong>
-            <p>Compliance information needed to be reviewed, trusted, and reconstructed later.</p>
+      <section class="presentation-slide visual-system-slide reverse" data-slide="4">
+        <div class="slide-copy">
+          <div class="slide-kicker">04 · System 2</div>
+          <h1>Chemical compliance.</h1>
+          <p class="slide-lede">
+            A high-consequence reporting process required governance, traceability, review states, and accountable sign-off.
+          </p>
+          <div class="state-strip">
+            <span>Pending</span>
+            <span>Reviewed</span>
+            <span>Flagged</span>
+            <span>Corrected</span>
+            <span>Signed off</span>
           </div>
-          <div class="slide-card">
-            <strong>Method</strong>
-            <p>Build review-state control, sign-off logic, and traceable evidence into the workflow.</p>
-          </div>
+          <a class="slide-evidence-link" href="/portfolio/reader/?doc=chemical-packet&from=presentation&slide=4">View evidence packet</a>
         </div>
-        <a class="slide-evidence-link" href="/portfolio/reader/?doc=chemical-packet">View evidence packet</a>
+        <figure class="system-visual-frame">
+          <img src="/assets/visuals/CHEMICAL_COMPLIANCE_SYSTEM.png" alt="Chemical Compliance System visual evidence.">
+        </figure>
       </section>
 
-      <section class="presentation-slide" data-slide="5">
-        <div class="slide-kicker">05 · System 3</div>
-        <h1>Inventory control.</h1>
-        <p class="slide-lede">
-          Expiration-sensitive inventory became a prioritization surface using FEFO logic, exception review, snapshot evidence, and operational adoption design.
-        </p>
-        <div class="slide-grid">
-          <div class="slide-card">
-            <strong>Problem</strong>
-            <p>Visibility alone did not tell users what needed attention first.</p>
+      <section class="presentation-slide visual-system-slide" data-slide="5">
+        <div class="slide-copy">
+          <div class="slide-kicker">05 · System 3</div>
+          <h1>Inventory control.</h1>
+          <p class="slide-lede">
+            Expiration-sensitive inventory became a prioritization surface using FEFO logic, exception review, and snapshot evidence.
+          </p>
+          <div class="priority-stack" aria-label="Inventory priority queue">
+            <div><strong>Critical</strong><span>Near expiration</span></div>
+            <div><strong>Review</strong><span>Possible FEFO issue</span></div>
+            <div><strong>Monitor</strong><span>Approaching window</span></div>
+            <div><strong>Stable</strong><span>No immediate action</span></div>
           </div>
-          <div class="slide-card">
-            <strong>Method</strong>
-            <p>Use priority bands, exception detection, filters, and snapshots to support action.</p>
-          </div>
+          <a class="slide-evidence-link" href="/portfolio/reader/?doc=inventory-packet&from=presentation&slide=5">View evidence packet</a>
         </div>
-        <a class="slide-evidence-link" href="/portfolio/reader/?doc=inventory-packet">View evidence packet</a>
+        <figure class="system-visual-frame">
+          <img src="/assets/visuals/INVENTORY_CONTROL_SYSTEM.png" alt="Inventory Control System visual evidence.">
+        </figure>
       </section>
 
-      <section class="presentation-slide" data-slide="6">
+      <section class="presentation-slide visual-table-slide" data-slide="6">
         <div class="slide-kicker">06 · Cross-system pattern</div>
-        <h1>The same method appeared across all three systems.</h1>
-        <div class="method-strip">
-          <span>Context</span>
-          <span>Structure</span>
-          <span>Modularity</span>
-          <span>Evidence</span>
-          <span>Iteration</span>
+        <h1>Three systems. One method.</h1>
+        <div class="comparison-table-wrap">
+          <table class="presentation-table">
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Problem</th>
+                <th>Control Layer</th>
+                <th>Decision Supported</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Financial</td>
+                <td>Reconciliation ambiguity</td>
+                <td>Variance workflow</td>
+                <td>What needs review?</td>
+              </tr>
+              <tr>
+                <td>Chemical</td>
+                <td>Reporting accountability</td>
+                <td>Review and sign-off states</td>
+                <td>What is complete?</td>
+              </tr>
+              <tr>
+                <td>Inventory</td>
+                <td>Expiration risk</td>
+                <td>FEFO priority surface</td>
+                <td>What needs attention first?</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <p class="slide-lede">
-          The case studies operate in different domains, but they share one deeper method: turn ambiguous operational work into structured, reviewable, decision-support systems.
+        <p class="slide-lede narrow">
+          Across all three systems, the method was consistent: context, structure, modularity, evidence, and iteration.
         </p>
       </section>
 
-      <section class="presentation-slide" data-slide="7">
+      <section class="presentation-slide visual-card-slide" data-slide="7">
         <div class="slide-kicker">07 · Reflection</div>
         <h1>Coursework gave the work language. Work gave the coursework consequence.</h1>
-        <p class="slide-lede">
-          The result is a practical method for turning messy operations into shared structure: a way to make information more trustworthy, work more understandable, and decisions more grounded in evidence.
-        </p>
-        <div class="slide-grid">
-          <div class="slide-card">
-            <strong>School gave me</strong>
-            <p>Requirements thinking, governance, data modeling, documentation, and evidence-based reasoning.</p>
-          </div>
-          <div class="slide-card">
-            <strong>Work tested</strong>
-            <p>Those ideas against messy data, stakeholder constraints, operational risk, and adoption friction.</p>
-          </div>
+        <div class="two-card-bridge">
+          <article class="big-card">
+            <div class="card-icon">🎓</div>
+            <h2>Coursework</h2>
+            <p><strong>Gave me language for:</strong></p>
+            <ul>
+              <li>Requirements</li>
+              <li>Governance</li>
+              <li>Schema design</li>
+              <li>Decision support</li>
+            </ul>
+          </article>
+          <div class="bridge-marker">→</div>
+          <article class="big-card">
+            <div class="card-icon">🏢</div>
+            <h2>Production Work</h2>
+            <p><strong>Tested those ideas against:</strong></p>
+            <ul>
+              <li>Messy data</li>
+              <li>Stakeholders</li>
+              <li>Operational risk</li>
+              <li>Adoption friction</li>
+            </ul>
+          </article>
         </div>
       </section>
 
-      <section class="presentation-slide" data-slide="8">
+      <section class="presentation-slide visual-close-slide" data-slide="8">
         <div class="slide-kicker">08 · Close</div>
         <h1>From analysis to control, trust, and workflow design.</h1>
-        <p class="slide-lede">
+        <div class="equation-visual">
+          <span>Analysis</span>
+          <strong>+</strong>
+          <span>Structure</span>
+          <strong>+</strong>
+          <span>Evidence</span>
+          <strong>=</strong>
+          <span class="equation-result">Trustworthy Action</span>
+        </div>
+        <p class="slide-lede narrow">
           This portfolio is both an academic artifact and professional evidence of a method.
         </p>
-        <div class="slide-card">
-          <strong>Final takeaway</strong>
-          <p>I build systems that make information more trustworthy, work more understandable, and decisions more grounded in evidence.</p>
-        </div>
         <div class="slide-actions">
           <a class="button primary" href="/portfolio/">Return to Portfolio</a>
           <a class="button secondary" href="/portfolio/evidence/">Open Evidence Library</a>

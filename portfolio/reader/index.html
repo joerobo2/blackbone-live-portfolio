@@ -45,5 +45,34 @@
 
   <script src="/assets/js/reader.js"></script>
 
+
+<script>
+  // READER_PRESENTATION_RETURN_V1
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("from") !== "presentation") return;
+
+    const slide = params.get("slide") || "1";
+    const href = "/portfolio/presentation/#slide-" + encodeURIComponent(slide);
+
+    const button = document.createElement("a");
+    button.className = "button secondary reader-return-presentation";
+    button.href = href;
+    button.textContent = "Back to Presentation";
+
+    const evidenceButton = Array.from(document.querySelectorAll("a")).find((link) =>
+      link.textContent.trim().toLowerCase() === "evidence library"
+    );
+
+    if (evidenceButton && evidenceButton.parentElement) {
+      evidenceButton.parentElement.insertBefore(button, evidenceButton);
+      return;
+    }
+
+    const header = document.querySelector("header") || document.body;
+    header.prepend(button);
+  })();
+</script>
+
 </body>
 </html>
