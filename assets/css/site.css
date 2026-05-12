@@ -5787,3 +5787,52 @@ body.resume-dedicated-page .resume-preview-image {
 }
 
 /* PRESENTATION_MOBILE_SCROLL_ALL_V1_END */
+
+/* ABOUT_MOBILE_NAV_VISUAL_FIX_V1_START */
+
+/* Mobile About uses the shared brand language, but needs a phone-native nav layout. */
+@media (max-width: 760px) {
+  .about-mobile-nav.nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 22px 0 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  }
+
+  .about-mobile-nav .brand,
+  .about-mobile-nav .about-mobile-brand,
+  .about-mobile-nav .brand:hover,
+  .about-mobile-nav .brand:focus {
+    display: inline-block;
+    width: fit-content;
+    color: var(--text);
+    text-decoration: none !important;
+    border-bottom: 0 !important;
+    letter-spacing: 0.12em;
+  }
+
+  .about-mobile-nav .nav-links,
+  .about-mobile-nav .about-mobile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 1.2;
+  }
+
+  .about-mobile-nav a:not(.brand):not(.about-mobile-brand) {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .about-mobile-nav a:not(.brand):not(.about-mobile-brand):hover {
+    color: var(--text);
+  }
+}
+
+/* ABOUT_MOBILE_NAV_VISUAL_FIX_V1_END */
