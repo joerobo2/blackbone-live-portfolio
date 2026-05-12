@@ -5836,3 +5836,25 @@ body.resume-dedicated-page .resume-preview-image {
 }
 
 /* ABOUT_MOBILE_NAV_VISUAL_FIX_V1_END */
+
+/* HOME_OPEN_PORTFOLIO_GOLD_V1_START */
+
+/* Homepage: make the intended first action feel like the front door. */
+.home-open-portfolio {
+  border: 1px solid rgba(245, 197, 66, 0.78) !important;
+  box-shadow:
+    0 0 0 1px rgba(245, 197, 66, 0.18),
+    0 18px 48px rgba(245, 197, 66, 0.16),
+    0 18px 48px rgba(56, 189, 248, 0.16) !important;
+}
+
+.home-open-portfolio:hover,
+.home-open-portfolio:focus {
+  border-color: rgba(255, 215, 92, 0.98) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 92, 0.26),
+    0 22px 58px rgba(245, 197, 66, 0.22),
+    0 18px 48px rgba(56, 189, 248, 0.18) !important;
+}
+
+/* HOME_OPEN_PORTFOLIO_GOLD_V1_END */
