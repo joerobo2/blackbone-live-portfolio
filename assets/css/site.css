@@ -5976,3 +5976,41 @@ body:has(.resume-meta-strip) h1 + p {
 
 /* RESUME_REMOVE_TOP_KICKER_V4_END */
 
+
+/* RESUME_SUBTITLE_SPACING_V5_START */
+
+.resume-page-subtitle {
+  display: block;
+  margin: 28px 0 28px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+body:has(.resume-page-subtitle) h1 {
+  margin-bottom: 0;
+  line-height: 0.95;
+}
+
+body:has(.resume-page-subtitle) .resume-meta-strip {
+  margin-top: 0;
+}
+
+/* RESUME_SUBTITLE_SPACING_V5_END */
+
+
+/* RESUME_SUBTITLE_SPACING_V6_START */
+
+.resume-page-subtitle {
+  margin-top: 52px !important;
+  margin-bottom: 30px !important;
+}
+
+body:has(.resume-page-subtitle) h1 {
+  margin-bottom: 0 !important;
+}
+
+/* RESUME_SUBTITLE_SPACING_V6_END */
+
