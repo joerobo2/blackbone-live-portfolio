@@ -6223,3 +6223,19 @@ body:has(.resume-page-subtitle) h1 {
 }
 
 /* ABOUT_GOLD_MISSION_BRIGHTEN_V4_END */
+
+/* ABOUT_GOLD_MISSION_READABLE_V5_START */
+
+/* Make the mission note visibly gold without changing size or layout. */
+.about-page-v3 .site-polish-mission,
+.about-mobile-page .site-polish-mission {
+  color: #ffe08a !important;
+  border-left-color: #f5c542 !important;
+  opacity: 1 !important;
+  font-weight: 520 !important;
+  text-shadow:
+    0 0 10px rgba(245, 197, 66, 0.18),
+    0 0 22px rgba(245, 197, 66, 0.10) !important;
+}
+
+/* ABOUT_GOLD_MISSION_READABLE_V5_END */
