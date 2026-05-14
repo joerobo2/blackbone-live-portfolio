@@ -6239,3 +6239,20 @@ body:has(.resume-page-subtitle) h1 {
 }
 
 /* ABOUT_GOLD_MISSION_READABLE_V5_END */
+
+/* ABOUT_GOLD_MISSION_INTEGRATED_V6_START */
+
+/* Final mission note treatment: same gold family as role line, navy background, thin gold rule only. */
+.about-page-v3 .site-polish-mission,
+.about-mobile-page .site-polish-mission {
+  color: #f5c542 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-left: 2px solid rgba(245, 197, 66, 0.78) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+/* ABOUT_GOLD_MISSION_INTEGRATED_V6_END */
