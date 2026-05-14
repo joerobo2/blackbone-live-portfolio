@@ -6209,3 +6209,17 @@ body:has(.resume-page-subtitle) h1 {
 }
 
 /* ABOUT_GOLD_MISSION_SOFT_V3_END */
+
+/* ABOUT_GOLD_MISSION_BRIGHTEN_V4_START */
+
+/* Brighten the mission note without changing size or layout. */
+.about-page-v3 .site-polish-mission,
+.about-mobile-page .site-polish-mission {
+  color: rgba(255, 240, 196, 0.98) !important;
+  border-left-color: rgba(245, 197, 66, 0.78) !important;
+  text-shadow:
+    0 0 16px rgba(245, 197, 66, 0.10),
+    0 0 28px rgba(245, 197, 66, 0.06) !important;
+}
+
+/* ABOUT_GOLD_MISSION_BRIGHTEN_V4_END */
