@@ -6305,3 +6305,42 @@ body.reflection-page-v1 .reflection-change-card {
 
 /* REFLECTION_BOOKEND_POLISH_V1_END */
 
+/* AIR_LIQUIDE_CONTEXT_PASS_V3_START */
+
+.portfolio-context-note {
+  position: relative;
+  margin: 18px 0 0;
+  max-width: 78ch;
+  padding: 0 0 0 18px;
+  color: rgba(226, 232, 240, 0.84);
+  font-size: clamp(1rem, 1.45vw, 1.1rem);
+  line-height: 1.68;
+}
+
+.portfolio-context-note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  bottom: 0.2em;
+  width: 4px;
+  min-height: 38px;
+  border-radius: 999px;
+  background: #f5c542;
+}
+
+@media (max-width: 760px) {
+  .portfolio-context-note {
+    padding-left: 16px;
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  .portfolio-context-note::before {
+    width: 3px;
+    min-height: 34px;
+  }
+}
+
+/* AIR_LIQUIDE_CONTEXT_PASS_V3_END */
+
