@@ -6014,3 +6014,108 @@ body:has(.resume-page-subtitle) h1 {
 
 /* RESUME_SUBTITLE_SPACING_V6_END */
 
+/* SITE_POLISH_POSITIONING_V1_START */
+
+.site-polish-emphasis {
+  color: #7dd3fc;
+  font-weight: 850;
+}
+
+.site-polish-mission {
+  margin: 18px 0 0;
+  max-width: 76ch;
+  color: rgba(226, 232, 240, 0.92);
+  font-size: clamp(1.02rem, 1.6vw, 1.16rem);
+  line-height: 1.72;
+}
+
+.site-polish-method,
+.site-polish-impact {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 22px 0 0;
+}
+
+.site-polish-method-item,
+.site-polish-impact-item {
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(8, 13, 26, 0.68));
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.site-polish-method-item {
+  padding: 16px 18px;
+}
+
+.site-polish-impact-item {
+  padding: 15px 16px;
+}
+
+.site-polish-method-item strong,
+.site-polish-impact-item strong {
+  display: block;
+  color: #ffffff;
+  font-weight: 850;
+}
+
+.site-polish-method-item strong {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.site-polish-impact-item strong {
+  font-size: clamp(1.12rem, 2vw, 1.38rem);
+  letter-spacing: -0.02em;
+}
+
+.site-polish-method-item p,
+.site-polish-impact-item span {
+  display: block;
+  margin: 8px 0 0;
+  color: rgba(203, 213, 225, 0.9);
+  line-height: 1.55;
+}
+
+.industry-anchor {
+  margin: 10px 0 14px;
+  padding: 11px 13px;
+  border-left: 3px solid rgba(56, 189, 248, 0.86);
+  border-radius: 12px;
+  background: rgba(56, 189, 248, 0.08);
+  color: rgba(226, 232, 240, 0.94);
+  line-height: 1.55;
+}
+
+.industry-anchor strong {
+  color: #ffffff;
+}
+
+@media (max-width: 760px) {
+  .site-polish-mission {
+    margin-top: 16px;
+    font-size: 1rem;
+    line-height: 1.66;
+  }
+
+  .site-polish-method,
+  .site-polish-impact {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .site-polish-method-item,
+  .site-polish-impact-item {
+    border-radius: 16px;
+    padding: 14px 15px;
+  }
+}
+
+/* SITE_POLISH_POSITIONING_V1_END */
+
