@@ -6132,9 +6132,9 @@ body:has(.resume-page-subtitle) h1 {
 
 /* ABOUT_ROLE_GOLD_V1_END */
 
-/* ABOUT_GOLD_MISSION_FINAL_V8_START */
+/* ABOUT_MISSION_GRAY_GOLD_BAR_V9_START */
 
-/* Final mission note: role-line gold, navy background, curved gold rail, regular weight. */
+/* Final mission note: readable gray text, navy background, curved gold rail. */
 .about-page-v3 .site-polish-mission,
 .about-mobile-page .site-polish-mission {
   display: block !important;
@@ -6147,7 +6147,7 @@ body:has(.resume-page-subtitle) h1 {
   background: transparent !important;
   box-shadow: none !important;
   text-shadow: none !important;
-  color: #f5c542 !important;
+  color: rgba(226, 232, 240, 0.86) !important;
   font-weight: 400 !important;
   font-size: clamp(1.02rem, 1.55vw, 1.12rem) !important;
   line-height: 1.72 !important;
@@ -6189,5 +6189,5 @@ body:has(.resume-page-subtitle) h1 {
   }
 }
 
-/* ABOUT_GOLD_MISSION_FINAL_V8_END */
+/* ABOUT_MISSION_GRAY_GOLD_BAR_V9_END */
 
