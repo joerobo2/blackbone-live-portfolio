@@ -6344,3 +6344,28 @@ body.reflection-page-v1 .reflection-change-card {
 
 /* AIR_LIQUIDE_CONTEXT_PASS_V3_END */
 
+
+/* BADGE_ROW_TRAILING_STRIP_FIX_V1_START */
+
+/* Prevent artifact/tag rows from creating a full-width blue strip behind pills. */
+.badge-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 6px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: auto !important;
+  max-width: max-content !important;
+}
+
+/* BADGE_ROW_TRAILING_STRIP_FIX_V1_END */
