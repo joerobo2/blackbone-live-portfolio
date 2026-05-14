@@ -6119,3 +6119,16 @@ body:has(.resume-page-subtitle) h1 {
 
 /* SITE_POLISH_POSITIONING_V1_END */
 
+/* ABOUT_ROLE_GOLD_V1_START */
+
+.about-page-v3 .site-polish-role-gold,
+.about-mobile-page .site-polish-role-gold {
+  color: #f5c542 !important;
+  font-weight: 850 !important;
+  text-shadow:
+    0 0 18px rgba(245, 197, 66, 0.18),
+    0 0 32px rgba(245, 197, 66, 0.08) !important;
+}
+
+/* ABOUT_ROLE_GOLD_V1_END */
+
