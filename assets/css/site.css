@@ -6132,145 +6132,26 @@ body:has(.resume-page-subtitle) h1 {
 
 /* ABOUT_ROLE_GOLD_V1_END */
 
+/* ABOUT_GOLD_MISSION_FINAL_V8_START */
 
-/* ABOUT_GOLD_MISSION_FORCE_V2_START */
-
+/* Final mission note: role-line gold, navy background, curved gold rail, regular weight. */
 .about-page-v3 .site-polish-mission,
 .about-mobile-page .site-polish-mission {
   display: block !important;
+  position: relative !important;
   margin: 18px 0 0 !important;
   max-width: 76ch !important;
-  padding: 16px 18px !important;
-  border: 1px solid rgba(245, 197, 66, 0.42) !important;
-  border-left: 4px solid rgba(245, 197, 66, 0.95) !important;
-  border-radius: 18px !important;
-  background:
-    linear-gradient(180deg, rgba(245, 197, 66, 0.14), rgba(8, 13, 26, 0.46)) !important;
-  color: rgba(255, 238, 190, 0.96) !important;
-  box-shadow:
-    0 18px 42px rgba(0, 0, 0, 0.24),
-    0 0 32px rgba(245, 197, 66, 0.10) !important;
-  font-size: clamp(1.02rem, 1.6vw, 1.16rem) !important;
-  line-height: 1.72 !important;
-}
-
-.about-page-v3 .site-polish-mission::first-letter,
-.about-mobile-page .site-polish-mission::first-letter {
-  color: #f5c542 !important;
-  font-weight: 850 !important;
-}
-
-@media (max-width: 760px) {
-  .about-page-v3 .site-polish-mission,
-  .about-mobile-page .site-polish-mission {
-    margin-top: 16px !important;
-    padding: 15px 16px !important;
-    border-radius: 16px !important;
-    font-size: 1rem !important;
-    line-height: 1.66 !important;
-  }
-}
-
-/* ABOUT_GOLD_MISSION_FORCE_V2_END */
-
-/* ABOUT_GOLD_MISSION_SOFT_V3_START */
-
-/* Soften the mission paragraph so it feels integrated with the page, not boxed off. */
-.about-page-v3 .site-polish-mission,
-.about-mobile-page .site-polish-mission {
-  display: block !important;
-  margin: 18px 0 0 !important;
-  max-width: 76ch !important;
-  padding: 0 0 0 14px !important;
+  padding: 0 0 0 18px !important;
   border: 0 !important;
-  border-left: 2px solid rgba(245, 197, 66, 0.62) !important;
   border-radius: 0 !important;
   background: transparent !important;
-  color: rgba(255, 232, 170, 0.94) !important;
   box-shadow: none !important;
+  text-shadow: none !important;
+  color: #f5c542 !important;
+  font-weight: 400 !important;
   font-size: clamp(1.02rem, 1.55vw, 1.12rem) !important;
   line-height: 1.72 !important;
-}
-
-.about-page-v3 .site-polish-mission::first-letter,
-.about-mobile-page .site-polish-mission::first-letter {
-  color: inherit !important;
-  font-weight: inherit !important;
-}
-
-@media (max-width: 760px) {
-  .about-page-v3 .site-polish-mission,
-  .about-mobile-page .site-polish-mission {
-    margin-top: 16px !important;
-    padding-left: 12px !important;
-    font-size: 1rem !important;
-    line-height: 1.66 !important;
-  }
-}
-
-/* ABOUT_GOLD_MISSION_SOFT_V3_END */
-
-/* ABOUT_GOLD_MISSION_BRIGHTEN_V4_START */
-
-/* Brighten the mission note without changing size or layout. */
-.about-page-v3 .site-polish-mission,
-.about-mobile-page .site-polish-mission {
-  color: rgba(255, 240, 196, 0.98) !important;
-  border-left-color: rgba(245, 197, 66, 0.78) !important;
-  text-shadow:
-    0 0 16px rgba(245, 197, 66, 0.10),
-    0 0 28px rgba(245, 197, 66, 0.06) !important;
-}
-
-/* ABOUT_GOLD_MISSION_BRIGHTEN_V4_END */
-
-/* ABOUT_GOLD_MISSION_READABLE_V5_START */
-
-/* Make the mission note visibly gold without changing size or layout. */
-.about-page-v3 .site-polish-mission,
-.about-mobile-page .site-polish-mission {
-  color: #ffe08a !important;
-  border-left-color: #f5c542 !important;
-  opacity: 1 !important;
-  font-weight: 520 !important;
-  text-shadow:
-    0 0 10px rgba(245, 197, 66, 0.18),
-    0 0 22px rgba(245, 197, 66, 0.10) !important;
-}
-
-/* ABOUT_GOLD_MISSION_READABLE_V5_END */
-
-/* ABOUT_GOLD_MISSION_INTEGRATED_V6_START */
-
-/* Final mission note treatment: same gold family as role line, navy background, thin gold rule only. */
-.about-page-v3 .site-polish-mission,
-.about-mobile-page .site-polish-mission {
-  color: #f5c542 !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-left: 2px solid rgba(245, 197, 66, 0.78) !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  font-weight: 500 !important;
-}
-
-/* ABOUT_GOLD_MISSION_INTEGRATED_V6_END */
-
-/* ABOUT_GOLD_MISSION_CURVED_BAR_V7_START */
-
-/* Final mission note: integrated gold text, navy background, curved gold bar, no bolding. */
-.about-page-v3 .site-polish-mission,
-.about-mobile-page .site-polish-mission {
-  position: relative !important;
-  color: #f5c542 !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  font-weight: 400 !important;
-  padding: 0 0 0 16px !important;
+  overflow: visible !important;
 }
 
 .about-page-v3 .site-polish-mission::before,
@@ -6278,15 +6159,12 @@ body:has(.resume-page-subtitle) h1 {
   content: "" !important;
   position: absolute !important;
   left: 0 !important;
-  top: 0.22em !important;
-  bottom: 0.22em !important;
-  width: 3px !important;
+  top: 0.18em !important;
+  bottom: 0.18em !important;
+  width: 4px !important;
+  min-height: 42px !important;
   border-radius: 999px !important;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 225, 128, 0.95),
-    rgba(245, 197, 66, 0.78)
-  ) !important;
+  background: #f5c542 !important;
 }
 
 .about-page-v3 .site-polish-mission::first-letter,
@@ -6295,4 +6173,21 @@ body:has(.resume-page-subtitle) h1 {
   font-weight: inherit !important;
 }
 
-/* ABOUT_GOLD_MISSION_CURVED_BAR_V7_END */
+@media (max-width: 760px) {
+  .about-page-v3 .site-polish-mission,
+  .about-mobile-page .site-polish-mission {
+    margin-top: 16px !important;
+    padding-left: 16px !important;
+    font-size: 1rem !important;
+    line-height: 1.66 !important;
+  }
+
+  .about-page-v3 .site-polish-mission::before,
+  .about-mobile-page .site-polish-mission::before {
+    width: 3px !important;
+    min-height: 36px !important;
+  }
+}
+
+/* ABOUT_GOLD_MISSION_FINAL_V8_END */
+
