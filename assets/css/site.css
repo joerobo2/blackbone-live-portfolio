@@ -6369,3 +6369,26 @@ body.reflection-page-v1 .reflection-change-card {
 }
 
 /* BADGE_ROW_TRAILING_STRIP_FIX_V1_END */
+
+/* BUTTON_FONT_UNIFICATION_V1_START */
+
+/* Keep real buttons and link-buttons visually identical. */
+button.button,
+a.button,
+.button {
+  font-family: inherit !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+}
+
+button.button {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border-style: solid !important;
+  cursor: pointer !important;
+}
+
+/* BUTTON_FONT_UNIFICATION_V1_END */
