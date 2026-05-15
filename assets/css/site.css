@@ -6463,3 +6463,38 @@ body.presentation-page .visual-card-slide {
 }
 
 /* PRESENTATION_SLIDE7_TITLE_WASH_FIX_V1_END */
+
+/* PRESENTATION_SLIDE7_WASH_HARD_FIX_V2_START */
+
+/* Slide 7 should match the clean background behavior of the other slides. */
+body.presentation-page .presentation-slide[data-slide="7"],
+body.presentation-page .visual-card-slide {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Remove any slide-level decorative wash/panel pseudo-elements. */
+body.presentation-page .presentation-slide[data-slide="7"]::before,
+body.presentation-page .presentation-slide[data-slide="7"]::after,
+body.presentation-page .visual-card-slide::before,
+body.presentation-page .visual-card-slide::after,
+body.presentation-page .presentation-slide[data-slide="7"] h1::before,
+body.presentation-page .presentation-slide[data-slide="7"] h1::after,
+body.presentation-page .visual-card-slide h1::before,
+body.presentation-page .visual-card-slide h1::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Preserve the actual reflection cards. */
+body.presentation-page .visual-card-slide .big-card {
+  border: 1px solid rgba(245, 197, 66, 0.24) !important;
+}
+
+/* PRESENTATION_SLIDE7_WASH_HARD_FIX_V2_END */
