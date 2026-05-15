@@ -6746,3 +6746,32 @@ not floating near the title.
 
 /* PRESENTATION_MOBILE_AUDIO_BUTTON_BOTTOM_V1_END */
 
+
+
+/* PRESENTATION_FINAL_LINK_LABELS_V3_START */
+
+body.presentation-page .slide-site-url,
+body.presentation-page .slide-title-url {
+  color: var(--gold, #f5c84c);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+body.presentation-page .slide-title-link {
+  margin: 0.32rem 0 0;
+}
+
+body.presentation-page .slide-title-url {
+  display: inline-block;
+  font-size: clamp(0.78rem, 1vw, 0.95rem);
+}
+
+body.presentation-page .slide-site-url {
+  display: inline-block;
+  font-size: clamp(0.78rem, 0.9vw, 0.95rem);
+  line-height: 1.25;
+}
+
+/* PRESENTATION_FINAL_LINK_LABELS_V3_END */
+
