@@ -6584,3 +6584,67 @@ body.presentation-page .slide-audio-button .audio-label {
 
 /* PRESENTATION_AUDIO_PLAYER_V1_END */
 
+/* PRESENTATION_AUDIO_BUTTON_DESKTOP_GLOW_V1_START */
+
+/* Gentle attention pulse for the narration control. */
+@keyframes presentationAudioButtonPulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    border-color: rgba(245, 197, 66, 0.48);
+    box-shadow:
+      0 0 0 1px rgba(245, 197, 66, 0.10),
+      0 12px 32px rgba(0, 0, 0, 0.24),
+      0 0 18px rgba(245, 197, 66, 0.10);
+  }
+
+  50% {
+    transform: translateY(-1px) scale(1.035);
+    border-color: rgba(255, 224, 138, 0.92);
+    box-shadow:
+      0 0 0 1px rgba(245, 197, 66, 0.28),
+      0 16px 42px rgba(0, 0, 0, 0.30),
+      0 0 34px rgba(245, 197, 66, 0.34),
+      0 0 64px rgba(245, 197, 66, 0.12);
+  }
+}
+
+body.presentation-page .slide-audio-button {
+  animation: presentationAudioButtonPulse 2.45s ease-in-out infinite;
+  will-change: transform, box-shadow, border-color;
+}
+
+/* Stop the pulse when the user is interacting or when audio is active. */
+body.presentation-page .slide-audio-button:hover,
+body.presentation-page .slide-audio-button:focus-visible,
+body.presentation-page .slide-audio-button.is-playing {
+  animation: none !important;
+}
+
+/* Playing state stays bright but steady. */
+body.presentation-page .slide-audio-button.is-playing {
+  box-shadow:
+    0 0 0 1px rgba(245, 197, 66, 0.30),
+    0 16px 42px rgba(0, 0, 0, 0.32),
+    0 0 36px rgba(245, 197, 66, 0.30) !important;
+}
+
+/* Desktop: treat Listen as a stable utility control, not slide-specific content. */
+@media (min-width: 761px) {
+  body.presentation-page .slide-audio-button {
+    position: fixed !important;
+    top: clamp(210px, 29vh, 340px) !important;
+    right: calc((100vw - min(980px, 86vw)) / 2 + 18px) !important;
+    left: auto !important;
+    bottom: auto !important;
+  }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  body.presentation-page .slide-audio-button {
+    animation: none !important;
+  }
+}
+
+/* PRESENTATION_AUDIO_BUTTON_DESKTOP_GLOW_V1_END */
+
