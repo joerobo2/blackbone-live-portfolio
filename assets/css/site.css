@@ -6706,3 +6706,43 @@ body.presentation-page .slide-audio-button.is-playing {
 
 /* PRESENTATION_AUDIO_BUTTON_NAV_CONTROL_V1_END */
 
+
+
+/* PRESENTATION_MOBILE_AUDIO_BUTTON_BOTTOM_V1_START */
+
+/*
+Mobile: the presentation is a vertical scroll document.
+Place each slide's Listen button at the bottom of its slide content,
+not floating near the title.
+*/
+@media (max-width: 760px) {
+  body.presentation-page .presentation-controls .slide-audio-button--control {
+    display: none !important;
+  }
+
+  body.presentation-page .presentation-slide > .slide-audio-button--slide {
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    display: inline-flex !important;
+    width: fit-content;
+    min-height: 34px;
+    margin: clamp(1.15rem, 5vw, 1.75rem) 0 0 auto;
+    padding: 0.46rem 0.72rem;
+
+    align-self: flex-end;
+    justify-self: end;
+    z-index: 1;
+  }
+
+  body.presentation-page .presentation-slide > .slide-audio-button--slide .audio-label {
+    display: inline-block;
+  }
+}
+
+/* PRESENTATION_MOBILE_AUDIO_BUTTON_BOTTOM_V1_END */
+
