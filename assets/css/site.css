@@ -6392,3 +6392,56 @@ button.button {
 }
 
 /* BUTTON_FONT_UNIFICATION_V1_END */
+
+/* PRESENTATION_GOLD_ACCENTS_V1_START */
+
+/* Presentation gold pass: restrained accents to echo the About page. */
+body.presentation-page .slide-kicker {
+  color: #f5c542 !important;
+  text-shadow:
+    0 0 18px rgba(245, 197, 66, 0.18),
+    0 0 34px rgba(245, 197, 66, 0.08) !important;
+}
+
+body.presentation-page .flow-arrow,
+body.presentation-page .bridge-marker,
+body.presentation-page .equation-visual strong {
+  color: #f5c542 !important;
+  text-shadow:
+    0 0 16px rgba(245, 197, 66, 0.28),
+    0 0 28px rgba(245, 197, 66, 0.12) !important;
+}
+
+body.presentation-page .slide-card,
+body.presentation-page .big-card,
+body.presentation-page .comparison-table-wrap,
+body.presentation-page .system-visual-frame,
+body.presentation-page .slide-hero-frame {
+  border-color: rgba(245, 197, 66, 0.24) !important;
+}
+
+body.presentation-page .slide-card.compact {
+  border-left: 4px solid rgba(245, 197, 66, 0.82) !important;
+}
+
+body.presentation-page .accent-node,
+body.presentation-page .equation-result {
+  box-shadow:
+    0 0 0 1px rgba(245, 197, 66, 0.22),
+    0 16px 42px rgba(245, 197, 66, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+}
+
+body.presentation-page .presentation-table th {
+  border-bottom: 1px solid rgba(245, 197, 66, 0.34) !important;
+}
+
+body.presentation-page .slide-evidence-link {
+  color: #f5c542 !important;
+}
+
+body.presentation-page .slide-evidence-link:hover {
+  color: #ffe08a !important;
+}
+
+/* PRESENTATION_GOLD_ACCENTS_V1_END */
