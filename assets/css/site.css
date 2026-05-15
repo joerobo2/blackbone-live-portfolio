@@ -6648,3 +6648,24 @@ body.presentation-page .slide-audio-button.is-playing {
 
 /* PRESENTATION_AUDIO_BUTTON_DESKTOP_GLOW_V1_END */
 
+
+/* PRESENTATION_AUDIO_BUTTON_CONTENT_FRAME_POSITION_V2_START */
+
+/* Desktop: stable upper-right utility position inside the presentation content frame. */
+@media (min-width: 761px) {
+  body.presentation-page .slide-audio-button {
+    position: fixed !important;
+
+    /* Sits in the slide utility lane, above the main content composition. */
+    top: clamp(168px, 20vh, 228px) !important;
+
+    /* Aligns with the right edge of the deck content frame, not the browser edge. */
+    right: calc((100vw - min(980px, 86vw)) / 2 + 18px) !important;
+
+    left: auto !important;
+    bottom: auto !important;
+    z-index: 90 !important;
+  }
+}
+
+/* PRESENTATION_AUDIO_BUTTON_CONTENT_FRAME_POSITION_V2_END */
