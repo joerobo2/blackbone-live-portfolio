@@ -1,10 +1,23 @@
-/* PRESENTATION_AUDIO_PLAYER_V1 */
+/* PRESENTATION_AUDIO_PLAYER_V2 */
 (() => {
   const AUDIO_ROOT = "/assets/audio/presentation";
   const PLAYING_CLASS = "is-playing";
 
   let activeAudio = null;
   let activeButton = null;
+  const audioCache = new Map();
+
+  function getAudio(slideNumberRaw) {
+    const slideNumber = String(slideNumberRaw).padStart(2, "0");
+
+    if (!audioCache.has(slideNumber)) {
+      const audio = new Audio(`${AUDIO_ROOT}/slide-${slideNumber}.mp3`);
+      audio.preload = "metadata";
+      audioCache.set(slideNumber, audio);
+    }
+
+    return audioCache.get(slideNumber);
+  }
 
   function setButtonState(button, isPlaying) {
     if (!button) return;
@@ -18,28 +31,55 @@
     }
   }
 
+  function resetAllButtons() {
+    document.querySelectorAll(".slide-audio-button").forEach((button) => {
+      setButtonState(button, false);
+    });
+  }
+
   function stopActiveAudio() {
     if (activeAudio) {
       activeAudio.pause();
+      activeAudio.currentTime = activeAudio.currentTime;
     }
 
-    if (activeButton) {
-      setButtonState(activeButton, false);
-    }
+    resetAllButtons();
 
     activeAudio = null;
     activeButton = null;
   }
 
-  function createAudioButton(slide, slideNumberRaw) {
-    const slideNumber = String(slideNumberRaw).padStart(2, "0");
-    const audio = new Audio(`${AUDIO_ROOT}/slide-${slideNumber}.mp3`);
-    audio.preload = "metadata";
+  function isSlideVisible(slide) {
+    if (!slide) return false;
 
+    const style = window.getComputedStyle(slide);
+
+    return (
+      !slide.hidden &&
+      slide.getAttribute("aria-hidden") !== "true" &&
+      style.display !== "none" &&
+      style.visibility !== "hidden"
+    );
+  }
+
+  function getCurrentSlideNumber() {
+    const slides = Array.from(document.querySelectorAll(".presentation-slide[data-slide]"));
+
+    const activeSlide =
+      slides.find((slide) => slide.classList.contains("is-active")) ||
+      slides.find((slide) => slide.classList.contains("active")) ||
+      slides.find((slide) => slide.getAttribute("aria-current") === "true") ||
+      slides.find(isSlideVisible) ||
+      slides[0];
+
+    return activeSlide?.getAttribute("data-slide") || "1";
+  }
+
+  function createAudioButton({ className = "", fixedSlideNumber = null } = {}) {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "slide-audio-button";
-    button.setAttribute("aria-label", `Play narration for slide ${slideNumberRaw}`);
+    button.className = `slide-audio-button ${className}`.trim();
+    button.setAttribute("aria-label", "Play narration");
     button.setAttribute("aria-pressed", "false");
     button.innerHTML = `
       <span class="audio-icon" aria-hidden="true">🎙</span>
@@ -49,6 +89,9 @@
     button.addEventListener("click", async (event) => {
       event.preventDefault();
       event.stopPropagation();
+
+      const slideNumberRaw = fixedSlideNumber || getCurrentSlideNumber();
+      const audio = getAudio(slideNumberRaw);
 
       if (activeAudio && activeAudio !== audio) {
         stopActiveAudio();
@@ -60,6 +103,12 @@
           activeAudio = audio;
           activeButton = button;
           setButtonState(button, true);
+
+          audio.onended = () => {
+            if (activeAudio === audio) {
+              stopActiveAudio();
+            }
+          };
         } catch (error) {
           console.error("Presentation audio playback failed:", error);
           setButtonState(button, false);
@@ -69,61 +118,44 @@
       }
     });
 
-    audio.addEventListener("ended", () => {
-      if (activeAudio === audio) {
-        stopActiveAudio();
-      } else {
-        setButtonState(button, false);
-      }
-    });
-
-    audio.addEventListener("pause", () => {
-      if (activeAudio === audio && !audio.ended) {
-        setButtonState(button, false);
-      }
-    });
-
     return button;
   }
 
-  function attachAudioButtons() {
+  function attachMobileSlideButtons() {
     const slides = document.querySelectorAll(".presentation-slide[data-slide]");
 
     slides.forEach((slide) => {
-      if (slide.querySelector(".slide-audio-button")) return;
+      if (slide.querySelector(".slide-audio-button--slide")) return;
 
       const slideNumberRaw = slide.getAttribute("data-slide");
       if (!slideNumberRaw) return;
 
-      const button = createAudioButton(slide, slideNumberRaw);
+      const button = createAudioButton({
+        className: "slide-audio-button--slide",
+        fixedSlideNumber: slideNumberRaw,
+      });
+
       slide.appendChild(button);
     });
   }
 
-  function observeSlideChanges() {
-    const slides = document.querySelectorAll(".presentation-slide[data-slide]");
+  function attachDesktopControlButton() {
+    const controls = document.querySelector(".presentation-controls");
+    if (!controls || controls.querySelector(".slide-audio-button--control")) return;
 
-    const observer = new MutationObserver(() => {
-      const activeSlide = activeButton?.closest(".presentation-slide");
-      if (!activeSlide) return;
-
-      const isHidden =
-        activeSlide.hidden ||
-        activeSlide.getAttribute("aria-hidden") === "true" ||
-        activeSlide.classList.contains("is-hidden") ||
-        activeSlide.style.display === "none";
-
-      if (isHidden) {
-        stopActiveAudio();
-      }
+    const button = createAudioButton({
+      className: "slide-audio-button--control",
     });
 
-    slides.forEach((slide) => {
-      observer.observe(slide, {
-        attributes: true,
-        attributeFilter: ["class", "style", "hidden", "aria-hidden"],
-      });
-    });
+    const returnControl = Array.from(controls.children).find((child) =>
+      /return/i.test(child.textContent || "")
+    );
+
+    if (returnControl) {
+      controls.insertBefore(button, returnControl);
+    } else {
+      controls.appendChild(button);
+    }
   }
 
   function bindNavigationPause() {
@@ -153,8 +185,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    attachAudioButtons();
-    observeSlideChanges();
+    attachMobileSlideButtons();
+    attachDesktopControlButton();
     bindNavigationPause();
   });
 })();

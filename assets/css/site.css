@@ -6669,3 +6669,40 @@ body.presentation-page .slide-audio-button.is-playing {
 }
 
 /* PRESENTATION_AUDIO_BUTTON_CONTENT_FRAME_POSITION_V2_END */
+
+/* PRESENTATION_AUDIO_BUTTON_NAV_CONTROL_V1_START */
+
+/* Desktop: place Listen in the bottom navigation row, not floating over slide content. */
+@media (min-width: 761px) {
+  body.presentation-page .presentation-slide > .slide-audio-button--slide {
+    display: none !important;
+  }
+
+  body.presentation-page .presentation-controls .slide-audio-button--control {
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: auto !important;
+    min-height: 32px;
+    padding: 0.42rem 0.68rem;
+    font-size: 0.68rem;
+    flex: 0 0 auto;
+  }
+}
+
+/* Mobile keeps the slide-level placement we already liked. */
+@media (max-width: 760px) {
+  body.presentation-page .presentation-controls .slide-audio-button--control {
+    display: none !important;
+  }
+
+  body.presentation-page .presentation-slide > .slide-audio-button--slide {
+    display: inline-flex !important;
+  }
+}
+
+/* PRESENTATION_AUDIO_BUTTON_NAV_CONTROL_V1_END */
+
