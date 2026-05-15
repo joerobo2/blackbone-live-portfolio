@@ -6445,3 +6445,21 @@ body.presentation-page .slide-evidence-link:hover {
 }
 
 /* PRESENTATION_GOLD_ACCENTS_V1_END */
+
+/* PRESENTATION_SLIDE7_TITLE_WASH_FIX_V1_START */
+
+/* Remove the accidental panel/wash behind the Slide 7 reflection headline. */
+body.presentation-page .presentation-slide[data-slide="7"] h1,
+body.presentation-page .visual-card-slide h1 {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+/* Keep the reflective cards accented, but do not let their visual treatment bleed upward. */
+body.presentation-page .visual-card-slide {
+  background: transparent !important;
+}
+
+/* PRESENTATION_SLIDE7_TITLE_WASH_FIX_V1_END */
